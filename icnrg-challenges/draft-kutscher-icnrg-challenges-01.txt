@@ -236,7 +236,7 @@ Internet-Draft               ICN Challenges                    July 2013
       although they all share similar models for accessing named data
       objects in the network.
 
-   ***KP Comment:
+   ***KPComment:
          without actually having defined what is a "named data object"
          up to here, the text above indicates that NDOs exist today.  I
          think what we have today is URIs and data, but "NDOs" per se.
