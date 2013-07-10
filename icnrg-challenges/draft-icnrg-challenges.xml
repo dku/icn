@@ -8,7 +8,8 @@
 <!ENTITY RFC5944 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5944.xml">
 <!ENTITY RFC2002 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2002.xml">
 
-<!ENTITY I-D.ni-core SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.farrell-decade-ni.xml">
+<!ENTITY RFC6920 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6920.xml">
+
 <!ENTITY I-D.ni-params SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.hallambaker-decade-ni-params.xml">
 <!ENTITY RFC5280 PUBLIC ''
 'http://xml.resource.org/public/rfc/bibxml/reference.RFC.5280.xml'>
@@ -40,7 +41,7 @@
 <!-- end of list of popular I-D processing instructions -->
 <?rfc comments="yes"?>
 <?rfc inline="yes"?>
-<rfc category="std" docName="draft-kutscher-icnrg-challenges-00" ipr="trust200902"
+<rfc category="std" docName="draft-kutscher-icnrg-challenges-01" ipr="trust200902"
      submissionType="independent">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
@@ -138,7 +139,7 @@
       </address>
     </author>
 
-    <date year="2013" />
+    <date year="2013" month="July" day="11"/>
 
     <!-- If the month and year are both specified and are the current ones, xml2rfc will fill 
          in the current day for you. If only the current year is specified, xml2rfc will fill 
@@ -445,7 +446,7 @@
     </section>
     
     <section title="ICN Research Challenges">
-      <section title="Naming">
+      <section title="Naming" anchor="sec.naming">
 	<t>
 	  Naming data objects is as important for ICN as naming hosts
 	  is for today's Internet. Fundamentally, ICN requires unique
@@ -522,7 +523,7 @@
 	      and receivers (or any ICN node) can validate the
 	      name-content binding by re-calculating the hash and
 	      comparing it to the name (component). <xref
-	      target="I-D.farrell-decade-ni"></xref> specifies a
+	      target="RFC6920"></xref> specifies a
 	      concrete naming format for this.
 	    </t>
 	    <t>
@@ -586,35 +587,119 @@
 	    propose here four important security challenges that come
 	    from the shift to information-centric communications.
 	  </t>
-	  <section title="Data object authentication">
+	  
+	  <section title="Data Object Authentication">
 	    <t>
-	      ICN data objects are retrieved not only from an original
-	      copy holder but also from any caching point. Since data
-	      objects can be maliciously modified, ICN should provide
-	      users with a security mechanism to verify the origin and
-	      integrity of the data object. Thus, every data object in
-	      ICN should be authenticated by means of a signature
+	      As mentioned in section <xref target="sec.naming"/>,
+	      data object authentication is an important ICN feature,
+	      since ICN data objects are retrieved not only from an
+	      original copy holder but also from any caching
+	      point. Since data objects can be maliciously modified,
+	      ICN should provide users with a security mechanism to
+	      verify the origin and integrity of the data object, and
+	      there are different ways to achieve this.
+	    </t>
+	    
+	    <t>
+	      An efficient approach for static NDOs is providing a
+	      name-content-binding by hashing an NDO and using the
+	      hash as a part of the object's name. <xref
+	      target="RFC6920"></xref> provides a mechanism and a
+	      format for representing a digest algorithm and the
+	      actual digest in a name (amongst other information).
+	    </t>
+	    <t>
+	      For dynamic objects (where it is desirable to refer to
+	      an NDO by name before the object has been created),
+	      public-key cryptography is often applied, i.e., every
+	      NDO would be authenticated by means of a signature
 	      performed by the data object publisher so that any data
 	      object consumer can verify the validity of the data
 	      object based on the signature. However, in order to
 	      verify the signature of an object, the consumer must
 	      know the public key of the entity that signed the
-	      object. One research challenge is then to support a
-	      mechanism to distribute the publisher's public keys to
-	      the consumers of data objects. For example, external
-	      third party authority such as hierarchical Public Key
-	      Infrastructure (PKI) <xref target="RFC5280"/> can be
-	      used. As ICN might not provide information about the
-	      origin of a data object, the object itself should
-	      incorporate the necessary information to determine the
-	      object publisher, for example with a certificate, that
-	      can be validated through the PKI. Once the certificate
-	      is authenticated, its public key can be used to
-	      authenticate the signed data object itself. Data object
-	      authentication is potentially tightly linked with
-	      naming.
+	      object.
+	    </t>
+	    <t>
+	      One research challenge is then to support a mechanism to
+	      distribute the publisher's public keys to the consumers
+	      of data objects.  There are two main approaches to
+	      achieve this; one is based on an external third party
+	      authority such as hierarchical Public Key Infrastructure
+	      (PKI) <xref target="RFC5280"/> and the other is to adapt a
+	      self-certifying scheme. The former, as the name implies,
+	      depends on an external third party authority to
+	      distribute the public key of the publisher for the
+	      consumers. In a self-certifying scheme, the public key
+	      (or a hash of it) would be used as part of the name --
+	      which is sufficient to validate the object's
+	      authenticity.
+	    </t>	      
+	    <!-- On the other hand, in a self-certifying scheme, any
+	         provider of the data object is responsible for
+	         distributing the corresponding public key and the
+	         necessary information to determine the data object
+	         publisher, for example with a certificate, that can
+	         be validated through the public key. Once the
+	         certificate authenticated, its public key can be
+	         used to authenticate the signed data object itself.
+	         Data object authentication is potentially tightly
+	         linked with naming. Alternatively, non PK-based
+	         name-content-binding validation, like hash-based
+	         name [RFC6920] can be adopted.
+	    -->
+	    <t>
+	      In cases where information about the origin of a data
+	      object is not available by other means, the object
+	      itself would have to incorporate the necessary
+	      information to determine the object publisher, for
+	      example with a certificate, that can be validated
+	      through the PKI. Once the certificate is authenticated,
+	      its public key can be used to authenticate the signed
+	      data object itself.
+	    </t>
+	      <!--Data object authentication is potentially tightly
+	      linked with naming. -->
+	  </section>
+	  
+	  <section title="Binding NDOs to Real-World Identities">
+	    <t>
+	      In addition to validating NDO authenticity, it is still
+	      important to bind real-world identities, e.g., a
+	      publisher identity, to objects, so that a requestor can
+	      verify that a received object was actually published by
+	      a certain source.
+	    </t>
+	    <t>
+	      With hash-based and self-certifying names,
+	      real-world-identity bindings are not intrinsically
+	      established: the name provides the hash of the NDO or of
+	      the public key that has been used to sign the NDO. There
+	      needs to be another binding to a real-world-identity if
+	      that feature is requested.
+	    </t>
+	    <t>
+	      If the object name directly provides the publisher name
+	      and if that name is protected by a certificate that
+	      links to PKI-like trust chain, the object name itself
+	      can provide an intrinsic binding to a real-world
+	      identity.
+	    </t>
+
+	  <t><list style="hanging" hangIndent="6">
+	    <t hangText="***DKU Comment:"><vspace /> Not sure what the
+	    conclusion is: in reality, this is all intrinsic to the
+	    particular ICN approach.
+	    </t>
+	
+	  </list></t> 
+
+
+	    <t>
+
 	    </t>
 	  </section>
+
 	  
 	  <section title="Traffic aggregation and filtering">
 	    <t>
@@ -1478,9 +1563,9 @@ Scribe   Participant 1 ... Participant N
 
     <references title="Informative References">
       &RFC5280;
-	  &RFC2002;
-	  &RFC5944;
-      &I-D.ni-core;
+      &RFC2002;
+      &RFC5944;
+      &RFC6920;
 
 <!--
       &I-D.ni-params;
