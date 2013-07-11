@@ -1459,7 +1459,7 @@ Scribe   Participant 1 ... Participant N
 	  networks will be managed in the future.
 	</t>
 	<t>
-	  With respect to network management we see two different
+	  With respect to network management we see three different
 	  aspects. First, any operator needs to manage all resources
 	  available in the network, which can range from node
 	  connectivity to network bandwidth availability to in-network
@@ -1468,13 +1468,19 @@ Scribe   Participant 1 ... Participant N
 	  network coverage extension, storage, and processing
 	  capabilities. DTN characteristics should also be considered
 	  to the degree that this is possible (e.g. content
-	  dissemination through data mules).  On the other hand, given
+	  dissemination through data mules).  Secondly, given
 	  that nodes and links are not at the center of an
 	  information-centric network, network management should
 	  capitalize on native ICN mechanisms. For example, in-network
 	  storage and name resolution can be used for monitoring,
 	  while native publish/subscribe functionality can be used for
-	  triggering notifications.
+	  triggering notifications. Finally, management is also at the
+	  core of network controlling capabilities by allowing operating
+	  actions to be mediated and decided, triggering and activating
+	  networking procedures in an optimized way. For example, monitoring
+	  aspects can be conjugated with different management actions in a
+	  coordinated way, allowing network operations to flow in a concertated
+	  way. 
 	</t>
 	<t>
 	  However, the considerations on leveraging intrinsic ICN

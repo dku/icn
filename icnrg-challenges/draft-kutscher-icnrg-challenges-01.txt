@@ -1240,19 +1240,25 @@ Internet-Draft               ICN Challenges                    July 2013
    insights into how information-centric networks will be managed in the
    future.
 
-   With respect to network management we see two different aspects.
+   With respect to network management we see three different aspects.
    First, any operator needs to manage all resources available in the
    network, which can range from node connectivity to network bandwidth
    availability to in-network storage to multi-access support.  In ICN,
    users will also bring into the network significant resources in terms
    of network coverage extension, storage, and processing capabilities.
    DTN characteristics should also be considered to the degree that this
-   is possible (e.g. content dissemination through data mules).  On the
-   other hand, given that nodes and links are not at the center of an
+   is possible (e.g. content dissemination through data mules).
+   Secondly, given that nodes and links are not at the center of an
    information-centric network, network management should capitalize on
    native ICN mechanisms.  For example, in-network storage and name
    resolution can be used for monitoring, while native publish/subscribe
-   functionality can be used for triggering notifications.
+   functionality can be used for triggering notifications.  Finally,
+   management is also at the core of network controlling capabilities by
+   allowing operating actions to be mediated and decided, triggering and
+   activating networking procedures in an optimized way.  For example,
+   monitoring aspects can be conjugated with different management
+   actions in a coordinated way, allowing network operations to flow in
+   a concertated way.
 
    However, the considerations on leveraging intrinsic ICN mechanisms
    and capabilities to support management operations go beyond a simple
@@ -1275,12 +1281,6 @@ Internet-Draft               ICN Challenges                    July 2013
    allow us to look into network management through a new perspective.
    By centering its operations around content, one can conceive new
    management operations addressing, for example, per-content management
-   or access control, as well as analyzing performance per content name
-   instead of per link or node.  Moreover, such considerations can also
-   be used to manage operational aspects of ICN mechanisms themselves.
-   For example, [NDN-MGMT] re-utilizes inherent content-centric
-   capabilities of CCN to manage optimal link connectivity for nodes, in
-   concert with a network optimization process.  Conversely, how these
 
 
 
@@ -1289,6 +1289,12 @@ Kutscher, et al.        Expires January 12, 2014               [Page 23]
 Internet-Draft               ICN Challenges                    July 2013
 
 
+   or access control, as well as analyzing performance per content name
+   instead of per link or node.  Moreover, such considerations can also
+   be used to manage operational aspects of ICN mechanisms themselves.
+   For example, [NDN-MGMT] re-utilizes inherent content-centric
+   capabilities of CCN to manage optimal link connectivity for nodes, in
+   concert with a network optimization process.  Conversely, how these
    content-centric aspects can otherwise influence and impact management
    in other areas (e.g., security, resilience) is also important, as
    exemplified by in [ccn-access], where access control mechanisms are
@@ -1332,12 +1338,6 @@ Internet-Draft               ICN Challenges                    July 2013
    [COMPACT]  Cowen, L., "Compact routing with minimum stretch",
               In Journal of Algorithms, vol. 38, pp. 170--183, 2001.
 
-   [Chaum]    Chaum, D. and E. van Heijst, "Group signatures",
-              In Proceedings of EUROCRYPT, 1991.
-
-   [DONA]     Koponen, T., Ermolinskiy, A., Chawla, M., Kim, K., gon
-              Chun, B., and S. Shenker, "A Data-Oriented (and Beyond)
-
 
 
 Kutscher, et al.        Expires January 12, 2014               [Page 24]
@@ -1345,6 +1345,11 @@ Kutscher, et al.        Expires January 12, 2014               [Page 24]
 Internet-Draft               ICN Challenges                    July 2013
 
 
+   [Chaum]    Chaum, D. and E. van Heijst, "Group signatures",
+              In Proceedings of EUROCRYPT, 1991.
+
+   [DONA]     Koponen, T., Ermolinskiy, A., Chawla, M., Kim, K., gon
+              Chun, B., and S. Shenker, "A Data-Oriented (and Beyond)
               Network Architecture", In Proceedings of SIGCOMM 2007,
               August 2007.
 
@@ -1388,11 +1393,6 @@ Internet-Draft               ICN Challenges                    July 2013
               In Perform. Eval., vol. 63, pp. 241--263, 2006.
 
    [RFC2002]  Perkins, C., "IP Mobility Support", RFC 2002,
-              October 1996.
-
-   [RFC5280]  Cooper, D., Santesson, S., Farrell, S., Boeyen, S.,
-              Housley, R., and W. Polk, "Internet X.509 Public Key
-              Infrastructure Certificate and Certificate Revocation List
 
 
 
@@ -1401,6 +1401,11 @@ Kutscher, et al.        Expires January 12, 2014               [Page 25]
 Internet-Draft               ICN Challenges                    July 2013
 
 
+              October 1996.
+
+   [RFC5280]  Cooper, D., Santesson, S., Farrell, S., Boeyen, S.,
+              Housley, R., and W. Polk, "Internet X.509 Public Key
+              Infrastructure Certificate and Certificate Revocation List
               (CRL) Profile", RFC 5280, May 2008.
 
    [RFC5944]  Perkins, C., "IP Mobility Support for IPv4, Revised",
@@ -1442,11 +1447,6 @@ Authors' Addresses
 
    Phone: +81-42-327-6582
    Email: suyong@nict.go.jp
-
-
-
-
-
 
 
 
