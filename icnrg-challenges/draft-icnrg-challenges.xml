@@ -139,7 +139,7 @@
       </address>
     </author>
 
-    <date year="2013" month="July" day="11"/>
+    <date year="2013" month="July" day="15"/>
 
     <!-- If the month and year are both specified and are the current ones, xml2rfc will fill 
          in the current day for you. If only the current year is specified, xml2rfc will fill 
@@ -308,6 +308,8 @@
 	  </t>
 	</list>
       </t>
+
+<!--
 	  
       <t>
 	<list style="hanging" hangIndent="6">
@@ -316,10 +318,14 @@
 	  text above indicates that NDOs exist today. I think what we
 	  have today is URIs and data, but "NDOs" per se.
 	  </t></list></t>
+	  <t>Dirk: we now define it in the section below, should be OK.</t>
+-->
       
     </section>
     
-    <section title="ICN Concepts">
+    <section title="ICN Terminology and Concepts">
+
+<!--
       
       <t><list style="hanging" hangIndent="6">
 	<t hangText="***KP Comment:"><vspace />Would it be possible to
@@ -335,39 +341,68 @@
 	network service, NDOs, Name-content binding etc.?). Just a
 	thought.</t></list></t>
 
-	<t>
-	  Fundamentally, ICN is providing access to named data as a
-	  first-order network service, i.e., the network is able to
-	  serve requests to named data natively. That means, network
-	  nodes can receive requests for named data and act as
-	  necessary, for example, by forwarding the request to a
-	  suitable next-hop. Consequently, the network processes
-	  requests for named data objects (and corresponding
-	  responses) natively. Every network node on a path is enabled
-	  to perform forwarding decisions, to cache objects etc.  This
-	  enables the network to forward such requests on optimal
-	  paths, employing the best transmission technologies at every
-	  node, e.g., broadcast/multicast transmission in wireless
-	  networks to avoid duplicate transmission of both requests
-	  and responses.
-	</t>
-	<t>
-	  In ICN there is a set of common concepts and node
-	  requirements beyond this basic service model. Naming data
-	  objects is a key concept. In general, ICN names do not
-	  represent neither network nodes nor interfaces -- they
-	  represent NDOs independent of their location. Names do play
-	  a key role in forwarding decisions and are used for matching
-	  requests to responses: In order to provide better support
-	  for accessing copies of NDOs regardless of their location,
-	  it is important to be able to validate that a response
-	  actually delivers the bits that correspond to an original
-	  request for named data.</t>
-	  
-	  <t><list style="hanging" hangIndent="6"> <t hangText="***KP
-	  Comment:"><vspace />Deleted ", like in the Internet
-	  Protocol,". ICN is not a protocol.</t></list></t>
-	  
+
+       <t>Dirk: I have started this list below.</t>
+
+-->
+
+	<section title="Terminology" anchor="sec.terms">
+	  <t>
+	    This section defines ICN some terms that are used in this
+	    document.
+	    <list style="hanging">
+	      <t hangText="Named Data Object (NDO):">
+		Addressable data unit in an ICN that can represent a
+		collection of bytes or a piece of information. In ICN,
+		each data object has a name bound to it, and there are
+		typically mechanisms to secure (and validate) this binding.
+	      </t>
+	      <t hangText="Requestor:">Entitiy in an ICN network that
+	      is sending a request for a Named Data Object to the
+	      network.
+	      </t>
+	    </list>
+	  </t>
+
+	</section>
+
+	<section title="Concepts">
+	  <t>
+	    Fundamentally, ICN is providing access to named data as a
+	    first-order network service, i.e., the network is able to
+	    serve requests to named data natively. That means, network
+	    nodes can receive requests for named data and act as
+	    necessary, for example, by forwarding the request to a
+	    suitable next-hop. Consequently, the network processes
+	    requests for named data objects (and corresponding
+	    responses) natively. Every network node on a path is
+	    enabled to perform forwarding decisions, to cache objects
+	    etc.  This enables the network to forward such requests on
+	    optimal paths, employing the best transmission
+	    technologies at every node, e.g., broadcast/multicast
+	    transmission in wireless networks to avoid duplicate
+	    transmission of both requests and responses.
+	  </t>
+	  <t>
+	    In ICN there is a set of common concepts and node
+	    requirements beyond this basic service model. Naming data
+	    objects is a key concept. In general, ICN names do not
+	    represent neither network nodes nor interfaces -- they
+	    represent NDOs independent of their location. Names do
+	    play a key role in forwarding decisions and are used for
+	    matching requests to responses: In order to provide better
+	    support for accessing copies of NDOs regardless of their
+	    location, it is important to be able to validate that a
+	    response actually delivers the bits that correspond to an
+	    original request for named data.
+	  </t>
+	  <!--
+	      <t><list style="hanging" hangIndent="6"> <t
+	      hangText="***KP Comment:"><vspace />Deleted ", like in the
+	      Internet Protocol,". ICN is not a protocol.</t></list></t>
+	      <t>Dirk: OK</t>
+	      
+	  -->
 	  <t>
 	    Name-content binding validation is a fundamental security
 	    service in ICN, and this is often achieved by establishing
@@ -410,7 +445,7 @@
 	    transport services, i.e., reliable transmission, flow
 	    control etc. First of all, a request/response model can
 	    enable receiver-driven transport regimes, i.e., receivers
-	    (the requesters of NDOs) can control message sending rates
+	    (the requestors of NDOs) can control message sending rates
 	    by regulating the request sending rate (assuming that
 	    every response message has to be triggered by a request
 	    message). Retransmission would be achieved by re-sending
@@ -422,7 +457,9 @@
 	    depending on configuration, observed performance or other
 	    criteria.
 	  </t>
-	  
+
+<!--
+	    
 	  <t><list style="hanging" hangIndent="6">
 	    <t hangText="***KP Comment:"><vspace />I do not get why
 	    "receiver-driven transport" is highlighted here as
@@ -433,17 +470,24 @@
 	    pertain to a single conversation e2e). And, this, again,
 	    is written with NDN mostly in mind.</t>
 	
-	  <t>Moreover, I do not see why the following paragraph belongs to "concepts".</t></list></t> 
-	  
-	  <t>
-	    This receiver-driven communication model potentially
-	    enables new interconnection and business models: a request
-	    for named data can be linked to an interest of a requester
-	    (or requesting network) in data from another peer, which
-	    could suggest modeling peering agreements and charging
-	    accordingly.
-	  </t>
-    </section>
+	    <t>Moreover, I do not see why the following paragraph
+	    belongs to "concepts".</t></list></t>
+
+            <t>Dirk: receiver-driven transport is something that ICN
+            enables (not only in CCN). TCP is sender-driven. So, IMO,
+            we should mention it here.</t>
+
+-->	  
+	    <t>
+	      This receiver-driven communication model potentially
+	      enables new interconnection and business models: a
+	      request for named data can be linked to an interest of a
+	      requestor (or requesting network) in data from another
+	      peer, which could suggest modeling peering agreements
+	      and charging accordingly.
+	    </t>
+	  </section>
+</section>
     
     <section title="ICN Research Challenges">
       <section title="Naming" anchor="sec.naming">
@@ -497,22 +541,20 @@
 	  names are typically non-hierarchical, or flat, although the
 	  publisher field could be employed to create a structure
 	  which could facilitate route aggregation.
-	</t>
-	
-	<t><list style="hanging" hangIndent="6"> <t hangText="***KP
-	Comment:"><vspace />The following para is a mostly repeating
-	what was just said; I propose to fold it into the previous one
-	and root out the repetition.</t></list></t>
-	
-	<t>
 	  There are several design trade-offs for ICN naming, which
 	  affect routing and security. Self-certifying names are not
 	  human readable nor hierarchical. They can however provide
 	  some structure for aggregation, for instance, a name part
-	  corresponding to a publisher. Without self-certification, as
-	  mentioned above, the infrastructure depends on a PKI for its
-	  operation, which can impede large-scale deployment.
+	  corresponding to a publisher.
 	</t>
+	
+<!--
+	<t><list style="hanging" hangIndent="6"> <t hangText="***KP
+	Comment:"><vspace />The following para is a mostly repeating
+	what was just said; I propose to fold it into the previous one
+	and root out the repetition.</t></list></t>
+	<t>Dirk: DONE</t>
+-->	
 	<t>
 	  Research challenges specific to naming include:
 	  <list style="symbols">
@@ -536,7 +578,7 @@
 	      names as described above.
 	    </t>
 	    <t>
-	      requester privacy protection can be a challenge in ICN
+	      requestor privacy protection can be a challenge in ICN
 	      as a direct consequence of the
 	      accessing-named-data-objects paradigm: if the network
 	      can "see" requests and responses, it can also log
@@ -556,7 +598,7 @@
 	      (i.e., changing the content without generating a new
 	      name) is impossible. Versioning is one possible
 	      solution, but requires a naming scheme that supports it
-	      (and a way for requesters to learn about versions).
+	      (and a way for requestors to learn about versions).
 	    </t>
 	    <t>
 	      Managing accessibility: whereas in ICN the general
@@ -574,18 +616,30 @@
       </section>
 
       <section title="Security">
+
+<!--
 	  <t><list style="hanging" hangIndent="6"> <t hangText="***KP
 	  Comment:"><vspace />Since this document is named
 	  "Challenges", are we supposed to point to solutions as well,
 	  or first and foremost document what is still unsolved?
 	  Although this question is motivated by the text below, it
-	  applies to the entire document.</t></list></t>
+	  applies to the entire document.</t></list>
+	  </t>
+	  
+	  <t>Dirk: yes, perhaps this should be made explicit? I have
+	  added a sentence in the paragraph below for now, but we
+	  might want to say more about this per challenge?</t>
+-->
 	  
 	  <t>
 	    Security can take many different forms in ICN and instead
 	    of discussing specific attacks or technical details, we
 	    propose here four important security challenges that come
-	    from the shift to information-centric communications.
+	    from the shift to information-centric communications. Some
+	    challenges are well-understood, and there are (sometimes
+	    multiple different) approaches to address them, whereas
+	    other challenges are active research and engineering
+	    topics.
 	  </t>
 	  
 	  <section title="Data Object Authentication">
@@ -706,13 +760,13 @@
 	      One request message to retrieve a data object can
 	      actually aggregate requests coming from several
 	      consumers. This aggregation of requests reduces the
-	      overall traffic but makes per-requester filtering
+	      overall traffic but makes per-requestor filtering
 	      harder.  The challenge in this case is to provide a
 	      mechanism that allows requests aggregation and
-	      per-requester filtering.  A possible solution is to
-	      indicate the set of requesters in the aggregated request
+	      per-requestor filtering.  A possible solution is to
+	      indicate the set of requestors in the aggregated request
 	      such that the response can indicate the subset of
-	      requesters allowed to access the data object. However,
+	      requestors allowed to access the data object. However,
 	      this solution requires collaboration from other nodes in
 	      the network and is not suitable for caching. Another
 	      possible solution is the encrypt data objects and ensure
@@ -758,23 +812,31 @@
 	<section title="Routing and Resolution System Scalability" anchor="sec.routing">
 	  <t>
 	    ICN routing locates a data object based on its name which
-	    is initially provided by a requester. ICN routing may
+	    is initially provided by a requestor. ICN routing may
 	    comprise three steps: a name resolution step, a discovery
 	    step, and a delivery step. The name resolution step
 	    translates the name of the requested data object into its
 	    locator. The discovery step routes the request to data
 	    object based on its name or locator. The last step
 	    (delivery) routes the data object back to the
-	    requester. Depending on how these steps are combined, ICN
+	    requestor. Depending on how these steps are combined, ICN
 	    routing schemes can be categorized as: Route-By-Name
 	    Routing (RBNR), Lookup-By-Name Routing (LBNR), and Hybrid
 	    Routing (HR).
 	  </t>
 
+<!--
 	  <t><list style="hanging" hangIndent="6"> <t hangText="***KP
 	  Comment:"><vspace />I think it would help the reader to add
 	  to each of this sections example architectures that follow
 	  each approach from the current literature.</t></list></t>
+
+	  <t>Dirk: possibly,  but I would want to avoid doing another
+	  survey here. We can do it if someome manages to add some
+	  links without blowing up the text too much.</t>
+-->
+
+
 	  
 	  <section title="Route-By-Name Routing (RBNR)">
 	    <t>
@@ -793,12 +855,12 @@
 	      omission of the resolution process. For the delivery
 	      step, RBNR needs another identifier (ID) of either host
 	      or location to forward the requested data object back to
-	      the requester. Otherwise, an additional routing
+	      the requestor. Otherwise, an additional routing
 	      mechanism has to be introduced such as bread-crumbs
 	      routing <xref target="BREADCRUMBS"/>, in which each
 	      request leaves behind a trail of breadcrumbs along its
 	      forwarding path, and then the response is forwarded back
-	      to the requester consuming the trail. Specific
+	      to the requestor consuming the trail. Specific
 	      challenges include:
 	      <list style="symbols">
 		<t>
@@ -848,8 +910,8 @@
 	      as locators, the discovery step can depend on the
 	      current IP infrastructure. The delivery step can be
 	      implemented similarly to IP routing. The locator of the
-	      requester is included in the request message, and then
-	      the requested data object is delivered to the requester
+	      requestor is included in the request message, and then
+	      the requested data object is delivered to the requestor
 	      based on the locator. Specific challenges include:
 	      <list style="symbols">
 		<t>How to build a scalable resolution system which provides
@@ -1217,7 +1279,7 @@ Scribe   Participant 1 ... Participant N
 	  of requests.
 	</t>
 	<t>
-	  In this model, the requester would control the data rate by
+	  In this model, the requestor would control the data rate by
 	  regulating its request sending rate and next by performing
 	  source/next-hop selections. Specific challenges depend on
 	  the specific ICN approach, but general challenges for
@@ -1243,13 +1305,13 @@ Scribe   Participant 1 ... Participant N
 	  service design.
 	</t>
 	<t>
-	  Achieving fairness for requesters can be one challenge as it
+	  Achieving fairness for requestors can be one challenge as it
 	  is not possible to identify the number of clients behind one
 	  particular request.  A second problem related to request
 	  aggregation is the management of request retransmissions.
 	  Generally, it is assumed that a router will not transmit a
 	  request if it transmitted an identical request recently and
-	  because there is no information about the requester, the
+	  because there is no information about the requestor, the
 	  router cannot distinguish the initial request from a client
 	  from a retransmission from the same client.  In such a
 	  situation, how routers can adapt their timers to use the

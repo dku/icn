@@ -4,7 +4,7 @@
 Network Working Group                                   D. Kutscher, Ed.
 Internet-Draft                                                       NEC
 Intended status: Standards Track                                  S. Eum
-Expires: January 12, 2014                                           NICT
+Expires: January 16, 2014                                           NICT
                                                           K. Pentikousis
                                                                   Huawei
                                                                I. Psaras
@@ -13,7 +13,7 @@ Expires: January 12, 2014                                           NICT
                                                   Universidade de Aveiro
                                                                D. Saucez
                                                                    INRIA
-                                                           July 11, 2013
+                                                           July 15, 2013
 
 
                         ICN Research Challenges
@@ -46,13 +46,13 @@ Status of this Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 12, 2014.
+   This Internet-Draft will expire on January 16, 2014.
 
 Copyright Notice
 
 
 
-Kutscher, et al.        Expires January 12, 2014                [Page 1]
+Kutscher, et al.        Expires January 16, 2014                [Page 1]
 
 Internet-Draft               ICN Challenges                    July 2013
 
@@ -72,31 +72,33 @@ Table of Contents
 
    1.  Introduction . . . . . . . . . . . . . . . . . . . . . . . . .  3
    2.  Problems with Information Distribution Today . . . . . . . . .  4
-   3.  ICN Concepts . . . . . . . . . . . . . . . . . . . . . . . . .  5
+   3.  ICN Terminology and Concepts . . . . . . . . . . . . . . . . .  5
+     3.1.  Terminology  . . . . . . . . . . . . . . . . . . . . . . .  5
+     3.2.  Concepts . . . . . . . . . . . . . . . . . . . . . . . . .  5
    4.  ICN Research Challenges  . . . . . . . . . . . . . . . . . . .  7
      4.1.  Naming . . . . . . . . . . . . . . . . . . . . . . . . . .  7
      4.2.  Security . . . . . . . . . . . . . . . . . . . . . . . . .  9
        4.2.1.  Data Object Authentication . . . . . . . . . . . . . .  9
        4.2.2.  Binding NDOs to Real-World Identities  . . . . . . . . 10
-       4.2.3.  Traffic aggregation and filtering  . . . . . . . . . . 11
-       4.2.4.  State overloading  . . . . . . . . . . . . . . . . . . 11
+       4.2.3.  Traffic aggregation and filtering  . . . . . . . . . . 10
+       4.2.4.  State overloading  . . . . . . . . . . . . . . . . . . 10
        4.2.5.  Traffic on data object replicas  . . . . . . . . . . . 11
-     4.3.  Routing and Resolution System Scalability  . . . . . . . . 12
-       4.3.1.  Route-By-Name Routing (RBNR) . . . . . . . . . . . . . 12
-       4.3.2.  Lookup-By-Name Routing (LBNR)  . . . . . . . . . . . . 13
+     4.3.  Routing and Resolution System Scalability  . . . . . . . . 11
+       4.3.1.  Route-By-Name Routing (RBNR) . . . . . . . . . . . . . 11
+       4.3.2.  Lookup-By-Name Routing (LBNR)  . . . . . . . . . . . . 12
        4.3.3.  Hybrid Routing (HR)  . . . . . . . . . . . . . . . . . 13
-     4.4.  Mobility Management  . . . . . . . . . . . . . . . . . . . 14
-     4.5.  Wireless Networking  . . . . . . . . . . . . . . . . . . . 16
+     4.4.  Mobility Management  . . . . . . . . . . . . . . . . . . . 13
+     4.5.  Wireless Networking  . . . . . . . . . . . . . . . . . . . 15
      4.6.  Transport Services . . . . . . . . . . . . . . . . . . . . 18
      4.7.  In-Network Caching . . . . . . . . . . . . . . . . . . . . 19
-       4.7.1.  Cache Placement  . . . . . . . . . . . . . . . . . . . 20
-       4.7.2.  Content Placement -- Content-to-Cache Distribution . . 21
+       4.7.1.  Cache Placement  . . . . . . . . . . . . . . . . . . . 19
+       4.7.2.  Content Placement -- Content-to-Cache Distribution . . 20
        4.7.3.  Request-to-Cache Routing . . . . . . . . . . . . . . . 21
-     4.8.  Network Management . . . . . . . . . . . . . . . . . . . . 22
-   5.  Link to and Impact on IETF Technologies  . . . . . . . . . . . 24
-   6.  Security Considerations  . . . . . . . . . . . . . . . . . . . 24
+     4.8.  Network Management . . . . . . . . . . . . . . . . . . . . 21
+   5.  Link to and Impact on IETF Technologies  . . . . . . . . . . . 23
+   6.  Security Considerations  . . . . . . . . . . . . . . . . . . . 23
    7.  Informative References . . . . . . . . . . . . . . . . . . . . 24
-   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 26
+   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 25
 
 
 
@@ -106,9 +108,7 @@ Table of Contents
 
 
 
-
-
-Kutscher, et al.        Expires January 12, 2014                [Page 2]
+Kutscher, et al.        Expires January 16, 2014                [Page 2]
 
 Internet-Draft               ICN Challenges                    July 2013
 
@@ -164,7 +164,7 @@ Internet-Draft               ICN Challenges                    July 2013
 
 
 
-Kutscher, et al.        Expires January 12, 2014                [Page 3]
+Kutscher, et al.        Expires January 16, 2014                [Page 3]
 
 Internet-Draft               ICN Challenges                    July 2013
 
@@ -220,7 +220,7 @@ Internet-Draft               ICN Challenges                    July 2013
 
 
 
-Kutscher, et al.        Expires January 12, 2014                [Page 4]
+Kutscher, et al.        Expires January 16, 2014                [Page 4]
 
 Internet-Draft               ICN Challenges                    July 2013
 
@@ -236,27 +236,22 @@ Internet-Draft               ICN Challenges                    July 2013
       although they all share similar models for accessing named data
       objects in the network.
 
-   ***KPComment:
-         without actually having defined what is a "named data object"
-         up to here, the text above indicates that NDOs exist today.  I
-         think what we have today is URIs and data, but "NDOs" per se.
 
+3.  ICN Terminology and Concepts
 
-3.  ICN Concepts
+3.1.  Terminology
 
-   ***KP Comment:
-         Would it be possible to introduce a few terms/definitions here?
-         Throughout the text terms such as "requester", "requestor",
-         "client" etc. are used in rather arbitrary manner.  Is it
-         important to clarify this?  I would argue, yes.  I guess the
-         audience that this draft addresses includes folks who are not
-         specialists on ICN.
+   This section defines ICN some terms that are used in this document.
 
-         Then, perhaps this section could be structured accordingly and
-         include the main topics introduced below but in a fashion that
-         makes them stand out easily (instead of running text for
-         network service, NDOs, Name-content binding etc.?).  Just a
-         thought.
+   Named Data Object (NDO):  Addressable data unit in an ICN that can
+      represent a collection of bytes or a piece of information.  In
+      ICN, each data object has a name bound to it, and there are
+      typically mechanisms to secure (and validate) this binding.
+
+   Requestor:  Entitiy in an ICN network that is sending a request for a
+      Named Data Object to the network.
+
+3.2.  Concepts
 
    Fundamentally, ICN is providing access to named data as a first-order
    network service, i.e., the network is able to serve requests to named
@@ -273,25 +268,21 @@ Internet-Draft               ICN Challenges                    July 2013
 
    In ICN there is a set of common concepts and node requirements beyond
    this basic service model.  Naming data objects is a key concept.  In
-
-
-
-Kutscher, et al.        Expires January 12, 2014                [Page 5]
-
-Internet-Draft               ICN Challenges                    July 2013
-
-
    general, ICN names do not represent neither network nodes nor
    interfaces -- they represent NDOs independent of their location.
    Names do play a key role in forwarding decisions and are used for
    matching requests to responses: In order to provide better support
    for accessing copies of NDOs regardless of their location, it is
+
+
+
+Kutscher, et al.        Expires January 16, 2014                [Page 5]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
    important to be able to validate that a response actually delivers
    the bits that correspond to an original request for named data.
-
-   ***KP Comment:
-         Deleted ", like in the Internet Protocol,".  ICN is not a
-         protocol.
 
    Name-content binding validation is a fundamental security service in
    ICN, and this is often achieved by establishing a verifiable binding
@@ -324,40 +315,28 @@ Internet-Draft               ICN Challenges                    July 2013
    enables new options for implementing transport services, i.e.,
    reliable transmission, flow control etc.  First of all, a request/
    response model can enable receiver-driven transport regimes, i.e.,
-   receivers (the requesters of NDOs) can control message sending rates
+   receivers (the requestors of NDOs) can control message sending rates
    by regulating the request sending rate (assuming that every response
    message has to be triggered by a request message).  Retransmission
    would be achieved by re-sending requests, e.g., after a timeout.
    Because objects can be replicated, object transmission and transport
-
-
-
-Kutscher, et al.        Expires January 12, 2014                [Page 6]
-
-Internet-Draft               ICN Challenges                    July 2013
-
-
    sessions would not necessarily have end-to-end semantics: requests
    can be answered by caches, and a node can select one or multiple
    next-hop destination for a particular request -- depending on
    configuration, observed performance or other criteria.
 
-   ***KP Comment:
-         I do not get why "receiver-driven transport" is highlighted
-         here as unique.  This part as this is a revolutionary kind of
-         feature, when in fact it is typical in TCP.  The feature here
-         is the generalization of what we have today (e.g. flow balance
-         in CCN and the fact that it does not pertain to a single
-         conversation e2e).  And, this, again, is written with NDN
-         mostly in mind.
-
-         Moreover, I do not see why the following paragraph belongs to
-         "concepts".
-
    This receiver-driven communication model potentially enables new
    interconnection and business models: a request for named data can be
-   linked to an interest of a requester (or requesting network) in data
+   linked to an interest of a requestor (or requesting network) in data
    from another peer, which could suggest modeling peering agreements
+
+
+
+Kutscher, et al.        Expires January 16, 2014                [Page 6]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
    and charging accordingly.
 
 
@@ -385,14 +364,6 @@ Internet-Draft               ICN Challenges                    July 2013
    correspondingly.
 
    Two types of naming schemes have been proposed in the ICN literature:
-
-
-
-Kutscher, et al.        Expires January 12, 2014                [Page 7]
-
-Internet-Draft               ICN Challenges                    July 2013
-
-
    hierarchical and flat namespaces.  For example, a hierarchical scheme
    may have a structure similar to current URIs, where the hierarchy is
    rooted in a publisher prefix.  Such hierarchy enables aggregation of
@@ -412,20 +383,19 @@ Internet-Draft               ICN Challenges                    July 2013
    name and signs the hash of the content with the corresponding secret
    key.  The resulting names are typically non-hierarchical, or flat,
    although the publisher field could be employed to create a structure
-   which could facilitate route aggregation.
+   which could facilitate route aggregation.  There are several design
+   trade-offs for ICN naming, which affect routing and security.  Self-
 
-   ***KP Comment:
-         The following para is a mostly repeating what was just said; I
-         propose to fold it into the previous one and root out the
-         repetition.
 
-   There are several design trade-offs for ICN naming, which affect
-   routing and security.  Self-certifying names are not human readable
-   nor hierarchical.  They can however provide some structure for
-   aggregation, for instance, a name part corresponding to a publisher.
-   Without self-certification, as mentioned above, the infrastructure
-   depends on a PKI for its operation, which can impede large-scale
-   deployment.
+
+Kutscher, et al.        Expires January 16, 2014                [Page 7]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
+   certifying names are not human readable nor hierarchical.  They can
+   however provide some structure for aggregation, for instance, a name
+   part corresponding to a publisher.
 
    Research challenges specific to naming include:
 
@@ -441,17 +411,9 @@ Internet-Draft               ICN Challenges                    July 2013
       could be the case for live streaming, when a publisher wants to
       make the stream available by registering stream chunk names in the
       network.  One approach to this can be self-certified names as
-
-
-
-Kutscher, et al.        Expires January 12, 2014                [Page 8]
-
-Internet-Draft               ICN Challenges                    July 2013
-
-
       described above.
 
-   o  requester privacy protection can be a challenge in ICN as a direct
+   o  requestor privacy protection can be a challenge in ICN as a direct
       consequence of the accessing-named-data-objects paradigm: if the
       network can "see" requests and responses, it can also log request
       history for network segments or individual users, which can be
@@ -467,7 +429,7 @@ Internet-Draft               ICN Challenges                    July 2013
       not change: updating an object (i.e., changing the content without
       generating a new name) is impossible.  Versioning is one possible
       solution, but requires a naming scheme that supports it (and a way
-      for requesters to learn about versions).
+      for requestors to learn about versions).
 
    o  Managing accessibility: whereas in ICN the general assumption is
       to enable ubiquitous access to NDOs, there can be relevant use
@@ -477,18 +439,25 @@ Internet-Draft               ICN Challenges                    July 2013
       mechanisms) or the concept of scopes, e.g., based on names that
       can only be used/resolved under some constraints.
 
-4.2.  Security
 
-   ***KP Comment:
-         Since this document is named "Challenges", are we supposed to
-         point to solutions as well, or first and foremost document what
-         is still unsolved?  Although this question is motivated by the
-         text below, it applies to the entire document.
+
+
+
+
+Kutscher, et al.        Expires January 16, 2014                [Page 8]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
+4.2.  Security
 
    Security can take many different forms in ICN and instead of
    discussing specific attacks or technical details, we propose here
    four important security challenges that come from the shift to
-   information-centric communications.
+   information-centric communications.  Some challenges are well-
+   understood, and there are (sometimes multiple different) approaches
+   to address them, whereas other challenges are active research and
+   engineering topics.
 
 4.2.1.  Data Object Authentication
 
@@ -497,14 +466,6 @@ Internet-Draft               ICN Challenges                    July 2013
    from an original copy holder but also from any caching point.  Since
    data objects can be maliciously modified, ICN should provide users
    with a security mechanism to verify the origin and integrity of the
-
-
-
-Kutscher, et al.        Expires January 12, 2014                [Page 9]
-
-Internet-Draft               ICN Challenges                    July 2013
-
-
    data object, and there are different ways to achieve this.
 
    An efficient approach for static NDOs is providing a name-content-
@@ -536,6 +497,14 @@ Internet-Draft               ICN Challenges                    July 2013
    In cases where information about the origin of a data object is not
    available by other means, the object itself would have to incorporate
    the necessary information to determine the object publisher, for
+
+
+
+Kutscher, et al.        Expires January 16, 2014                [Page 9]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
    example with a certificate, that can be validated through the PKI.
    Once the certificate is authenticated, its public key can be used to
    authenticate the signed data object itself.
@@ -553,14 +522,6 @@ Internet-Draft               ICN Challenges                    July 2013
    NDO.  There needs to be another binding to a real-world-identity if
    that feature is requested.
 
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 10]
-
-Internet-Draft               ICN Challenges                    July 2013
-
-
    If the object name directly provides the publisher name and if that
    name is protected by a certificate that links to PKI-like trust
    chain, the object name itself can provide an intrinsic binding to a
@@ -574,11 +535,11 @@ Internet-Draft               ICN Challenges                    July 2013
 
    One request message to retrieve a data object can actually aggregate
    requests coming from several consumers.  This aggregation of requests
-   reduces the overall traffic but makes per-requester filtering harder.
+   reduces the overall traffic but makes per-requestor filtering harder.
    The challenge in this case is to provide a mechanism that allows
-   requests aggregation and per-requester filtering.  A possible
-   solution is to indicate the set of requesters in the aggregated
-   request such that the response can indicate the subset of requesters
+   requests aggregation and per-requestor filtering.  A possible
+   solution is to indicate the set of requestors in the aggregated
+   request such that the response can indicate the subset of requestors
    allowed to access the data object.  However, this solution requires
    collaboration from other nodes in the network and is not suitable for
    caching.  Another possible solution is the encrypt data objects and
@@ -592,6 +553,14 @@ Internet-Draft               ICN Challenges                    July 2013
 
    ICN solutions where intermediate routers need to keep state to
    operate correctly (e.g., CCN [CCN]) are subject to denial of service
+
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 10]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
    attacks aiming to overload the router's internal state.  The
    challenge is then to provision routers and construct internal state
    in a way that alleviates sensibility to such attacks.  The problem
@@ -609,31 +578,18 @@ Internet-Draft               ICN Challenges                    July 2013
    on its own data.  For example, how can a producer know the number of
    copies of its data are in the network or who has consumed them?
 
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 11]
-
-Internet-Draft               ICN Challenges                    July 2013
-
-
 4.3.  Routing and Resolution System Scalability
 
    ICN routing locates a data object based on its name which is
-   initially provided by a requester.  ICN routing may comprise three
+   initially provided by a requestor.  ICN routing may comprise three
    steps: a name resolution step, a discovery step, and a delivery step.
    The name resolution step translates the name of the requested data
    object into its locator.  The discovery step routes the request to
    data object based on its name or locator.  The last step (delivery)
-   routes the data object back to the requester.  Depending on how these
+   routes the data object back to the requestor.  Depending on how these
    steps are combined, ICN routing schemes can be categorized as: Route-
    By-Name Routing (RBNR), Lookup-By-Name Routing (LBNR), and Hybrid
    Routing (HR).
-
-   ***KP Comment:
-         I think it would help the reader to add to each of this
-         sections example architectures that follow each approach from
-         the current literature.
 
 4.3.1.  Route-By-Name Routing (RBNR)
 
@@ -649,10 +605,18 @@ Internet-Draft               ICN Challenges                    July 2013
    routing process due to the omission of the resolution process.  For
    the delivery step, RBNR needs another identifier (ID) of either host
    or location to forward the requested data object back to the
-   requester.  Otherwise, an additional routing mechanism has to be
+   requestor.  Otherwise, an additional routing mechanism has to be
    introduced such as bread-crumbs routing [BREADCRUMBS], in which each
    request leaves behind a trail of breadcrumbs along its forwarding
-   path, and then the response is forwarded back to the requester
+   path, and then the response is forwarded back to the requestor
+
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 11]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
    consuming the trail.  Specific challenges include:
 
    o  How to aggregate the names of data objects to reduce the number of
@@ -664,14 +628,6 @@ Internet-Draft               ICN Challenges                    July 2013
             I think that the following is a general issue (aliasing
             etc.), not specific to RBNR, and I'm not sure it's a
             challenge anyway.
-
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 12]
-
-Internet-Draft               ICN Challenges                    July 2013
-
 
    o  How does a user learn the name which is designed for aggregation
       by provider?  (For example, although we name our contribution as
@@ -697,9 +653,9 @@ Internet-Draft               ICN Challenges                    July 2013
    step is carried out based on the locator.  Since IP addresses could
    be used as locators, the discovery step can depend on the current IP
    infrastructure.  The delivery step can be implemented similarly to IP
-   routing.  The locator of the requester is included in the request
+   routing.  The locator of the requestor is included in the request
    message, and then the requested data object is delivered to the
-   requester based on the locator.  Specific challenges include:
+   requestor based on the locator.  Specific challenges include:
 
    o  How to build a scalable resolution system which provides
 
@@ -709,6 +665,13 @@ Internet-Draft               ICN Challenges                    July 2013
       *  Fast update: the location of data object is expected to change
          frequently.  Also, multiple data objects may change their
          locations at the same time, e.g. data objects in laptop.
+
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 12]
+
+Internet-Draft               ICN Challenges                    July 2013
+
 
    o  How to incorporate copies of a data object in in-network caches in
       this routing scheme?
@@ -721,14 +684,6 @@ Internet-Draft               ICN Challenges                    July 2013
    be adopted to reduce overall latency by omitting the resolution
    process.  On the other hand, LBNR can be used to route between
    domains which have their own prefix (locator).  A specific challenge
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 13]
-
-Internet-Draft               ICN Challenges                    July 2013
-
-
    here is:
 
    o  How to design a scalable mapping system which, given the name of
@@ -766,6 +721,14 @@ Internet-Draft               ICN Challenges                    July 2013
    mobility anchor in host-centric networking, that can be applied
    across different ICN proposals.  For instance, although widely-
    deployed mobile network architectures typically come with their own
+
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 13]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
    network entities and associated protocols, they follow the same line
    of design with respect to managing mobility.  This design thinking,
    which calls for incorporating mobility anchors, permeates in the ICN
@@ -777,14 +740,6 @@ Internet-Draft               ICN Challenges                    July 2013
    location-indepedent.  In addition, as argued in [SEEN], current
    mobility management schemes anchor information retrieval not only at
    a specific network gateway (e.g. home agent in Mobile IP) but due to
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 14]
-
-Internet-Draft               ICN Challenges                    July 2013
-
-
    the end-to-end nature of host-centric communication also at a
    specific correspondent node.  However, once a change in the point of
    attachment occurs, information retrieval from the original
@@ -822,6 +777,14 @@ Internet-Draft               ICN Challenges                    July 2013
    attachment to another.  In ICN, however, the traditional meaning of
    "point of attachment" no longer applies as communication is not
    restrained by location-based access to data objects.  Therefore, a
+
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 14]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
    "seamless transition" in ICN ensures that content reception continues
    without any perceptible change from the point of view of the ICN
    application receiving that content.  Moreover, this transition needs
@@ -832,14 +795,6 @@ Internet-Draft               ICN Challenges                    July 2013
    mobility aspects can also be tightly coupled with network management
    aspects, in respect to policy enforcement, link control and other
    parameters necessary for establishing the node's link to the network.
-
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 15]
-
-Internet-Draft               ICN Challenges                    July 2013
-
 
    In summary, the following research challenges on ICN mobility
    management can be derived:
@@ -878,6 +833,14 @@ Internet-Draft               ICN Challenges                    July 2013
    researchers are often more concerned about introducing mechanisms
    that ensure that "broadcast storms" do not take down a network.  How
    can broadcast serve our (information-centric) networking needs better
+
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 15]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
    has yet to be thoroughly investigated.
 
    Wireless networking is often intertwined with mobility but this is
@@ -889,14 +852,6 @@ Internet-Draft               ICN Challenges                    July 2013
    instance, in a typical IETF working group meeting, a scribe takes
    notes which are uploaded to a centralized repository (see Figure 1).
    Subsequently, each meeting participant obtains a copy of the document
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 16]
-
-Internet-Draft               ICN Challenges                    July 2013
-
-
    on their own devices for local use, annotation, and sharing with
    colleagues that are not present at the meeting.  Note that in this
    example there is no node mobility and that it is not important
@@ -934,6 +889,14 @@ Internet-Draft               ICN Challenges                    July 2013
    remote access paradigm from wired to wireless communication,
    irrespective of the special characteristics of the latter.
 
+
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 16]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
    It goes without saying that an ICN approach that does not take into
    consideration the wireless nature of an interface will waste the same
    amount of resources as a host-centric paradigm.  Of course, in-
@@ -945,13 +908,6 @@ Internet-Draft               ICN Challenges                    July 2013
    On the other hand, promiscuous interface operation and opportunistic
    caching would maximize wireless network capacity utilization in this
    example.
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 17]
-
-Internet-Draft               ICN Challenges                    July 2013
-
 
    Arguably, if one designs a future wireless access technology with an
    information-centric "layer 3" in mind, many of the design choices
@@ -990,6 +946,13 @@ Internet-Draft               ICN Challenges                    July 2013
    o  How can MIMO and Coordinated Multipoint Transmission (CoMP) be
       natively combined with ICN primitives in future cellular networks?
 
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 17]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
 4.6.  Transport Services
 
    ICN's receiver-driven communication model as described above creates
@@ -1000,15 +963,7 @@ Internet-Draft               ICN Challenges                    July 2013
    sending parallel requests for the same object or by switching sources
    (or next hops) in a suitable schedule for a series of requests.
 
-   In this model, the requester would control the data rate by
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 18]
-
-Internet-Draft               ICN Challenges                    July 2013
-
-
+   In this model, the requestor would control the data rate by
    regulating its request sending rate and next by performing source/
    next-hop selections.  Specific challenges depend on the specific ICN
    approach, but general challenges for receiver-driven transport
@@ -1029,13 +984,13 @@ Internet-Draft               ICN Challenges                    July 2013
    requests to its neighbor.  The aggregation of requests has a general
    impact on transport service design.
 
-   Achieving fairness for requesters can be one challenge as it is not
+   Achieving fairness for requestors can be one challenge as it is not
    possible to identify the number of clients behind one particular
    request.  A second problem related to request aggregation is the
    management of request retransmissions.  Generally, it is assumed that
    a router will not transmit a request if it transmitted an identical
    request recently and because there is no information about the
-   requester, the router cannot distinguish the initial request from a
+   requestor, the router cannot distinguish the initial request from a
    client from a retransmission from the same client.  In such a
    situation, how routers can adapt their timers to use the best of the
    communication paths.  Finally, aggregation of requests has an impact
@@ -1043,6 +998,16 @@ Internet-Draft               ICN Challenges                    July 2013
    number of clients actually consuming the content it is producing.
    This shift of model influence the business model of the server, e.g.,
    how to implement pay-per-click?
+
+
+
+
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 18]
+
+Internet-Draft               ICN Challenges                    July 2013
+
 
 4.7.  In-Network Caching
 
@@ -1054,16 +1019,6 @@ Internet-Draft               ICN Challenges                    July 2013
    investigation have been identified with respect to in-network
    caching.  Here we list some of the most important challenges that
    relate to the properties of the new ubiquitous caching system.
-
-
-
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 19]
-
-Internet-Draft               ICN Challenges                    July 2013
-
 
 4.7.1.  Cache Placement
 
@@ -1102,6 +1057,14 @@ Internet-Draft               ICN Challenges                    July 2013
    relate to both the Content Placement Problem and the Request-to-Cache
    Routing Problem discussed below.
 
+
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 19]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
    ***KP Comment:
          I'm not convinced that opportunistic caching is not valuable
          (or of "limited benefit").  I think the jury is out on that...
@@ -1109,17 +1072,6 @@ Internet-Draft               ICN Challenges                    July 2013
          premature, imo.  The tradeoffs of deploying or not do not
          relate only with the hit ratio.  Perhaps reword this?  Some
          refs would be useful to substantiate the claims as well.
-
-
-
-
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 20]
-
-Internet-Draft               ICN Challenges                    July 2013
-
 
 4.7.2.  Content Placement -- Content-to-Cache Distribution
 
@@ -1159,6 +1111,16 @@ Internet-Draft               ICN Challenges                    July 2013
    operators.  Such issues need to be investigated and relate also to
    the evaluation methodology discussed later on.
 
+
+
+
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 20]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
    ***KP Comment:
          I think the evaluation methodology discussion belongs to the
          scenarios draft.
@@ -1169,14 +1131,6 @@ Internet-Draft               ICN Challenges                    July 2013
    forwarded to the nodes that temporarily host (cache) the
    corresponding contents.  This challenge relates to name-based
    routing, discussed before.  Requests should ideally follow the path
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 21]
-
-Internet-Draft               ICN Challenges                    July 2013
-
-
    to the cached content.  However, instructions as to which content is
    cached where cannot be broadcasted throughout the network.
    Therefore, the knowledge of a content's location at the time of the
@@ -1215,6 +1169,14 @@ Internet-Draft               ICN Challenges                    July 2013
    infrastructure networks, development of management tools and
    mechanisms must go hand-in with the rest of the architecture design.
 
+
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 21]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
    Although defining FCAPS for ICN is clearly outside the scope of this
    document, there is a need for creating basic tools early on while ICN
    is still in the design and experimentation phases that can evolve
@@ -1225,14 +1187,6 @@ Internet-Draft               ICN Challenges                    July 2013
    perspective, will also need to be considered.  Given the expectations
    for a large number of nodes and unprecedented traffic volumes,
    automating tasks, or even better employing self-management mechanisms
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 22]
-
-Internet-Draft               ICN Challenges                    July 2013
-
-
    is preferred.  The main challenge here is that all tools we have at
    our disposal today are node-centric, end-to-end oriented, or assuming
    a packet-stream communication environment.  Rethinking reachability
@@ -1271,6 +1225,14 @@ Internet-Draft               ICN Challenges                    July 2013
    NetInf uses a flat naming structure, etc.).  In this way, ICN is
    decoupled from host-centric aspects on which traditional networking
    management schemes rely upon.  As such, questions are raised which
+
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 22]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
    can directly be translated into challenges for network management
    capability, such as, for example how to address a node or a network
    segment in a ICN naming paradigm, how to identify which node is
@@ -1281,14 +1243,6 @@ Internet-Draft               ICN Challenges                    July 2013
    allow us to look into network management through a new perspective.
    By centering its operations around content, one can conceive new
    management operations addressing, for example, per-content management
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 23]
-
-Internet-Draft               ICN Challenges                    July 2013
-
-
    or access control, as well as analyzing performance per content name
    instead of per link or node.  Moreover, such considerations can also
    be used to manage operational aspects of ICN mechanisms themselves.
@@ -1325,6 +1279,16 @@ Internet-Draft               ICN Challenges                    July 2013
    TBD
 
 
+
+
+
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 23]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
 7.  Informative References
 
    [BREADCRUMBS]
@@ -1337,13 +1301,6 @@ Internet-Draft               ICN Challenges                    July 2013
 
    [COMPACT]  Cowen, L., "Compact routing with minimum stretch",
               In Journal of Algorithms, vol. 38, pp. 170--183, 2001.
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 24]
-
-Internet-Draft               ICN Challenges                    July 2013
-
 
    [Chaum]    Chaum, D. and E. van Heijst, "Group signatures",
               In Proceedings of EUROCRYPT, 1991.
@@ -1380,6 +1337,14 @@ Internet-Draft               ICN Challenges                    July 2013
 
    [NDN-MGMT]
               Corujo, D., Aguiar, R., Vidal, I., and J. Garcia-Reinoso,
+
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 24]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
               "A named data networking flexible framework for management
               communications", Communications Magazine, IEEE , vol.50,
               no.12, pp.36-43 , December 2012.
@@ -1393,14 +1358,6 @@ Internet-Draft               ICN Challenges                    July 2013
               In Perform. Eval., vol. 63, pp. 241--263, 2006.
 
    [RFC2002]  Perkins, C., "IP Mobility Support", RFC 2002,
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 25]
-
-Internet-Draft               ICN Challenges                    July 2013
-
-
               October 1996.
 
    [RFC5280]  Cooper, D., Santesson, S., Farrell, S., Boeyen, S.,
@@ -1427,6 +1384,23 @@ Internet-Draft               ICN Challenges                    July 2013
               '12). ACM, New York, NY, USA, 85-90., 2012.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 25]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
 Authors' Addresses
 
    Dirk Kutscher (editor)
@@ -1447,14 +1421,6 @@ Authors' Addresses
 
    Phone: +81-42-327-6582
    Email: suyong@nict.go.jp
-
-
-
-
-
-Kutscher, et al.        Expires January 12, 2014               [Page 26]
-
-Internet-Draft               ICN Challenges                    July 2013
 
 
    Kostas Pentikousis
@@ -1484,6 +1450,13 @@ Internet-Draft               ICN Challenges                    July 2013
    Email: dcorujo@av.it.pt
 
 
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 26]
+
+Internet-Draft               ICN Challenges                    July 2013
+
+
    Damien Saucez
    INRIA
    2004 route des Lucioles - BP 93
@@ -1508,5 +1481,32 @@ Internet-Draft               ICN Challenges                    July 2013
 
 
 
-Kutscher, et al.        Expires January 12, 2014               [Page 27]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kutscher, et al.        Expires January 16, 2014               [Page 27]
 
