@@ -386,15 +386,15 @@
 	  <t>
 	    In ICN there is a set of common concepts and node
 	    requirements beyond this basic service model. Naming data
-	    objects is a key concept. In general, ICN names do not
-	    represent neither network nodes nor interfaces -- they
-	    represent NDOs independent of their location. Names do
-	    play a key role in forwarding decisions and are used for
-	    matching requests to responses: In order to provide better
-	    support for accessing copies of NDOs regardless of their
-	    location, it is important to be able to validate that a
-	    response actually delivers the bits that correspond to an
-	    original request for named data.
+	    objects is a key concept. In general, ICN names represent
+	    neither network nodes nor interfaces -- they represent
+	    NDOs independent of their location. Names do play a key
+	    role in forwarding decisions and are used for matching
+	    requests to responses: In order to provide better support
+	    for accessing copies of NDOs regardless of their location,
+	    it is important to be able to validate that a response
+	    actually delivers the bits that correspond to an original
+	    request for named data.
 	  </t>
 	  <!--
 	      <t><list style="hanging" hangIndent="6"> <t
@@ -1009,21 +1009,21 @@
 	  probably not the best way forward in ICN research for mobile
 	  networking. Fundamentally this approach is anything but
 	  information-centric and location-indepedent. In addition, as
-	  argued in [SEEN], current mobility management schemes anchor
-	  information retrieval not only at a specific network gateway
-	  (e.g. home agent in Mobile IP) but due to the end-to-end
-	  nature of host-centric communication also at a specific
-	  correspondent node. However, once a change in the point of
-	  attachment occurs, information retrieval from the original
-	  "correspondent node" may be no longer optimal. This was
-	  shown in [MANI], for example, where a simple mechanism that
-	  triggers the discovery of new retrieval providers for the
-	  same data object, following a change in the point of
-	  attachment, clearly outperforms a tunnel-based approach like
-	  Mobile IP in terms of object download times. The challenge
-	  here is how to capitalize on location information while
-	  facilitating the use of ICN primitives which natively
-	  support multicast and anycast.
+	  argued in <xref target="SEEN"/>, current mobility management
+	  schemes anchor information retrieval not only at a specific
+	  network gateway (e.g. home agent in Mobile IP) but due to
+	  the end-to-end nature of host-centric communication also at
+	  a specific correspondent node. However, once a change in the
+	  point of attachment occurs, information retrieval from the
+	  original "correspondent node" may be no longer optimal. This
+	  was shown in <xref target="MANI"/>, for example, where a
+	  simple mechanism that triggers the discovery of new
+	  retrieval providers for the same data object, following a
+	  change in the point of attachment, clearly outperforms a
+	  tunnel-based approach like Mobile IP in terms of object
+	  download times. The challenge here is how to capitalize on
+	  location information while facilitating the use of ICN
+	  primitives which natively support multicast and anycast.
 	</t>
 
 	<t>
