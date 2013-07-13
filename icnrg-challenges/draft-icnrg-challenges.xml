@@ -255,8 +255,12 @@
       </t>
       <t>
 	This document presents the ICN research challenges that need
-	to be addressed in order to achieve these goals. The objective
-	of this document is to document these challenges and
+	to be addressed in order to achieve these goals. These research
+	challenges are seen from a technical perspective, although 
+	business relationships between Internet players will also
+	influence developments in this area. We leave business
+	challenges for a separate document, however. The objective
+	of this note is to document the technical challenges and
 	corresponding current approaches and to expose requirements
 	that should be addressed by future research work.
       </t>
@@ -1296,11 +1300,34 @@ Scribe   Participant 1 ... Participant N
 	with ICN. HRICP is CCN-specific.</t></list></t>
 	
 	<t>
+	As mentioned above, the ICN communication paradigm does not depend 
+	strictly on end-to-end flows, as contents might be received from 
+	mid-network caches. The traditional concept of a flow is then 
+	somewhat cancelled as sub-flows, or flowlets might be formed on 
+	the fly, when fractions of a content file are transmitted from 
+	in-network caches. For a transport layer protocol this is challenging, 
+	as any measurement related to this flow, as traditionally done by 
+	transport protocols such as TCP, will be hugely misleading. For 
+	example, false RTT measurements will lead to largely variable average 
+	and smooth RTT values, which in turn will trigger false timeout 
+	expirations.
+	</t>
+	<t>
+	Furthermore, out-of-order delivery is expected to be common in a scenario
+	where parts of a content file are retrieved from in-network caches, 
+	rather than from the origin server. Several techniques for dealing with 
+	out-of-order delivery have been proposed in the past for TCP, some of
+	which could potentially be modified and re-used in the context of ICN. 
+	Further research is needed on this direction though to i) choose the 
+	right technique and ii) adjust it according to the requirements of the 
+	ICN architecture and transport protocol in use.
+	</t>
+	<t>
 	  ICN offers routers the possibility to aggregate requests and
 	  can use several paths, meaning that there is no such thing
 	  as a (dedicated) end-to-end communication path, e.g., a
 	  router that receives two requests for the same content at
-	  the same time only sends one requests to its neighbor. The
+	  the same time only sends one request to its neighbor. The
 	  aggregation of requests has a general impact on transport
 	  service design.
 	</t>
@@ -1319,8 +1346,8 @@ Scribe   Participant 1 ... Participant N
 	  requests has an impact on the server (producer) side. This
 	  last has no way to determine the number of clients actually
 	  consuming the content it is producing. This shift of model
-	  influence the business model of the server, e.g., how to
-	  implement pay-per-click?
+	  influences the business model of the server, e.g., how to
+	  implement pay-per-click
 	</t>
 	
       </section>
@@ -1350,7 +1377,7 @@ Scribe   Participant 1 ... Participant N
 	    placement. Retrieval of contents from off-path caches
 	    requires redirection of requests and, therefore, is
 	    closely related to the Request-to-Cache Routing problem
-	    discussed below. Off-path caches have to be placed in
+	    discussed later. Off-path caches have to be placed in
 	    strategic points within a network in order to reduce the
 	    redirection delays and the number of detour hops to
 	    retrieve cached contents. Previous research on
@@ -1372,7 +1399,7 @@ Scribe   Participant 1 ... Participant N
 	    constraints on the design and operation of in-network
 	    caching elements. Furthermore, the gain of such a system
 	    of on-path in-network caches relies on
-	    opportunistic/accidental cache hits and has therefore been
+	    opportunistic cache hits and has therefore been
 	    considered of limited benefit, given the huge amount of
 	    contents hosted in the Internet. For this reason, network
 	    operators might initially consider only a limited number
@@ -1383,6 +1410,19 @@ Scribe   Participant 1 ... Participant N
 	    characteristics. These challenges relate to both the
 	    Content Placement Problem and the Request-to-Cache Routing
 	    Problem discussed below.
+	  </t>
+	  <t>
+	  In call cases, however, the driver for the implementation, 
+	  deployment and operation of in-network caches will be its cost. 
+	  Operating caches at line speed inevitably requires faster 
+	  memories, which increase the implementation cost. Based on the 
+	  capital to be invested, ISPs will need to make strategic 
+	  decisions on the cache placement, which can be driven by several
+	  factors, such as: avoid inter-domain/expensive links, centrality
+	  of nodes, size of domain and the corresponding spatial locality 
+	  of users, traffic patterns in a specific part of the 
+	  network (e.g., university vs business vs fashion district
+	  of a city).
 	  </t>
 	  
 	  <t><list style="hanging" hangIndent="6"> <t hangText="***KP
@@ -1433,14 +1473,16 @@ Scribe   Participant 1 ... Participant N
 	    the characteristics of the content to be cached. Popular
 	    content might need to be placed where it is going to be
 	    requested next. Furthermore, issues of "expected content
-	    popularity" might need to be considered in order for some
-	    contents to be given priority (e.g., popular content
-	    vs. one-timers). The criteria as to which contents should
-	    be given priority in in-network content caches relate also
+	    popularity" or temporal locality need to be taken into 
+	    account in designing in-network caching algorithms
+	    in order for some contents to be given priority (e.g., popular
+	    content vs. one-timers). The criteria as to which contents 
+	    should be given priority in in-network content caches relate also
 	    to the business relationships between content providers
-	    and network operators. Such issues need to be investigated
-	    and relate also to the evaluation methodology discussed
-	    later on.
+	    and network operators. Business model issues will drive some 
+	    of these decisions on content-to-cache distribution, but such
+	    issues are outside the scope of this note and are not discussed 
+	    here further.
 	  </t>
 	  
 	  <t><list style="hanging" hangIndent="6">
