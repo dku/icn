@@ -524,18 +524,20 @@
     
     <section title="ICN Research Challenges">
       <section title="Naming and data authenticity" anchor="sec.naming">
+
 	<t>
 	  Naming data objects is as important for ICN as naming hosts
 	  is for today's Internet. Fundamentally, ICN requires unique
 	  names for individual NDOs, since names are used for
 	  identifying objects independently of their location or
-	  container.  In addition, since NDOs can be cached anywhere, the
-	  origin cannot be trusted anymore hence the importance to establish a
-	  verifiable binding between the object and its name (name-data
-	  integrity) so that a receiver can be sure that the received bits do
-	  correspond to the NDO originally requested (object authenticity).
-	  Information about an object's provenance, i.e., who generated or
-	  published it, is also useful to associate to the name.
+	  container.  In addition, since NDOs can be cached anywhere,
+	  the origin cannot be trusted anymore hence the importance to
+	  establish a verifiable binding between the object and its
+	  name (name-data integrity) so that a receiver can be sure
+	  that the received bits do correspond to the NDO originally
+	  requested (object authenticity).  Information about an
+	  object's provenance, i.e., who generated or published it, is
+	  also useful to associate to the name.
 	</t>
 	<t>
 	  The above functions are fundamentally required for the
@@ -785,13 +787,6 @@
 	      but there is no universal way to achieve it as it is all
 	      intrinsic to the particular ICN approach.
 	    </t>
-
-	  </list></t> 
-
-
-	    <t>
-
-	    </t>
 	  </section>
 
 	  
@@ -938,12 +933,14 @@
 		  How to aggregate the names of data objects to reduce
 		  the number of routing entries?
 		</t>
-		  
+
+<!--
 		<t><list style="hanging" hangIndent="6"> <t
 		hangText="***KP Comment:"><vspace />I think that the
 		following is a general issue (aliasing etc.), not
 		specific to RBNR, and I'm not sure it's a challenge
 		anyway.</t></list></t>
+-->
 		<t>
 		  How does a user learn the name which is designed for
 		  aggregation by provider? (For example, although we
@@ -1452,6 +1449,7 @@ Scribe   Participant 1 ... Participant N
 	    proxy-caching and CDN deployment is helpful in this case.
 	  </t>
 
+<!--
 	  <t><list style="hanging" hangIndent="6"> <t hangText="***KP
 	  Comment:"><vspace />Perhaps it's better to introduce the
 	  Request-to-Cache Routing problem earlier than at the end of
@@ -1459,7 +1457,7 @@ Scribe   Participant 1 ... Participant N
 	  Request-to-Cache Routing problem discussed next" appear in
 	  several places. If it affects everything why not summarize
 	  it upfront?</t></list></t>
-
+-->
 	  <t>
 	    On the other hand, on-path caching requires less network
 	    intervention and fits more neatly in ICN. However, on-path
@@ -1492,7 +1490,8 @@ Scribe   Participant 1 ... Participant N
 	  network (e.g., university vs business vs fashion district
 	  of a city).
 	  </t>
-	  
+
+<!--	  
 	  <t><list style="hanging" hangIndent="6"> <t hangText="***KP
 	  Comment:"><vspace />I'm not convinced that opportunistic
 	  caching is not valuable (or of "limited benefit"). I think
@@ -1501,7 +1500,7 @@ Scribe   Participant 1 ... Participant N
 	  deploying or not do not relate only with the hit
 	  ratio. Perhaps reword this? Some refs would be useful to
 	  substantiate the claims as well.</t></list></t>
-
+-->
 	</section>
 	<section title="Content Placement -- Content-to-Cache Distribution">
 	  <t>
@@ -1552,9 +1551,11 @@ Scribe   Participant 1 ... Participant N
 	    issues are outside the scope of this note and are not discussed 
 	    here further.
 	  </t>
-	  
+
+<!--	  
 	  <t><list style="hanging" hangIndent="6">
 	  <t hangText="***KP Comment:"><vspace />I think the evaluation methodology discussion belongs to the scenarios draft.</t></list></t>
+-->
 	  
 	</section>
 	<section title="Request-to-Cache Routing">
