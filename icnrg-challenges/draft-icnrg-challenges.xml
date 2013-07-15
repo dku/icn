@@ -139,6 +139,34 @@
       </address>
     </author>
 
+    <author fullname="Thomas C. Schmidt" initials="T.C." surname="Schmidt">
+      <organization>HAW HAmburg</organization>
+      <address>
+	      <postal>
+		      <street>Berliner Tor 7</street>
+		      <city>Hamburg</city>
+		      <code>20099</code>
+		      <country>Germany</country>
+	      </postal>
+
+	<email>t.schmidt@ieee.org</email>
+      </address>
+    </author>
+
+    <author fullname="Matthias Waehlisch" initials="M." surname="Waehlisch">
+      <organization>FU Berlin</organization>
+      <address>
+	      <postal>
+		      <street>Takustr. 9</street>
+		      <city>Berlin</city>
+		      <code>14195</code>
+		      <country>Germany</country>
+	      </postal>
+
+	<email>waehlisch@ieee.org</email>
+      </address>
+    </author>
+
     <date year="2013" month="July" day="15"/>
 
     <!-- If the month and year are both specified and are the current ones, xml2rfc will fill 
@@ -809,6 +837,23 @@
 	      a data object producer has on its own data. For example,
 	      how can a producer know the number of copies of its data
 	      are in the network or who has consumed them?
+	    </t>
+	  </section>
+
+	  <section title="Cryptographic robustness">
+	    <t>
+	      Content producers sign their content to ensure the integrity of
+	      data and to allow for data object authentication. This is a
+          fundamental requirement in ICN due to distributed caching.
+          Publishers, who (a) massively sign content, which is (b)
+          long-lived, offer time and data to an attacker for comprising
+          cryptographic credentials. Signing large amount of data eases
+          common attacks that try to breach the key of the publisher. Based
+          on this observation, the following research challenges appear. To
+          which extent does the content publication model conflict with
+          cryptographic limitations? How can we achieve a transparent
+          re-signing without introducing additional cryptographical
+          weaknesses or key management overhead?
 	    </t>
 	  </section>
 	</section>
