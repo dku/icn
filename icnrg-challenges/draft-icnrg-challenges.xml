@@ -1339,11 +1339,12 @@ Scribe   Participant 1 ... Participant N
 	  target="HRICP"/> describes a sample request rate control
 	  protocol and corresponding design challenges.
 	</t>
-	
+
+<!--	
 	<t><list style="hanging" hangIndent="6"> <t hangText="***KP
 	Comment:"><vspace />Again receiver-driven transport is not new
 	with ICN. HRICP is CCN-specific.</t></list></t>
-	
+-->	
 	<t>
 	As mentioned above, the ICN communication paradigm does not depend 
 	strictly on end-to-end flows, as contents might be received from 
@@ -1542,11 +1543,11 @@ Scribe   Participant 1 ... Participant N
 	    to name-based routing, discussed before. Requests should
 	    ideally follow the path to the cached content. However,
 	    instructions as to which content is cached where cannot be
-	    broadcasted throughout the network. Therefore, the
-	    knowledge of a content's location at the time of the
-	    request might either not exist, or it might not be
-	    accurate (i.e., contents might have been removed by the
-	    time a request is redirected to a specific node).
+	    broadcast throughout the network. Therefore, the knowledge
+	    of a content's location at the time of the request might
+	    either not exist, or it might not be accurate (i.e.,
+	    contents might have been removed by the time a request is
+	    redirected to a specific node).
 	  </t>
 	  <t>
 	    Coordination between the data and the control planes to
@@ -1639,17 +1640,16 @@ Scribe   Participant 1 ... Participant N
 	  new possibilities for both ICN and "network management" as a
 	  concept. For instance, naming mechanisms are central to ICN
 	  intrinsic operations, which are used to identify and reach
-	  content under different aspects (e.g., CCN uses a
-	  hierarchical namespace able to contain human-readable naming
-	  scheme, NetInf uses a flat naming structure, etc.). In this
-	  way, ICN is decoupled from host-centric aspects on which
-	  traditional networking management schemes rely upon. As
-	  such, questions are raised which can directly be translated
-	  into challenges for network management capability, such as,
-	  for example how to address a node or a network segment in a
-	  ICN naming paradigm, how to identify which node is connected
-	  "where", and if there is a host-centric protocol running
-	  from which the management process can also leverage upon.
+	  content under different aspects (e.g., hierarchically
+	  structured vs. 'flattish' names). In this way, ICN is
+	  decoupled from host-centric aspects on which traditional
+	  networking management schemes rely upon. As such, questions
+	  are raised which can directly be translated into challenges
+	  for network management capability, such as, for example how
+	  to address a node or a network segment in a ICN naming
+	  paradigm, how to identify which node is connected "where",
+	  and if there is a host-centric protocol running from which
+	  the management process can also leverage upon.
 	</t>
 	<t>
 	  But, on the other hand, these same inherent ICN
