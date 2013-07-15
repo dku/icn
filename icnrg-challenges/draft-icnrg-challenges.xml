@@ -6,6 +6,7 @@
 
 <!ENTITY RFC2629 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2629.xml">
 <!ENTITY RFC5944 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5944.xml">
+<!ENTITY RFC5246 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5246.xml">
 <!ENTITY RFC2002 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2002.xml">
 
 <!ENTITY RFC6920 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6920.xml">
@@ -522,19 +523,19 @@
 </section>
     
     <section title="ICN Research Challenges">
-      <section title="Naming" anchor="sec.naming">
+      <section title="Naming and data authenticity" anchor="sec.naming">
 	<t>
 	  Naming data objects is as important for ICN as naming hosts
 	  is for today's Internet. Fundamentally, ICN requires unique
 	  names for individual NDOs, since names are used for
 	  identifying objects independently of their location or
-	  container. It is important to establish a verifiable binding
-	  between the object and its name (name-data integrity), so
-	  that a receiver can be sure that the received bits do
-	  correspond to the NDO originally requested (object
-	  authenticity). Information about an object's provenance,
-	  i.e., who generated or published it, is also useful to
-	  associate to the name.
+	  container.  In addition, since NDOs can be cached anywhere, the
+	  origin cannot be trusted anymore hence the importance to establish a
+	  verifiable binding between the object and its name (name-data
+	  integrity) so that a receiver can be sure that the received bits do
+	  correspond to the NDO originally requested (object authenticity).
+	  Information about an object's provenance, i.e., who generated or
+	  published it, is also useful to associate to the name.
 	</t>
 	<t>
 	  The above functions are fundamentally required for the
@@ -666,7 +667,7 @@
 	  <t>
 	    Security can take many different forms in ICN and instead
 	    of discussing specific attacks or technical details, we
-	    propose here four important security challenges that come
+	    propose here the most important security challenges that come
 	    from the shift to information-centric communications. Some
 	    challenges are well-understood, and there are (sometimes
 	    multiple different) approaches to address them, whereas
@@ -680,17 +681,20 @@
 	      data object authentication is an important ICN feature,
 	      since ICN data objects are retrieved not only from an
 	      original copy holder but also from any caching
-	      point. Since data objects can be maliciously modified,
-	      ICN should provide users with a security mechanism to
-	      verify the origin and integrity of the data object, and
+	      point. Hence, the communication channel endpoints to
+	      retrieve NDOs are not trustable anymore and solutions
+	      widely used today such as TLS <xref target="RFC5246" />
+	      cannot be used. Since data objects can be maliciously
+	      modified ICN should provide users with a security mechanism
+	      to verify the origin and integrity of the data object, and
 	      there are different ways to achieve this.
 	    </t>
 	    
 	    <t>
 	      An efficient approach for static NDOs is providing a
 	      name-content-binding by hashing an NDO and using the
-	      hash as a part of the object's name. <xref
-	      target="RFC6920"></xref> provides a mechanism and a
+	      hash as a part of the object's name.
+	      <xref target="RFC6920" /> provides a mechanism and a
 	      format for representing a digest algorithm and the
 	      actual digest in a name (amongst other information).
 	    </t>
@@ -771,13 +775,17 @@
 	      can provide an intrinsic binding to a real-world
 	      identity.
 	    </t>
-
-	  <t><list style="hanging" hangIndent="6">
+	    <!--	  <t><list style="hanging" hangIndent="6">
 	    <t hangText="***DKU Comment:"><vspace /> Not sure what the
 	    conclusion is: in reality, this is all intrinsic to the
 	    particular ICN approach.
+    </t> -->
+            <t>
+	      Binding between NDOs and Real-World Identities is essential
+	      but there is no universal way to achieve it as it is all
+	      intrinsic to the particular ICN approach.
 	    </t>
-	
+
 	  </list></t> 
 
 
@@ -814,8 +822,9 @@
 	  <section title="State overloading">
 	    <t>
 	      ICN solutions where intermediate routers need to keep
-	      state to operate correctly (e.g., CCN <xref
-	      target="CCN"/>) are subject to denial of service attacks
+	      state, such as request origin or forwarding information,
+	      to operate correctly (e.g., CCN <xref target="CCN"/>)
+	      are subject to denial of service attacks
 	      aiming to overload the router's internal state. The
 	      challenge is then to provision routers and construct
 	      internal state in a way that alleviates sensibility to
@@ -844,20 +853,33 @@
 	    <t>
 	      Content producers sign their content to ensure the integrity of
 	      data and to allow for data object authentication. This is a
-          fundamental requirement in ICN due to distributed caching.
-          Publishers, who (a) massively sign content, which is (b)
-          long-lived, offer time and data to an attacker for comprising
-          cryptographic credentials. Signing large amount of data eases
-          common attacks that try to breach the key of the publisher. Based
-          on this observation, the following research challenges appear. To
-          which extent does the content publication model conflict with
-          cryptographic limitations? How can we achieve a transparent
-          re-signing without introducing additional cryptographical
-          weaknesses or key management overhead?
+	      fundamental requirement in ICN due to distributed caching.
+	      Publishers, who (a) massively sign content, which is (b)
+	      long-lived, offer time and data to an attacker for comprising
+	      cryptographic credentials. Signing large amount of data eases
+	      common attacks that try to breach the key of the publisher. Based
+	      on this observation, the following research challenges appear. To
+	      which extent does the content publication model conflict with
+	      cryptographic limitations? How can we achieve a transparent
+	      re-signing without introducing additional cryptographical
+	      weaknesses or key management overhead?
+	    </t>
+	  </section>
+	  <section title="Routing and forwarding information bases">
+	    <t>
+	      <xref target="sec.routing" /> shows that routing and forwarding
+	      information bases are subject to scalability issue when routing
+	      by name is used. While the system is designed it is not only
+	      important to ensure that it cannot suffer from targeted attacks
+	      aiming at increasing routing and forwarding information bases.
+	      As the routing system is tightly bound to the ICN solution itself,
+	      there is no universal way to avoid such attacks. However, a
+	      possible approache is to combine routing infromation authenticity
+	      validation with filtering (e.g., maximum deaggregation level
+	      whenever applicable, black lists, etc.).
 	    </t>
 	  </section>
 	</section>
-	
 	<section title="Routing and Resolution System Scalability" anchor="sec.routing">
 	  <t>
 	    ICN routing locates a data object based on its name which
@@ -1719,6 +1741,7 @@ Scribe   Participant 1 ... Participant N
     <references title="Informative References">
       &RFC5280;
       &RFC2002;
+      &RFC5246;
       &RFC5944;
       &RFC6920;
 
