@@ -42,7 +42,7 @@
 <!-- end of list of popular I-D processing instructions -->
 <?rfc comments="yes"?>
 <?rfc inline="yes"?>
-<rfc category="std" docName="draft-kutscher-icnrg-challenges-01" ipr="trust200902"
+<rfc category="std" docName="draft-kutscher-icnrg-challenges-02" ipr="trust200902"
      submissionType="independent">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
@@ -87,15 +87,15 @@
     </author>
 
     <author fullname="Kostas Pentikousis" initials="K." surname="Pentikousis">
-      <organization abbrev="Huawei">Huawei Technologies</organization>
+      <organization abbrev="EICT">EICT GmbH</organization>
       <address>
 	<postal>
-	  <street>Carnotstrasse 4</street>
+	  <street>Torgauer Strasse 12-15</street>
 	  <city>Berlin</city>
-	  <code>10587</code>
+	  <code>10829</code>
 	  <country>Germany</country>
 	</postal>
-	<email>k.pentikousis@huawei.com</email>
+	<email>k.pentikousis@eict.de</email>
       </address>
     </author>
 
@@ -200,15 +200,16 @@
     <abstract>
       <t>
 	This memo describes research challenges for
-	Information-Centric Networking. Information-centric networking
+	Information-Centric Networking. Information-Centric Networking
 	is an approach to evolve the Internet infrastructure to
-	directly support this use by introducing uniquely named data
-	as a core Internet principle.  Data becomes independent from
-	location, application, storage, and means of transportation,
-	enabling in-network caching and replication. Challenges
-	include naming, security, routing, system scalability,
-	mobility management, wireless networking, transport services,
-	in-network caching, and network management.
+	directly support information distribution by introducing
+	uniquely named data as a core Internet principle.  Data
+	becomes independent from location, application, storage, and
+	means of transportation, enabling in-network caching and
+	replication. Challenges include naming, security, routing,
+	system scalability, mobility management, wireless networking,
+	transport services, in-network caching, and network
+	management.
       </t>
     </abstract>
   </front>
@@ -231,11 +232,11 @@
 	replication and content distribution in different specific
 	ways. These approaches are currently deployed in separate
 	silos -- different CDN providers and P2P applications rely on
-	own, often proprietary, distribution technologies. It is not possible to
-	uniquely and securely identify named information independently
-	of the distribution channel; and the different distribution
-	approaches are typically implemented as an overlay,
-	potentially leading to unnecessary inefficiency.
+	their own, often proprietary, distribution technologies. It is
+	not possible to uniquely and securely identify named
+	information independently of the distribution channel; and the
+	different distribution approaches are typically implemented as
+	an overlay, potentially leading to unnecessary inefficiency.
       </t>
       <t>
 	For example, creating and sharing multimedia content in a
@@ -305,39 +306,49 @@
 	that cache content, provide location-independent access to
 	data, and optimize its delivery. In principle, such platforms
 	provide a service model of accessing named data objects (NDOs)
-	(e.g. replicated web resources, M2M data in data centers)
+	(e.g., replicated web resources, M2M data in data centers)
 	instead of a host-to-host packet delivery service model.</t>
 	
-	<t>However, since this functionality resides in overlays only,
-	the full potential of content distribution and M2M application
-	platforms cannot be leveraged as the network is not aware of
-	data requests and data transmissions. This has the following
-	impact:
-	<list style="symbols">
-	  <t>data traffic typically follows sub-optimal paths as it is
-	  effectively routed depending on the overlay topology instead
-	  of the Internet layer topology;</t>
-	  <t>network capabilities, such as multicast and broadcast,
-	  are largely underutilized or not employed at all. As a
-	  result, request and delivery for the same object have to be
-	  made multiple times;</t>
-	  <t>overlays typically require significant infrastructure
-	  support, e.g., authentication portals, content storage, and
-	  applications servers, making it often impossible to
-	  establish local, direct communication;</t>
-	  <t>since the network is not aware of the nature of data
-	  objects, it is unable to manage access and transmission
-	  (without layer violations);
-	  </t>
-	  <t>provenance validation uses host authentication today. As
-	  such, even if there are locally cached copies available, it
-	  is normally not easily possible to validate their
-	  authenticity; and
-	  </t>
-	  <t>many applications follow their own approach to caching,
-	  replication, transport, authenticity validation (if at all),
-	  although they all share similar models for accessing named
-	  data objects in the network.
+	<t>
+	  However, since this functionality resides in overlays only,
+	  the full potential of content distribution and M2M
+	  application platforms cannot be leveraged as the network is
+	  not aware of data requests and data transmissions. This has
+	  the following impact:
+	  <list style="symbols">
+	    <t>
+	      data traffic typically follows sub-optimal paths as it
+	      is effectively routed depending on the overlay topology
+	      instead of the Internet layer topology;
+	    </t>
+	    <t>
+	      network capabilities, such as multicast and broadcast,
+	      are largely underutilized or not employed at all. As a
+	      result, request and delivery for the same object have to
+	      be made multiple times;
+	    </t>
+	    <t>
+	      overlays typically require significant infrastructure
+	      support, e.g., authentication portals, content storage,
+	      and applications servers, making it often impossible to
+	      establish local, direct communication;
+	    </t>
+	    <t>
+	      since the network is not aware of the nature of data
+	      objects, it is unable to manage access and transmission
+	      (without layer violations);
+	    </t>
+	    <t>
+	      provenance validation uses host authentication today. As
+	      such, even if there are locally cached copies available,
+	      it is normally not easily possible to validate their
+	      authenticity; and
+	    </t>
+	    <t>
+	      many applications follow their own approach to caching,
+	      replication, transport, authenticity validation (if at
+	      all), although they all share similar models for
+	      accessing named data objects in the network.
 	  </t>
 	</list>
       </t>
@@ -381,9 +392,17 @@
 
 	<section title="Terminology" anchor="sec.terms">
 	  <t>
+<!--
 	    This section defines ICN some terms that are used in this
 	    document.
+-->
 	    <list style="hanging">
+	      <t hangText="Information-Centric Networking (ICN)">
+		A concept for communicating in a network that provides
+		accessing named data objects as a first order
+		service. See <xref target="sec.concepts"/> for
+		details.
+	      </t>
 	      <t hangText="Named Data Object (NDO):">
 		Addressable data unit in an ICN that can represent a
 		collection of bytes or a piece of information. In ICN,
@@ -399,7 +418,7 @@
 
 	</section>
 
-	<section title="Concepts">
+	<section title="Concepts" anchor="sec.concepts">
 	  <t>
 	    Fundamentally, ICN is providing access to named data as a
 	    first-order network service, i.e., the network is able to
@@ -421,7 +440,7 @@
 	    requirements beyond this basic service model. Naming data
 	    objects is a key concept. In general, ICN names represent
 	    neither network nodes nor interfaces -- they represent
-	    NDOs independent of their location. Names do play a key
+	    NDOs independently of their location. Names do play a key
 	    role in forwarding decisions and are used for matching
 	    requests to responses: In order to provide better support
 	    for accessing copies of NDOs regardless of their location,
@@ -476,7 +495,7 @@
 	    The request/response model and ubiquitous in-network
 	    storage also enables new options for implementing
 	    transport services, i.e., reliable transmission, flow
-	    control etc. First of all, a request/response model can
+	    control, etc. First of all, a request/response model can
 	    enable receiver-driven transport regimes, i.e., receivers
 	    (the requestors of NDOs) can control message sending rates
 	    by regulating the request sending rate (assuming that
@@ -544,8 +563,8 @@
 	  information-centric network to work reliably, otherwise
 	  neither network elements nor receivers can trust object
 	  authenticity. Lack of this trust enables several attacks
-	  including critical DoS attacks by injecting spoofed content
-	  into the network. There are different ways to use names and
+	  including DoS attacks by injecting spoofed content into the
+	  network. There are different ways to use names and
 	  cryptography to achieve the desired functions <xref
 	  target="ICNNAMING"/> <xref target="ICNSURVEY"/>, and there
 	  are different ways to manage namespaces correspondingly.
@@ -557,7 +576,7 @@
 	  URIs, where the hierarchy is rooted in a publisher
 	  prefix. Such hierarchy enables aggregation of routing
 	  information, improving scalability of the routing system. In
-	  some cases, the names are human-readable, which makes it
+	  some cases, names are human-readable, which makes it
 	  possible for users to manually type in names, reuse, and, to
 	  some extent, map the name to user intent.
 	</t>
@@ -567,19 +586,19 @@
 	  name-data integrity can be verified without requiring a
 	  public key infrastructure (PKI) or other third party to
 	  first establish trust in the key. Self-certification is
-	  achieved by binding the hash of the NDO content to the
-	  object's name. For instance, this can be done by directly
-	  embedding the hash of the content in the name. Another
-	  option is an indirect binding, which embeds the public key
-	  of the publisher in the name and signs the hash of the
-	  content with the corresponding secret key. The resulting
-	  names are typically non-hierarchical, or flat, although the
-	  publisher field could be employed to create a structure
-	  which could facilitate route aggregation.
-	  There are several design trade-offs for ICN naming, which
-	  affect routing and security. Self-certifying names are not
-	  human readable nor hierarchical. They can however provide
-	  some structure for aggregation, for instance, a name part
+	  achieved, e.g., by binding the hash of the NDO content to
+	  the object's name. For instance, this can be done by
+	  directly embedding the hash of the content in the
+	  name. Another option is an indirect binding, which embeds
+	  the public key of the publisher in the name and signs the
+	  hash of the content with the corresponding secret key. The
+	  resulting names are typically non-hierarchical, or flat,
+	  although the publisher field could be employed to create a
+	  structure which could facilitate route aggregation.  There
+	  are several design trade-offs for ICN naming, which affect
+	  routing and security. Self-certifying names are not human
+	  readable nor hierarchical. They can however provide some
+	  structure for aggregation, for instance, a name part
 	  corresponding to a publisher.
 	</t>
 	
@@ -650,7 +669,7 @@
 	</t>
       </section>
 
-      <section title="Security">
+      <section title="Security" anchor="sec.security">
 
 <!--
 	  <t><list style="hanging" hangIndent="6"> <t hangText="***KP
@@ -686,10 +705,11 @@
 	      point. Hence, the communication channel endpoints to
 	      retrieve NDOs are not trustable anymore and solutions
 	      widely used today such as TLS <xref target="RFC5246" />
-	      cannot be used. Since data objects can be maliciously
-	      modified ICN should provide users with a security mechanism
-	      to verify the origin and integrity of the data object, and
-	      there are different ways to achieve this.
+	      cannot be used as a general solution. Since data objects
+	      can be maliciously modified ICN should provide users
+	      with a security mechanism to verify the origin and
+	      integrity of the data object, and there are different
+	      ways to achieve this.
 	    </t>
 	    
 	    <t>
@@ -912,22 +932,21 @@
 	      data object has to be maintained in the routing
 	      table. Since the number of data objects is very large
 	      (estimated as 10^11 back in 2007 <xref target="DONA"/>
-	      but this may be should be significantly larger than
-	      that1 , e.g. 10^15 to 10^22), the size of routing tables
-	      becomes a concern, as it can be proportional to the
-	      number of data object unless an aggregation mechanism is
-	      introduced. On the other hand, RBNR reduces overall
-	      latency and simplifies the routing process due to the
-	      omission of the resolution process. For the delivery
-	      step, RBNR needs another identifier (ID) of either host
-	      or location to forward the requested data object back to
-	      the requestor. Otherwise, an additional routing
-	      mechanism has to be introduced such as bread-crumbs
-	      routing <xref target="BREADCRUMBS"/>, in which each
-	      request leaves behind a trail of breadcrumbs along its
-	      forwarding path, and then the response is forwarded back
-	      to the requestor consuming the trail. Specific
-	      challenges include:
+	      but this may be significantly larger than that, e.g.,
+	      10^15 to 10^22), the size of routing tables becomes a
+	      concern, as it can be proportional to the number of data
+	      object unless an aggregation mechanism is introduced. On
+	      the other hand, RBNR reduces overall latency and
+	      simplifies the routing process due to the omission of
+	      the resolution process. For the delivery step, RBNR
+	      needs another identifier (ID) of either host or location
+	      to forward the requested data object back to the
+	      requestor. Otherwise, an additional routing mechanism
+	      has to be introduced, such as bread-crumbs routing <xref
+	      target="BREADCRUMBS"/>, in which each request leaves
+	      behind a trail of breadcrumbs along its forwarding path,
+	      and then the response is forwarded back to the requestor
+	      consuming the trail. Specific challenges include:
 	      <list style="symbols">
 		<t>
 		  How to aggregate the names of data objects to reduce
@@ -959,7 +978,7 @@
 		  copies? For example, employing compact routing <xref
 		  target="COMPACT"/>, random walk <xref
 		  target="RANDOM"/> or Greedy routing <xref
-		  target="GREEDY"/>, and so on.
+		  target="GREEDY"/>.
 		</t>
 		<t>
 		  How to incorporate copies of a data object in
@@ -992,7 +1011,7 @@
 		    Fast update: the location of data object is
 		    expected to change frequently. Also, multiple data
 		    objects may change their locations at the same
-		    time, e.g. data objects in laptop.
+		    time, e.g., data objects in laptop.
 		</t></list></t>
 		<t>
 		  How to incorporate copies of a data object in
@@ -1006,7 +1025,7 @@
 	    <t>
 	      HR combines RBNR and LBNR to benefit from their
 	      advantages. For instance, within a single administrative
-	      domain, e.g. an ISP, where scalability issues can be
+	      domain, e.g., an ISP, where scalability issues can be
 	      addressed with network planning, RBNR can be adopted to
 	      reduce overall latency by omitting the resolution
 	      process. On the other hand, LBNR can be used to route
@@ -1079,7 +1098,7 @@
 	  information-centric and location-indepedent. In addition, as
 	  argued in <xref target="SEEN"/>, current mobility management
 	  schemes anchor information retrieval not only at a specific
-	  network gateway (e.g. home agent in Mobile IP) but due to
+	  network gateway (e.g., home agent in Mobile IP) but due to
 	  the end-to-end nature of host-centric communication also at
 	  a specific correspondent node. However, once a change in the
 	  point of attachment occurs, information retrieval from the
@@ -1106,8 +1125,8 @@
 	  new content to normally flow from different interfaces, or
 	  through newly connected points of attachment to the
 	  network. However, when the node moving is the (only) content
-	  source, it appears that more complex network support my be
-	  necessary, including forwarding updates and caching
+	  source, it appears that more complex network support might
+	  be necessary, including forwarding updates and cache
 	  rebuilding. A case in point is a conversation network
 	  service, such as a voice or video call between two
 	  parties. The requirements in this case are more stringent
@@ -1188,16 +1207,16 @@
 	  mind: the waist of the protocol stack is IP and it will be
 	  so for the foreseeable future. By fixing the protocol stack
 	  waist, engineers can answer a large set of questions,
-	  including how to handle conversational traffic (e.g. voice
+	  including how to handle conversational traffic (e.g., voice
 	  calls) vs. web access to online resources, how to support
 	  multicast (the IP flavor), and so on, in a rather
 	  straightforward manner. Broadcast, on the other hand, which
 	  is inherent in wireless communication is not fully taken
 	  advantage off. On the contrary, researchers are often more
 	  concerned about introducing mechanisms that ensure that
-	  "broadcast storms" do not take down a network. How can
-	  broadcast serve our (information-centric) networking needs
-	  better has yet to be thoroughly investigated.
+	  "broadcast storms" do not take down a network. The question
+	  of how broadcast can serve ICN needs better has yet to be
+	  thoroughly investigated.
 	</t>
 	
 	<t>
@@ -1225,16 +1244,16 @@
 	 +---------------------+ 
 	 | Document Repository |
 	 +---------------------+ 
-               ||
+                   ||
 	       (Internet) 
 	           ||
-         +--------------+ 
+             +--------------+ 
 	     | Access Point |
 	     +--------------+ 
-        /  |             \
-       /   |	          \
+            /  |             \
+           /   |              \
 	  /    |               \
-Scribe   Participant 1 ... Participant N
+     Scribe   Participant 1 ... Participant N
 ]]>
 	</artwork></figure>
 
@@ -1259,16 +1278,16 @@ Scribe   Participant 1 ... Participant N
 	    It goes without saying that an ICN approach that does not
 	    take into consideration the wireless nature of an
 	    interface will waste the same amount of resources as a
-	    host-centric paradigm. Of course, in-network caching at
-	    the wireless access point could reduce the amount of data
-	    carried over the backhaul link but, if there is no change
-	    in the use of the wireless medium, the NDO will still be
-	    carried over the wireless ether N+1 times. Intelligent
-	    caching strategies, replica placement cooperation and so
-	    on simply cannot alleviate this. On the other hand,
-	    promiscuous interface operation and opportunistic caching
-	    would maximize wireless network capacity utilization in
-	    this example.
+	    host-centric paradigm. In-network caching at the wireless
+	    access point could reduce the amount of data carried over
+	    the backhaul link but, if there is no change in the use of
+	    the wireless medium, the NDO will still be carried over
+	    the wireless ether N+1 times. Intelligent caching
+	    strategies, replica placement cooperation and so on simply
+	    cannot alleviate this. On the other hand, promiscuous
+	    interface operation and opportunistic caching would
+	    maximize wireless network capacity utilization in this
+	    example.
 	  </t>
 	  
 	  <t>
@@ -1365,16 +1384,17 @@ Scribe   Participant 1 ... Participant N
 	with ICN. HRICP is CCN-specific.</t></list></t>
 -->	
 	<t>
-	As mentioned above, the ICN communication paradigm does not depend 
-	strictly on end-to-end flows, as contents might be received from 
-	mid-network caches. The traditional concept of a flow is then 
-	somewhat cancelled as sub-flows, or flowlets might be formed on 
-	the fly, when fractions of a content file are transmitted from 
-	in-network caches. For a transport layer protocol this is challenging, 
-	as any measurement related to this flow, as traditionally done by 
-	transport protocols such as TCP, will be hugely misleading. For 
-	example, false RTT measurements will lead to largely variable average 
-	and smooth RTT values, which in turn will trigger false timeout 
+	As mentioned above, the ICN communication paradigm does not
+	depend strictly on end-to-end flows, as contents might be
+	received from mid-network caches. The traditional concept of a
+	flow is then somewhat cancelled as sub-flows, or flowlets
+	might be formed on the fly, when fractions of an NDO are
+	transmitted from in-network caches. For a transport layer
+	protocol this is challenging, as any measurement related to
+	this flow, as traditionally done by transport protocols such
+	as TCP, will be hugely misleading. For example, false RTT
+	measurements will lead to largely variable average and smooth
+	RTT values, which in turn will trigger false timeout
 	expirations.
 	</t>
 	<t>
@@ -1398,8 +1418,8 @@ Scribe   Participant 1 ... Participant N
 	</t>
 	<t>
 	  Achieving fairness for requestors can be one challenge as it
-	  is not possible to identify the number of clients behind one
-	  particular request.  A second problem related to request
+	  is not possible to identify the number of requestors behind
+	  one particular request.  A second problem related to request
 	  aggregation is the management of request retransmissions.
 	  Generally, it is assumed that a router will not transmit a
 	  request if it transmitted an identical request recently and
@@ -1540,16 +1560,16 @@ Scribe   Participant 1 ... Participant N
 	    the characteristics of the content to be cached. Popular
 	    content might need to be placed where it is going to be
 	    requested next. Furthermore, issues of "expected content
-	    popularity" or temporal locality need to be taken into 
-	    account in designing in-network caching algorithms
-	    in order for some contents to be given priority (e.g., popular
-	    content vs. one-timers). The criteria as to which contents 
-	    should be given priority in in-network content caches relate also
-	    to the business relationships between content providers
-	    and network operators. Business model issues will drive some 
-	    of these decisions on content-to-cache distribution, but such
-	    issues are outside the scope of this note and are not discussed 
-	    here further.
+	    popularity" or temporal locality need to be taken into
+	    account in designing in-network caching algorithms in
+	    order for some contents to be given priority (e.g.,
+	    popular content vs. one-timers). The criteria as to which
+	    contents should be given priority in in-network content
+	    caches relate also to the business relationships between
+	    content providers and network operators. Business model
+	    issues will drive some of these decisions on
+	    content-to-cache distribution, but such issues are outside
+	    the scope of this note and are not discussed here further.
 	  </t>
 
 <!--	  
@@ -1589,6 +1609,39 @@ Scribe   Participant 1 ... Participant N
 	    need to be exploited in order to build a scalable model.
 	  </t>
 	</section>
+
+	<section title="Staleness Detection of Cached NDOs">
+	  <t>
+	    TO BE CHECKED
+	  </t>
+	  <t>
+	    Due to the largely distributed copies of NDOs in
+	    in-network caches, ICN should be able to provide a
+	    staleness verification algorithm which provides
+	    synchronization of NDOs located at their providers and
+	    in-network caching points. It is often argued that
+	    ignoring stale NDOs in caches and simply providing new
+	    names for updated NDOs might be sufficient rather than
+	    using a staleness verification algorithm to manage
+	    them. However, the renaming scheme still causes following
+	    problems.
+	  </t>
+	  <t>
+	    First, notifying the new names of updated NDOs to users is
+	    not a trivial task. Unless the update is informed to
+	    entire users at the same time, some users would use the
+	    old acquainted name by intending to retrieve the updated
+	    NDO. Second, the renaming scheme does not provide a
+	    mechanism to limit access to the stale NDOs which may be
+	    required for a security reason occationally.
+	  </t>
+	  <t>
+	    One research challenge is how to design consistency and
+	    coherence models for caching NDOs along with their
+	    revision handling and updating protocols in a scalable
+	    manner.
+	  </t>
+	</section>
       </section>
       
       <section title="Network Management">
@@ -1612,9 +1665,9 @@ Scribe   Participant 1 ... Participant N
 	  hand-in with the rest of the architecture design.
 	</t>
 	<t>
-	  Although defining FCAPS for ICN is clearly outside the scope
-	  of this document, there is a need for creating basic tools
-	  early on while ICN is still in the design and
+	  Although defining an FCAPS model for ICN is clearly outside
+	  the scope of this document, there is a need for creating
+	  basic tools early on while ICN is still in the design and
 	  experimentation phases that can evolve over time and help
 	  network operations centers (NOC) to define policies,
 	  validate that they are indeed used in practice, be notified
@@ -1640,7 +1693,7 @@ Scribe   Participant 1 ... Participant N
 	  bring into the network significant resources in terms of
 	  network coverage extension, storage, and processing
 	  capabilities. DTN characteristics should also be considered
-	  to the degree that this is possible (e.g. content
+	  to the degree that this is possible (e.g., content
 	  dissemination through data mules).  Secondly, given
 	  that nodes and links are not at the center of an
 	  information-centric network, network management should
@@ -1724,7 +1777,10 @@ Scribe   Participant 1 ... Participant N
     </section>
     
     <section title="Security Considerations">
-      <t>TBD</t>
+      <t>
+	Security related questions related to ICN are discussed in
+	<xref target="sec.security"/>.
+      </t>
 	  
     </section>
   </middle>
