@@ -835,6 +835,7 @@
 	  </section>
 	  
 	  <section title="State overloading">
+<!-- OLD
 	    <t>
 	      ICN solutions where intermediate routers need to keep
 	      state, such as request origin or forwarding information,
@@ -852,9 +853,30 @@
 	      on attacks on caching, robust cache eviction algorithms
 	      must be used.
 	    </t>
+-->
+	    <t>
+	      ICN solutions that implement state on intermediate
+	      routers for request routing or forwarding (e.g., CCN
+	      <xref target="CCN"/>) are subject to denial of service
+	      attacks from overloading or superseding the internal
+	      state of a router (e.g., 'interest flooding' <xref
+	      target="BACKSCATTER"/>). Additionally, stateful
+	      forwarding can enable attack vectors such as resource
+	      exhaustion or complexity attacks to the routing
+	      infrastructure. The challenge is then to provision
+	      routers and construct internal state in a way that
+	      alleviates sensibility to such attacks. The problem
+	      becomes even harder, if the protocol does not provide
+	      information about the origin of messages. Without
+	      origin, it is a particular challenge to distinguish
+	      between regular (intense) use and misuse of the
+	      infrastructure.
+	    </t>
+
 	  </section>
 	  
-	  <section title="Traffic on data object replicas">
+	  <section title="Delivering data objects from replicas">
+	    <!-- OLD
 	    <t>
 	      A challenge related to content management but that can
 	      have impact on security is the potential lack of control
@@ -862,6 +884,41 @@
 	      how can a producer know the number of copies of its data
 	      are in the network or who has consumed them?
 	    </t>
+-->
+	    <t>
+	      A common capability of ICN solutions is data replication
+	      and in-network storage. Delivering replicated data
+	      objects from caches decouples content consumption from
+	      data sources which leads to a loss of control on (1)
+	      content access, and (2) content dissemination. In a
+	      widely distributed, decentralized environment like the
+	      Internet, this raises several challenges.
+	    </t>
+	    <t>
+	      One group of challenges is related to content
+	      management. Without access control, a content provider
+	      looses the means to count and survey content
+	      consumption, to limit access scopes, to control or know
+	      about the number of copies of its data in the network,
+	      or to withdraw publication reliably. Any non-cooperative
+	      or desynchronized data cache may hinder an effective
+	      content management policy.
+	    </t>
+	    <t>
+	      Another group of challenges arises from potential
+	      traffic amplifications in the decoupled environment. ICN
+	      solutions that attempt to retrieve content from several
+	      replicas in parallel, or decorrelated network routing
+	      states, but also distributed attackers may
+	      simultaneously initiate the transmission of content from
+	      multiple replicas towards the same destination (e.g.,
+	      'initiated overloads' or 'blockades' <xref
+	      target="BACKSCATTER"/>). Methods for mitigating such
+	      threats need rigorous forwarding checks that require
+	      alignment with caching procedures (e.g., on-path or
+	      off-path).
+	    </t>
+
 	  </section>
 
 	  <section title="Cryptographic robustness">
@@ -882,16 +939,18 @@
 	  </section>
 	  <section title="Routing and forwarding information bases">
 	    <t>
-	      <xref target="sec.routing" /> shows that routing and forwarding
-	      information bases are subject to scalability issue when routing
-	      by name is used. While the system is designed it is not only
-	      important to ensure that it cannot suffer from targeted attacks
-	      aiming at increasing routing and forwarding information bases.
-	      As the routing system is tightly bound to the ICN solution itself,
-	      there is no universal way to avoid such attacks. However, a
-	      possible approache is to combine routing infromation authenticity
-	      validation with filtering (e.g., maximum deaggregation level
-	      whenever applicable, black lists, etc.).
+	      <xref target="sec.routing" /> shows that routing and
+	      forwarding information bases are subject to scalability
+	      issue when routing by name is used. While the system is
+	      designed it is not only important to ensure that it
+	      cannot suffer from targeted attacks aiming at increasing
+	      routing and forwarding information bases.  As the
+	      routing system is tightly bound to the ICN solution
+	      itself, there is no universal way to avoid such
+	      attacks. However, a possible approache is to combine
+	      routing information authenticity validation with
+	      filtering (e.g., maximum deaggregation level whenever
+	      applicable, black lists, etc.).
 	    </t>
 	  </section>
 	</section>
@@ -2003,6 +2062,29 @@
 	</front>
 	<seriesInfo name=" WoWMoM 2010, IEEE" value=""/>
       </reference>
+
+
+      <reference anchor="BACKSCATTER">
+	<front>
+	  <title>Backscatter from the Data Plane - Threats to Stability and Security in Information-Centric Network Infrastructure</title>
+          <author initials="M." surname="Waehlisch">
+            <organization>FU Berlin</organization>
+          </author>         
+          <author initials="TC." surname="Schmidt">
+            <organization>HAW Hamburg</organization>
+          </author>
+          <author initials="M." surname="Vahlenkamp">
+            <organization>HAW Hamburg</organization>
+          </author>
+          <date month="November" year="2013" />
+        </front>
+        <seriesInfo name="Computer Networks"
+                    value="Vol 57, No. 16, pp. 3192-3206" />
+        <format target="http://dx.doi.org/10.1016/j.comnet.2013.07.009"
+                type="PDF" />
+      </reference>
+      
+
 	
     </references>
   </back>
