@@ -407,7 +407,12 @@
 		Addressable data unit in an ICN that can represent a
 		collection of bytes or a piece of information. In ICN,
 		each data object has a name bound to it, and there are
-		typically mechanisms to secure (and validate) this binding.
+		typically mechanisms to secure (and validate) this
+		binding. Different ICN approaches have different
+		concepts for how to map NDOs to individual units of
+		transport. Within the context of this document, an NDO
+		is any named object that can be requested from the
+		network.
 	      </t>
 	      <t hangText="Requestor:">Entitiy in an ICN network that
 	      is sending a request for a Named Data Object to the
@@ -1058,7 +1063,9 @@
 	      implemented similarly to IP routing. The locator of the
 	      requestor is included in the request message, and then
 	      the requested data object is delivered to the requestor
-	      based on the locator. Specific challenges include:
+	      based on the locator. A specific instantiation of such a
+	      system is <xref target="MDHT"/>.
+	      Specific challenges include:
 	      <list style="symbols">
 		<t>How to build a scalable resolution system which provides
 		<list style="symbols">
@@ -1670,9 +1677,11 @@
 	</section>
 
 	<section title="Staleness Detection of Cached NDOs">
+<!--
 	  <t>
 	    TO BE CHECKED
 	  </t>
+-->
 	  <t>
 	    Due to the largely distributed copies of NDOs in
 	    in-network caches, ICN should be able to provide a
@@ -2083,9 +2092,21 @@
         <format target="http://dx.doi.org/10.1016/j.comnet.2013.07.009"
                 type="PDF" />
       </reference>
-      
 
-	
+
+      <reference anchor="MDHT">
+	<front>
+	  <title>MDHT: A hierarchical name resolution service for
+	  information-centric networks</title>
+	  <author initials="M." surname="D'Ambrosio"/>
+	  <author initials="C." surname="Dannewitz"/>
+	  <author initials="H." surname="Karl"/>
+	  <author initials="V." surname="Vercellone"/>
+	  <date month="August" year="2011"/>
+	</front>
+	<seriesInfo name="ACM SIGCOMM workshop on Information-centric
+	networking" value="Toronto, Canada, 2011"/>
+	</reference>
     </references>
   </back>
 </rfc>
