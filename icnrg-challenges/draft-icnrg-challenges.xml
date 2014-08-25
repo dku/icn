@@ -1824,7 +1824,8 @@
 	    </t>
 	    <t>
 	      Coordination of management information exchange and
-	      control between ICN nodes and ICN network control points
+	      control between ICN nodes and ICN network control points</t>
+		<t>
 	      Identification of management and controlling actions and
 	      items through information naming
 	    </t>
