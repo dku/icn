@@ -4,21 +4,21 @@
      There has to be one entity for each item to be referenced. 
      An alternate method (rfc include) is described in the references. -->
 
-<!ENTITY RFC2629 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2629.xml">
-<!ENTITY RFC5944 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5944.xml">
-<!ENTITY RFC5246 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5246.xml">
-<!ENTITY RFC2002 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2002.xml">
 
-<!ENTITY RFC6920 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6920.xml">
+<!ENTITY RFC5944 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5944.xml">
+<!ENTITY RFC5246 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5246.xml">
+<!ENTITY RFC2002 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2002.xml">
 
-<!ENTITY I-D.ni-params SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.hallambaker-decade-ni-params.xml">
+<!ENTITY RFC6920 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6920.xml">
+
+<!ENTITY I-D.ni-params SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.hallambaker-decade-ni-params.xml">
 <!ENTITY RFC5280 PUBLIC ''
-'http://xml.resource.org/public/rfc/bibxml/reference.RFC.5280.xml'>
+'http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5280.xml'>
 ]>
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
 <!-- used by XSLT processors -->
 <!-- For a complete list and description of processing instructions (PIs), 
-     please see http://xml.resource.org/authoring/README.html. -->
+     please see http://xml2rfc.ietf.org/authoring/README.html. -->
 <!-- Below are generally applicable Processing Instructions (PIs) that most I-Ds might want to use.
      (Here they are set differently than their defaults in xml2rfc v1.32) -->
 <?rfc strict="no" ?>
@@ -42,7 +42,7 @@
 <!-- end of list of popular I-D processing instructions -->
 <?rfc comments="yes"?>
 <?rfc inline="yes"?>
-<rfc category="std" docName="draft-kutscher-icnrg-challenges-02" ipr="trust200902"
+<rfc category="std" docName="draft-irtf-icnrg-challenges-00" ipr="trust200902"
      submissionType="independent">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
@@ -168,7 +168,7 @@
       </address>
     </author>
 
-    <date year="2014" month="February" day="14"/>
+    <date year="2014" month="August" day="29"/>
 
     <!-- If the month and year are both specified and are the current ones, xml2rfc will fill 
          in the current day for you. If only the current year is specified, xml2rfc will fill 
@@ -1450,28 +1450,30 @@
 	with ICN. HRICP is CCN-specific.</t></list></t>
 -->	
 	<t>
-	As mentioned above, the ICN communication paradigm does not
-	depend strictly on end-to-end flows, as contents might be
-	received from mid-network caches. The traditional concept of a
-	flow is then somewhat cancelled as sub-flows, or flowlets
-	might be formed on the fly, when fractions of an NDO are
-	transmitted from in-network caches. For a transport layer
-	protocol this is challenging, as any measurement related to
-	this flow, as traditionally done by transport protocols such
-	as TCP, will be hugely misleading. For example, false RTT
-	measurements will lead to largely variable average and smooth
-	RTT values, which in turn will trigger false timeout
-	expirations.
+	  As mentioned above, the ICN communication paradigm does not
+	  depend strictly on end-to-end flows, as contents might be
+	  received from mid-network caches. The traditional concept of
+	  a flow is then somewhat cancelled as sub-flows, or flowlets
+	  might be formed on the fly, when fractions of an NDO are
+	  transmitted from in-network caches. For a transport layer
+	  protocol this is challenging, as any measurement related to
+	  this flow, as traditionally done by transport protocols such
+	  as TCP, will be hugely misleading. For example, false RTT
+	  measurements will lead to largely variable average and
+	  smooth RTT values, which in turn will trigger false timeout
+	  expirations.
 	</t>
 	<t>
-	Furthermore, out-of-order delivery is expected to be common in a scenario
-	where parts of a content file are retrieved from in-network caches, 
-	rather than from the origin server. Several techniques for dealing with 
-	out-of-order delivery have been proposed in the past for TCP, some of
-	which could potentially be modified and re-used in the context of ICN. 
-	Further research is needed on this direction though to i) choose the 
-	right technique and ii) adjust it according to the requirements of the 
-	ICN architecture and transport protocol in use.
+	  Furthermore, out-of-order delivery is expected to be common
+	  in a scenario where parts of a content file are retrieved
+	  from in-network caches, rather than from the origin
+	  server. Several techniques for dealing with out-of-order
+	  delivery have been proposed in the past for TCP, some of
+	  which could potentially be modified and re-used in the
+	  context of ICN.  Further research is needed on this
+	  direction though to i) choose the right technique and ii)
+	  adjust it according to the requirements of the ICN
+	  architecture and transport protocol in use.
 	</t>
 	<t>
 	  ICN offers routers the possibility to aggregate requests and
@@ -1498,7 +1500,17 @@
 	  last has no way to determine the number of clients actually
 	  consuming the content it is producing. This shift of model
 	  influences the business model of the server, e.g., how to
-	  implement pay-per-click
+	  implement pay-per-click.
+	</t>
+	<t>
+	  NDOs can represent content used in different types of
+	  applications with different QoS requirements, for example,
+	  interactive real-time applications, media streaming, file
+	  download. Each of these applications imposes different QoS
+	  requirements on different elements in an information-centric
+	  network, e.g., regarding cache placement, request-to-cache/source
+	  routing. Achieving the necessary quality-of-service levels
+	  in a shared network is an active ICN research topic.
 	</t>
 	
       </section>
@@ -1677,32 +1689,51 @@
 	</section>
 
 	<section title="Staleness Detection of Cached NDOs">
-<!--
-	  <t>
-	    TO BE CHECKED
-	  </t>
--->
 	  <t>
 	    Due to the largely distributed copies of NDOs in
 	    in-network caches, ICN should be able to provide a
 	    staleness verification algorithm which provides
 	    synchronization of NDOs located at their providers and
-	    in-network caching points. It is often argued that
-	    ignoring stale NDOs in caches and simply providing new
-	    names for updated NDOs might be sufficient rather than
-	    using a staleness verification algorithm to manage
-	    them. However, the renaming scheme still causes following
-	    problems.
+	    in-network caching points. Two types of approaches can be
+	    considered for this problem, namely direct and indirect
+	    approaches.
 	  </t>
+
 	  <t>
-	    First, notifying the new names of updated NDOs to users is
-	    not a trivial task. Unless the update is informed to
-	    entire users at the same time, some users would use the
-	    old acquainted name by intending to retrieve the updated
-	    NDO. Second, the renaming scheme does not provide a
-	    mechanism to limit access to the stale NDOs which may be
-	    required for a security reason occationally.
+	    In the direct approach, each cache looks up certain
+	    information in the name of NDO, e.g., time stamp which
+	    directly indicates its staleness. This approach is well
+	    applicable to some NDOs that come from machine-to-machine
+	    and Internet of Things scenarios, whose base operation
+	    relies on obtaining the latest version of that NDO (i.e.,
+	    a soil sensor in a farm providing different continuous
+	    parameters that are sent to a display or green-house
+	    regulation system) <xref target="freshness"/>.
 	  </t>
+
+	  <t>
+	    In the indirect approach, each cache consults the
+	    publisher of the cached NDO about its staleness before
+	    serving it. This approach assumes that the name of NDO
+	    includes the publisher information which can be used to
+	    reach to the publisher. It is suitable for the NDO whose
+	    expiring time is difficult to be set in advance, e.g., a
+	    webpage which contains main text (that stays the same ever
+	    after) and the interactive section such as comments or ads
+	    (that is updated irregularly).
+	  </t>
+
+	  <t>
+	    It is often argued that ignoring stale NDOs in caches and
+	    simply providing new names for updated NDOs might be
+	    sufficient rather than using a staleness verification
+	    algorithm to manage them. However, notifying the new names
+	    of updated NDOs to users is not a trivial task. Unless the
+	    update is informed to entire users at the same time, some
+	    users would use the old acquainted name by intending to
+	    retrieve the updated NDO.
+	  </t>
+
 	  <t>
 	    One research challenge is how to design consistency and
 	    coherence models for caching NDOs along with their
@@ -1839,12 +1870,6 @@
       </section>
     </section>
 
-    <section title="Link to and Impact on IETF Technologies">
-      <t>
-	TBW later.
-      </t>
-    </section>
-    
     <section title="Security Considerations">
       <t>
 	Security related questions related to ICN are discussed in
@@ -1852,6 +1877,8 @@
       </t>
 	  
     </section>
+
+
   </middle>
 
   <back>
@@ -1863,6 +1890,7 @@
         (for I-Ds: include="reference.I-D.narten-iana-considerations-rfc2434bis.xml")
 
      Both are cited textually in the same manner: by using xref elements. If you use the PI option, xml2rfc will, by default, try to find included files in the samedirectory as the including file. You can also define the XML_LIBRARY environment variable with a value containing a set of directories to search.  These can be either in the localfiling system or remote ones accessed by http (http://domain/dir/... ).-->
+
 
     <references title="Informative References">
       &RFC5280;
@@ -2108,6 +2136,43 @@
 	<seriesInfo name="ACM SIGCOMM workshop on Information-centric
 	networking" value="Toronto, Canada, 2011"/>
 	</reference>
-    </references>
+
+	<reference anchor="freshness">
+	  <front>
+	    <title>Consumer Driven Information Freshness Approach for Content Centric Networking</title>
+	    <author initials="J." surname="Quevedo"/>
+	    <author initials="D." surname="Corujo"/>
+	    <author initials="R." surname="Aguiar"/>
+	    <date month="May" year="2014"/>
+	  </front>
+	  <seriesInfo name="IEEE INFOCOM Workshop on Name-Oriented Mobility" value="Toronto, Canada, 2014"/>
+	</reference>
+      </references>
+
+    <section title="Acknowledgments">
+      <t>
+	The authors would like to thank Georgios Karagiannis for
+	providing suggestions on QoS research challenges.
+      </t>
+    </section>
+
+
+    <section title="Changes">
+      <t>
+	<list style="hanging">
+	  <t hangText="draft-icnrg-challenges-00">
+	    <list style="symbols">
+	      <t>added paragraph on QoS to transport services section</t>
+	      <t>rewrote text 4.7.4 (Staleness Detection of Cached NDOs)</t>
+	    </list>
+	  </t>
+	</list>
+      </t>
+    </section>
+
+
+
+
+
   </back>
 </rfc>
