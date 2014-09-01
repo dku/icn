@@ -168,7 +168,7 @@
       </address>
     </author>
 
-    <date year="2014" month="August" day="29"/>
+    <date year="2014" month="September" day="01"/>
 
     <!-- If the month and year are both specified and are the current ones, xml2rfc will fill 
          in the current day for you. If only the current year is specified, xml2rfc will fill 
@@ -498,7 +498,7 @@
 	  </t>
 	  <t>
 	    The request/response model and ubiquitous in-network
-	    storage also enables new options for implementing
+	    storage also enable new options for implementing
 	    transport services, i.e., reliable transmission, flow
 	    control, etc. First of all, a request/response model can
 	    enable receiver-driven transport regimes, i.e., receivers
@@ -510,7 +510,7 @@
 	    replicated, object transmission and transport sessions
 	    would not necessarily have end-to-end semantics: requests
 	    can be answered by caches, and a node can select one or
-	    multiple next-hop destination for a particular request --
+	    multiple next-hop destinations for a particular request --
 	    depending on configuration, observed performance or other
 	    criteria.
 	  </t>
@@ -655,7 +655,7 @@
 	      later retrieval, names have to be long-lived -- and the
 	      name-content binding must not change: updating an object
 	      (i.e., changing the content without generating a new
-	      name) is impossible. Versioning is one possible
+	      name) is not possible. Versioning is one possible
 	      solution, but requires a naming scheme that supports it
 	      (and a way for requestors to learn about versions).
 	    </t>
@@ -810,7 +810,7 @@
             <t>
 	      Binding between NDOs and Real-World Identities is essential
 	      but there is no universal way to achieve it as it is all
-	      intrinsic to the particular ICN approach.
+	      intrinsic to a particular ICN approach.
 	    </t>
 	  </section>
 
@@ -822,14 +822,14 @@
 	      consumers. This aggregation of requests reduces the
 	      overall traffic but makes per-requestor filtering
 	      harder.  The challenge in this case is to provide a
-	      mechanism that allows requests aggregation and
+	      mechanism that allows request aggregation and
 	      per-requestor filtering.  A possible solution is to
 	      indicate the set of requestors in the aggregated request
 	      such that the response can indicate the subset of
 	      requestors allowed to access the data object. However,
 	      this solution requires collaboration from other nodes in
 	      the network and is not suitable for caching. Another
-	      possible solution is the encrypt data objects and ensure
+	      possible solution is to encrypt data objects and ensure
 	      that only authorised consumers can decrypt them. This
 	      solution does not preclude caching and does not require
 	      collaboration from the network. However, it implies a
@@ -894,7 +894,7 @@
 	      A common capability of ICN solutions is data replication
 	      and in-network storage. Delivering replicated data
 	      objects from caches decouples content consumption from
-	      data sources which leads to a loss of control on (1)
+	      data sources, which leads to a loss of control on (1)
 	      content access, and (2) content dissemination. In a
 	      widely distributed, decentralized environment like the
 	      Internet, this raises several challenges.
@@ -1029,7 +1029,7 @@
 		  aggregation by provider? (For example, although we
 		  name our contribution as "ICN research challenge",
 		  IRTF (provider) may want to change the name to
-		  "/IETF/IRTF/ ICN/Research challenge" for
+		  "/IETF/IRTF/ICN/Research challenge" for
 		  aggregation. In this case, how does a user learn the
 		  name "/IETF/IRTF/ICN/Research challenge" to retrieve
 		  the contribution initially named "ICN research
@@ -1041,7 +1041,7 @@
 		  advantage of topological structure and distributed
 		  copies? For example, employing compact routing <xref
 		  target="COMPACT"/>, random walk <xref
-		  target="RANDOM"/> or Greedy routing <xref
+		  target="RANDOM"/> or greedy routing <xref
 		  target="GREEDY"/>.
 		</t>
 		<t>
@@ -1077,7 +1077,7 @@
 		    Fast update: the location of data object is
 		    expected to change frequently. Also, multiple data
 		    objects may change their locations at the same
-		    time, e.g., data objects in laptop.
+		    time, e.g., data objects in a laptop.
 		</t></list></t>
 		<t>
 		  How to incorporate copies of a data object in
@@ -1278,7 +1278,7 @@
 	  multicast (the IP flavor), and so on, in a rather
 	  straightforward manner. Broadcast, on the other hand, which
 	  is inherent in wireless communication is not fully taken
-	  advantage off. On the contrary, researchers are often more
+	  advantage of. On the contrary, researchers are often more
 	  concerned about introducing mechanisms that ensure that
 	  "broadcast storms" do not take down a network. The question
 	  of how broadcast can serve ICN needs better has yet to be
@@ -1517,7 +1517,7 @@
 
       <section title="In-Network Caching">
 	<t>
-	  Explicitly named content objects allow for caching at
+	  Explicitly named data objects allow for caching at
 	  virtually any network element, including routers, proxy
 	  caches and end-host machines. In-network caching can
 	  therefore improve network performance by fetching content
@@ -1585,7 +1585,7 @@
 	  factors, such as: avoid inter-domain/expensive links, centrality
 	  of nodes, size of domain and the corresponding spatial locality 
 	  of users, traffic patterns in a specific part of the 
-	  network (e.g., university vs business vs fashion district
+	  network (e.g., university vs. business vs. fashion district
 	  of a city).
 	  </t>
 
@@ -1618,7 +1618,7 @@
 	  <t>
 	    Furthermore, the number of replicas held in the system
 	    brings up resource management issues in terms of cache
-	    allocation. For example, continuously replicating content
+	    allocation. For example, continuously replicating data
 	    objects in all network elements results in redundant
 	    copies of the same objects. The issue of redundant
 	    replication has been investigated in the past for
