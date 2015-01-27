@@ -944,25 +944,20 @@
 	  </section>
 	  <section title="Routing and forwarding information bases">
 	    <t>
-	      <xref target="sec.routing" /> shows that routing and
-	      forwarding information bases are subject to scalability
-	      issue when routing by name is used. While the system is
-	      designed it is not only important to ensure that it
-	      cannot suffer from targeted attacks aiming at increasing
-	      routing and forwarding information bases.  As the
-	      routing system is tightly bound to the ICN solution
-	      itself, there is no universal way to avoid such
-	      attacks. However, a possible approache is to combine
-	      routing information authenticity validation with
-	      filtering (e.g., maximum deaggregation level whenever
-	      applicable, black lists, etc.).
+	      In ICN networks, one attack vector is to increase the size of routing 
+	      and forwarding information bases at ICN nodes, i.e., attacking 
+	      routing scalability in networks that rely on routing by name. This is 
+	      an intrinsic ICN security issue: possible mitigation approaches 
+	      include combining routing information authenticity validation with 
+	      filtering (e.g., maximum deaggregation level whenever applicable, 
+	      black lists, etc.).
 	    </t>
 	  </section>
 	</section>
 	<section title="Routing and Resolution System Scalability" anchor="sec.routing">
 	  <t>
-	    ICN routing locates a data object based on its name which
-	    is initially provided by a requestor. ICN routing may
+	    ICN routing is a process that finds a data object based on its name 
+	    initially provided by a requestor. ICN routing may
 	    comprise three steps: a name resolution step, a discovery
 	    step, and a delivery step. The name resolution step
 	    translates the name of the requested data object into its
@@ -1262,6 +1257,11 @@
 	    <t>
 	      How do we ensure that managing mobility does not
 	      introduce scalability issues in ICN?
+	    </t>
+	    
+	    <t>
+	      How will the name resolution process be affected by rapid 
+	      topological changes, when the content source itself is mobile?
 	    </t>
 	</list></t>
       </section>
