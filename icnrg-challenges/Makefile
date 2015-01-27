@@ -2,7 +2,7 @@ XML2RFC=./xml2rfc
 
 DRAFTTXT=draft-icnrg-challenges.txt
 SRC=draft-icnrg-challenges.xml
-CURRENTVERSION=draft-irtf-icnrg-challenges-00.txt
+CURRENTVERSION=draft-irtf-icnrg-challenges-01.txt
 
 all: $(DRAFTTXT)
 

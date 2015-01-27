@@ -42,7 +42,7 @@
 <!-- end of list of popular I-D processing instructions -->
 <?rfc comments="yes"?>
 <?rfc inline="yes"?>
-<rfc category="std" docName="draft-irtf-icnrg-challenges-00" ipr="trust200902"
+<rfc category="std" docName="draft-irtf-icnrg-challenges-01" ipr="trust200902"
      submissionType="independent">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
@@ -168,7 +168,7 @@
       </address>
     </author>
 
-    <date year="2014" month="September" day="01"/>
+    <date year="2015" month="January" day="27"/>
 
     <!-- If the month and year are both specified and are the current ones, xml2rfc will fill 
          in the current day for you. If only the current year is specified, xml2rfc will fill 
@@ -2152,7 +2152,8 @@
     <section title="Acknowledgments">
       <t>
 	The authors would like to thank Georgios Karagiannis for
-	providing suggestions on QoS research challenges.
+	providing suggestions on QoS research challenges and Dimitri
+	Papadimitriou for feedback on the routing section.
       </t>
     </section>
 
@@ -2160,6 +2161,12 @@
     <section title="Changes">
       <t>
 	<list style="hanging">
+	  <t hangText="draft-icnrg-challenges-01">
+	    <list style="symbols">
+	      <t>changes to the routing section based on comments by
+	      Dimitri Papadimitriou</t>
+	    </list>
+	  </t>
 	  <t hangText="draft-icnrg-challenges-00">
 	    <list style="symbols">
 	      <t>added paragraph on QoS to transport services section</t>

@@ -4,7 +4,7 @@
 Network Working Group                                   D. Kutscher, Ed.
 Internet-Draft                                                       NEC
 Intended status: Standards Track                                  S. Eum
-Expires: March 5, 2015                                              NICT
+Expires: July 31, 2015                                              NICT
                                                           K. Pentikousis
                                                                     EICT
                                                                I. Psaras
@@ -17,11 +17,11 @@ Expires: March 5, 2015                                              NICT
                                                              HAW HAmburg
                                                             M. Waehlisch
                                                                FU Berlin
-                                                      September 01, 2014
+                                                        January 27, 2015
 
 
                         ICN Research Challenges
-                     draft-irtf-icnrg-challenges-00
+                     draft-irtf-icnrg-challenges-01
 
 Abstract
 
@@ -52,16 +52,16 @@ Status of this Memo
 
 
 
-Kutscher, et al.          Expires March 5, 2015                 [Page 1]
+Kutscher, et al.          Expires July 31, 2015                 [Page 1]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
-   This Internet-Draft will expire on March 5, 2015.
+   This Internet-Draft will expire on July 31, 2015.
 
 Copyright Notice
 
-   Copyright (c) 2014 IETF Trust and the persons identified as the
+   Copyright (c) 2015 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -108,9 +108,9 @@ Copyright Notice
 
 
 
-Kutscher, et al.          Expires March 5, 2015                 [Page 2]
+Kutscher, et al.          Expires July 31, 2015                 [Page 2]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
 Table of Contents
@@ -164,9 +164,9 @@ Table of Contents
 
 
 
-Kutscher, et al.          Expires March 5, 2015                 [Page 3]
+Kutscher, et al.          Expires July 31, 2015                 [Page 3]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
 1.  Introduction
@@ -220,9 +220,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                 [Page 4]
+Kutscher, et al.          Expires July 31, 2015                 [Page 4]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    ICN concepts can be deployed by retooling the protocol stack: name-
@@ -276,9 +276,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                 [Page 5]
+Kutscher, et al.          Expires July 31, 2015                 [Page 5]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
       communication;
@@ -332,9 +332,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                 [Page 6]
+Kutscher, et al.          Expires July 31, 2015                 [Page 6]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    transmission in wireless networks to avoid duplicate transmission of
@@ -388,9 +388,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                 [Page 7]
+Kutscher, et al.          Expires July 31, 2015                 [Page 7]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    Because objects can be replicated, object transmission and transport
@@ -444,9 +444,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                 [Page 8]
+Kutscher, et al.          Expires July 31, 2015                 [Page 8]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    certifying" approach, meaning that the object's name-data integrity
@@ -500,9 +500,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                 [Page 9]
+Kutscher, et al.          Expires July 31, 2015                 [Page 9]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
       (and a way for requestors to learn about versions).
@@ -556,9 +556,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                [Page 10]
+Kutscher, et al.          Expires July 31, 2015                [Page 10]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    the publisher's public keys to the consumers of data objects.  There
@@ -612,9 +612,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                [Page 11]
+Kutscher, et al.          Expires July 31, 2015                [Page 11]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    access the data object.  However, this solution requires
@@ -668,9 +668,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                [Page 12]
+Kutscher, et al.          Expires July 31, 2015                [Page 12]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    procedures (e.g., on-path or off-path).
@@ -691,19 +691,17 @@ Internet-Draft               ICN Challenges               September 2014
 
 4.2.7.  Routing and forwarding information bases
 
-   Section 4.3 shows that routing and forwarding information bases are
-   subject to scalability issue when routing by name is used.  While the
-   system is designed it is not only important to ensure that it cannot
-   suffer from targeted attacks aiming at increasing routing and
-   forwarding information bases.  As the routing system is tightly bound
-   to the ICN solution itself, there is no universal way to avoid such
-   attacks.  However, a possible approache is to combine routing
-   information authenticity validation with filtering (e.g., maximum
-   deaggregation level whenever applicable, black lists, etc.).
+   In ICN networks, one attack vector is to increase the size of routing
+   and forwarding information bases at ICN nodes, i.e., attacking
+   routing scalability in networks that rely on routing by name.  This
+   is an intrinsic ICN security issue: possible mitigation approaches
+   include combining routing information authenticity validation with
+   filtering (e.g., maximum deaggregation level whenever applicable,
+   black lists, etc.).
 
 4.3.  Routing and Resolution System Scalability
 
-   ICN routing locates a data object based on its name which is
+   ICN routing is a process that finds a data object based on its name
    initially provided by a requestor.  ICN routing may comprise three
    steps: a name resolution step, a discovery step, and a delivery step.
    The name resolution step translates the name of the requested data
@@ -721,16 +719,16 @@ Internet-Draft               ICN Challenges               September 2014
    routing information for each data object has to be maintained in the
    routing table.  Since the number of data objects is very large
    (estimated as 10^11 back in 2007 [DONA] but this may be significantly
-
-
-
-Kutscher, et al.          Expires March 5, 2015                [Page 13]
-
-Internet-Draft               ICN Challenges               September 2014
-
-
    larger than that, e.g., 10^15 to 10^22), the size of routing tables
    becomes a concern, as it can be proportional to the number of data
+
+
+
+Kutscher, et al.          Expires July 31, 2015                [Page 13]
+
+Internet-Draft               ICN Challenges                 January 2015
+
+
    object unless an aggregation mechanism is introduced.  On the other
    hand, RBNR reduces overall latency and simplifies the routing process
    due to the omission of the resolution process.  For the delivery
@@ -776,17 +774,16 @@ Internet-Draft               ICN Challenges               September 2014
 
    o  How to build a scalable resolution system which provides
 
-
-
-
-
-Kutscher, et al.          Expires March 5, 2015                [Page 14]
-
-Internet-Draft               ICN Challenges               September 2014
-
-
       *  Fast lookup: mapping the name of data object to its locators
          (copies as well).
+
+
+
+
+Kutscher, et al.          Expires July 31, 2015                [Page 14]
+
+Internet-Draft               ICN Challenges                 January 2015
+
 
       *  Fast update: the location of data object is expected to change
          frequently.  Also, multiple data objects may change their
@@ -833,17 +830,17 @@ Internet-Draft               ICN Challenges               September 2014
    primary deployment environment.  Most, if not all, ICN proposals
    consider mobility from the very beginning, although at varying levels
    of architectural and protocol detail.  That said, no solution has so
-
-
-
-Kutscher, et al.          Expires March 5, 2015                [Page 15]
-
-Internet-Draft               ICN Challenges               September 2014
-
-
    far come forward with a definite answer on how to handle mobility in
    ICN using native primitives.  In fact, we observe that mobility
    appears to be addressed on ICN proposal specific basis.  That is,
+
+
+
+Kutscher, et al.          Expires July 31, 2015                [Page 15]
+
+Internet-Draft               ICN Challenges                 January 2015
+
+
    there is no single paradigm solution, akin to tunneling through a
    mobility anchor in host-centric networking, that can be applied
    across different ICN proposals.  For instance, although widely-
@@ -889,17 +886,17 @@ Internet-Draft               ICN Challenges               September 2014
    Another parameter that needs to be paid attention to is the impact of
    using different wireless access interfaces based on different
    technologies, where the performance and link conditions can vary
-
-
-
-Kutscher, et al.          Expires March 5, 2015                [Page 16]
-
-Internet-Draft               ICN Challenges               September 2014
-
-
    widely depending of numerous factors.
 
    In host-centric networking, mobility management mechanisms ensure
+
+
+
+Kutscher, et al.          Expires July 31, 2015                [Page 16]
+
+Internet-Draft               ICN Challenges                 January 2015
+
+
    optimal handovers and (ideally) seamless transition from one point of
    attachment to another.  In ICN, however, the traditional meaning of
    "point of attachment" no longer applies as communication is not
@@ -938,6 +935,9 @@ Internet-Draft               ICN Challenges               September 2014
    o  How do we ensure that managing mobility does not introduce
       scalability issues in ICN?
 
+   o  How will the name resolution process be affected by rapid
+      topological changes, when the content source itself is mobile?
+
 4.5.  Wireless Networking
 
    Today, all layer 2 wireless network radio access technologies (L2)
@@ -948,9 +948,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                [Page 17]
+Kutscher, et al.          Expires July 31, 2015                [Page 17]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    voice calls) vs. web access to online resources, how to support
@@ -1004,9 +1004,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                [Page 18]
+Kutscher, et al.          Expires July 31, 2015                [Page 18]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    not the critical factor in this example.  The actual information
@@ -1060,9 +1060,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                [Page 19]
+Kutscher, et al.          Expires July 31, 2015                [Page 19]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    o  What are the benefits from combining ICN with network coding in
@@ -1116,9 +1116,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                [Page 20]
+Kutscher, et al.          Expires July 31, 2015                [Page 20]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    end-to-end communication path, e.g., a router that receives two
@@ -1172,9 +1172,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                [Page 21]
+Kutscher, et al.          Expires July 31, 2015                [Page 21]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    therefore, is closely related to the Request-to-Cache Routing problem
@@ -1228,9 +1228,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                [Page 22]
+Kutscher, et al.          Expires July 31, 2015                [Page 22]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    elements results in redundant copies of the same objects.  The issue
@@ -1284,9 +1284,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                [Page 23]
+Kutscher, et al.          Expires July 31, 2015                [Page 23]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    be exploited in order to build a scalable model.
@@ -1340,9 +1340,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                [Page 24]
+Kutscher, et al.          Expires July 31, 2015                [Page 24]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    available much later than the original introduction of IP and many
@@ -1396,9 +1396,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                [Page 25]
+Kutscher, et al.          Expires July 31, 2015                [Page 25]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    and capabilities to support management operations go beyond a simple
@@ -1452,9 +1452,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                [Page 26]
+Kutscher, et al.          Expires July 31, 2015                [Page 26]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
 5.  Security Considerations
@@ -1508,9 +1508,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                [Page 27]
+Kutscher, et al.          Expires July 31, 2015                [Page 27]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
               Networking (ICN), 2011.
@@ -1564,9 +1564,9 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-Kutscher, et al.          Expires March 5, 2015                [Page 28]
+Kutscher, et al.          Expires July 31, 2015                [Page 28]
 
-Internet-Draft               ICN Challenges               September 2014
+Internet-Draft               ICN Challenges                 January 2015
 
 
    [SEEN]     Pentikousis, K., "In search of energy-efficient mobile
@@ -1590,16 +1590,39 @@ Internet-Draft               ICN Challenges               September 2014
 Appendix A.  Acknowledgments
 
    The authors would like to thank Georgios Karagiannis for providing
-   suggestions on QoS research challenges.
+   suggestions on QoS research challenges and Dimitri Papadimitriou for
+   feedback on the routing section.
 
 
 Appendix B.  Changes
+
+   draft-icnrg-challenges-01
+
+      *  changes to the routing section based on comments by Dimitri
+         Papadimitriou
 
    draft-icnrg-challenges-00
 
       *  added paragraph on QoS to transport services section
 
       *  rewrote text 4.7.4 (Staleness Detection of Cached NDOs)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kutscher, et al.          Expires July 31, 2015                [Page 29]
+
+Internet-Draft               ICN Challenges                 January 2015
 
 
 Authors' Addresses
@@ -1612,17 +1635,6 @@ Authors' Addresses
 
    Phone:
    Email: kutscher@neclab.eu
-
-
-
-
-
-
-
-
-Kutscher, et al.          Expires March 5, 2015                [Page 29]
-
-Internet-Draft               ICN Challenges               September 2014
 
 
    Suyong Eum
@@ -1662,6 +1674,13 @@ Internet-Draft               ICN Challenges               September 2014
    Email: dcorujo@av.it.pt
 
 
+
+
+Kutscher, et al.          Expires July 31, 2015                [Page 30]
+
+Internet-Draft               ICN Challenges                 January 2015
+
+
    Damien Saucez
    INRIA
    2004 route des Lucioles - BP 93
@@ -1669,16 +1688,6 @@ Internet-Draft               ICN Challenges               September 2014
    France
 
    Email: damien.saucez@inria.fr
-
-
-
-
-
-
-
-Kutscher, et al.          Expires March 5, 2015                [Page 30]
-
-Internet-Draft               ICN Challenges               September 2014
 
 
    Thomas C. Schmidt
@@ -1723,14 +1732,5 @@ Internet-Draft               ICN Challenges               September 2014
 
 
 
-
-
-
-
-
-
-
-
-
-Kutscher, et al.          Expires March 5, 2015                [Page 31]
+Kutscher, et al.          Expires July 31, 2015                [Page 31]
 
