@@ -232,7 +232,7 @@ Internet-Draft               ICN Challenges                 January 2015
    packet-level internetworking technology that would cause fundamental
    changes to Internet routing and forwarding.  In summary, ICN is
    expected to evolve the Internet architecture towards a network model
-   that is more suitable for the current and future use patterns.
+   that is more suitable for the current and future usage patterns.
 
    This document presents the ICN research challenges that need to be
    addressed in order to achieve these goals.  These research challenges
@@ -301,7 +301,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 3.1.  Terminology
 
-   Information-Centric Networking (ICN)  A concept for communicating in
+   Information-Centric Networking (ICN):  A concept for communicating in
       a network that provides accessing named data objects as a first
       order service.  See Section 3.2 for details.
 

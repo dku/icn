@@ -281,7 +281,7 @@
 	technology that would cause fundamental changes to Internet
 	routing and forwarding. In summary, ICN is expected to evolve
 	the Internet architecture towards a network model that is more
-	suitable for the current and future use patterns.
+	suitable for the current and future usage patterns.
       </t>
       <t>
 	This document presents the ICN research challenges that need
@@ -397,7 +397,7 @@
 	    document.
 -->
 	    <list style="hanging">
-	      <t hangText="Information-Centric Networking (ICN)">
+	      <t hangText="Information-Centric Networking (ICN):">
 		A concept for communicating in a network that provides
 		accessing named data objects as a first order
 		service. See <xref target="sec.concepts"/> for
