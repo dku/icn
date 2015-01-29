@@ -12,6 +12,10 @@
 <!ENTITY RFC6920 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6920.xml">
 
 <!ENTITY I-D.ni-params SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.hallambaker-decade-ni-params.xml">
+
+<!ENTITY I-D.icnrg-scenarios SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.draft-irtf-icnrg-scenarios-03.xml">
+
+
 <!ENTITY RFC5280 PUBLIC ''
 'http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5280.xml'>
 ]>
@@ -168,7 +172,7 @@
       </address>
     </author>
 
-    <date year="2015" month="January" day="27"/>
+    <date year="2015" month="January" day="29"/>
 
     <!-- If the month and year are both specified and are the current ones, xml2rfc will fill 
          in the current day for you. If only the current year is specified, xml2rfc will fill 
@@ -1868,6 +1872,65 @@
 	  </list>
 	</t>
       </section>
+
+      <section title="Application Development">
+	<t>
+	  ICN can be applied to different application domains and is
+	  expected to provide benefits for application developers by
+	  providing a more suitable interface for application
+	  developers (in addition to the other ICN benefits described
+	  above). <xref target="I-D.irtf-icnrg-scenarios"/> provides
+	  an overview of relevant application domains at large. This
+	  section discusses opportunities and challenges for selected
+	  application types.
+	</t>
+	<section title="Web Applications">
+	  <t>
+	    Intuitively the ICN request/response communication style
+	    seems to be directly mappable to web communication
+	    (HTTP). NDO names could be the equivalent of URIs in
+	    today's web, proprietary and transparent caching could be
+	    obsoleted by ICN in-network caching, and developers could
+	    directly use an ICN request/response API to build
+	    applications.
+	  </t>
+	  <t>
+	    Research effort such as <xref target="icn2014-web-ndn"/>
+	    have analzed real-world web applications and ways to
+	    implement them in ICN. The most significant insight is
+	    that, REST-style web communication heavily relies on
+	    transmitting user/application context information in HTTP
+	    GET requests, which would have to be mapped to
+	    corresponding ICN messages. The challenge in ICN would be
+	    how to exactly achieve that mapping -- this could be done
+	    to some extent by extending name formats or by extending
+	    message structure to include cookies and similar context
+	    information. The design decisions would need to consider
+	    overhead in routers (if larger GET/Interest messages would
+	    have to be stored in corresponding tables on routers, for
+	    exampe).
+	  </t>
+	  <t>
+	    Other challenges include the ability to return different
+	    results based on client-specific processing in the
+	    presence on immutable objects (and name-object bindings)
+	    in ICN and the ability for efficient bidirectional
+	    communication, which would require some mechanism to name
+	    and reach client applications.
+	  </t>
+	</section>
+	<section title="Video Streaming and Download">
+	  <t>
+	  </t>
+	</section>
+	<section title="Internet of Things">
+	  <t>
+	    stack size, communication overhead, potentially required gateway architecture
+	  </t>
+	</section>
+
+      </section>
+      
     </section>
 
     <section title="Security Considerations">
@@ -2147,6 +2210,27 @@
 	  </front>
 	  <seriesInfo name="IEEE INFOCOM Workshop on Name-Oriented Mobility" value="Toronto, Canada, 2014"/>
 	</reference>
+
+
+	<reference anchor="icn2014-web-ndn">
+	  <front>
+	    <title>
+	      Communication Patterns for Web Interaction in Named Data
+	      Networking
+	    </title>
+	    <author initials="I." surname="Moiseenko"/>
+	    <author initials="M." surname="Stapp"/>
+	    <author initials="D." surname="Oran"/>
+	    <date month="September" year="2014"/>
+	  </front>
+	  <seriesInfo name="ACM SIGCOMM Information-Centric Networking Conference" value="Paris, France, 2014"/>
+
+	</reference>
+
+
+	&I-D.icnrg-scenarios;
+
+	
       </references>
 
     <section title="Acknowledgments">
