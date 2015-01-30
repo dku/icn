@@ -4,7 +4,7 @@
 Network Working Group                                   D. Kutscher, Ed.
 Internet-Draft                                                       NEC
 Intended status: Standards Track                                  S. Eum
-Expires: August 2, 2015                                             NICT
+Expires: August 3, 2015                                             NICT
                                                           K. Pentikousis
                                                                     EICT
                                                                I. Psaras
@@ -17,7 +17,7 @@ Expires: August 2, 2015                                             NICT
                                                              HAW HAmburg
                                                             M. Waehlisch
                                                                FU Berlin
-                                                        January 29, 2015
+                                                        January 30, 2015
 
 
                         ICN Research Challenges
@@ -52,12 +52,12 @@ Status of this Memo
 
 
 
-Kutscher, et al.         Expires August 2, 2015                 [Page 1]
+Kutscher, et al.         Expires August 3, 2015                 [Page 1]
 
 Internet-Draft               ICN Challenges                 January 2015
 
 
-   This Internet-Draft will expire on August 2, 2015.
+   This Internet-Draft will expire on August 3, 2015.
 
 Copyright Notice
 
@@ -108,7 +108,7 @@ Copyright Notice
 
 
 
-Kutscher, et al.         Expires August 2, 2015                 [Page 2]
+Kutscher, et al.         Expires August 3, 2015                 [Page 2]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -146,12 +146,12 @@ Table of Contents
      4.9.  Application Development  . . . . . . . . . . . . . . . . . 27
        4.9.1.  Web Applications . . . . . . . . . . . . . . . . . . . 27
        4.9.2.  Video Streaming and Download . . . . . . . . . . . . . 27
-       4.9.3.  Internet of Things . . . . . . . . . . . . . . . . . . 27
-   5.  Security Considerations  . . . . . . . . . . . . . . . . . . . 27
-   6.  Informative References . . . . . . . . . . . . . . . . . . . . 28
-   Appendix A.  Acknowledgments . . . . . . . . . . . . . . . . . . . 30
-   Appendix B.  Changes . . . . . . . . . . . . . . . . . . . . . . . 30
-   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 31
+       4.9.3.  Internet of Things . . . . . . . . . . . . . . . . . . 28
+   5.  Security Considerations  . . . . . . . . . . . . . . . . . . . 28
+   6.  Informative References . . . . . . . . . . . . . . . . . . . . 29
+   Appendix A.  Acknowledgments . . . . . . . . . . . . . . . . . . . 32
+   Appendix B.  Changes . . . . . . . . . . . . . . . . . . . . . . . 32
+   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 32
 
 
 
@@ -164,7 +164,7 @@ Table of Contents
 
 
 
-Kutscher, et al.         Expires August 2, 2015                 [Page 3]
+Kutscher, et al.         Expires August 3, 2015                 [Page 3]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -220,7 +220,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                 [Page 4]
+Kutscher, et al.         Expires August 3, 2015                 [Page 4]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -276,7 +276,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                 [Page 5]
+Kutscher, et al.         Expires August 3, 2015                 [Page 5]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -332,7 +332,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                 [Page 6]
+Kutscher, et al.         Expires August 3, 2015                 [Page 6]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -388,7 +388,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                 [Page 7]
+Kutscher, et al.         Expires August 3, 2015                 [Page 7]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -444,7 +444,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                 [Page 8]
+Kutscher, et al.         Expires August 3, 2015                 [Page 8]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -500,7 +500,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                 [Page 9]
+Kutscher, et al.         Expires August 3, 2015                 [Page 9]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -556,7 +556,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 10]
+Kutscher, et al.         Expires August 3, 2015                [Page 10]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -612,7 +612,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 11]
+Kutscher, et al.         Expires August 3, 2015                [Page 11]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -668,7 +668,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 12]
+Kutscher, et al.         Expires August 3, 2015                [Page 12]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -724,7 +724,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 13]
+Kutscher, et al.         Expires August 3, 2015                [Page 13]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -780,7 +780,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 14]
+Kutscher, et al.         Expires August 3, 2015                [Page 14]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -836,7 +836,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 15]
+Kutscher, et al.         Expires August 3, 2015                [Page 15]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -892,7 +892,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 16]
+Kutscher, et al.         Expires August 3, 2015                [Page 16]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -948,7 +948,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 17]
+Kutscher, et al.         Expires August 3, 2015                [Page 17]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -1004,7 +1004,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 18]
+Kutscher, et al.         Expires August 3, 2015                [Page 18]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -1060,7 +1060,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 19]
+Kutscher, et al.         Expires August 3, 2015                [Page 19]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -1116,7 +1116,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 20]
+Kutscher, et al.         Expires August 3, 2015                [Page 20]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -1172,7 +1172,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 21]
+Kutscher, et al.         Expires August 3, 2015                [Page 21]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -1228,7 +1228,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 22]
+Kutscher, et al.         Expires August 3, 2015                [Page 22]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -1284,7 +1284,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 23]
+Kutscher, et al.         Expires August 3, 2015                [Page 23]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -1340,7 +1340,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 24]
+Kutscher, et al.         Expires August 3, 2015                [Page 24]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -1396,7 +1396,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 25]
+Kutscher, et al.         Expires August 3, 2015                [Page 25]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -1452,7 +1452,7 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 26]
+Kutscher, et al.         Expires August 3, 2015                [Page 26]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -1495,10 +1495,64 @@ Internet-Draft               ICN Challenges                 January 2015
 
 4.9.2.  Video Streaming and Download
 
+   One of ICN's prime application area is video streaming and download
+   where accessing named data, object-level security and in-network
+   storage can fulfill requirements for both video streaming and
+   download.  The applicability and benefits of ICN to video has been
+   demonstrated by several prototype developments
+   [icn2014-ahlgren-video-demo].
+
+   [I-D.irtf-icnrg-videostreaming] discusses the opportunities and
+   challenges for implementing todays' video services such as DASH-based
+   streaming and download over ICN, considering performance
+
+
+
+Kutscher, et al.         Expires August 3, 2015                [Page 27]
+
+Internet-Draft               ICN Challenges                 January 2015
+
+
+   requirements, relationship to Peer-to-Peer live streaming, IPTV and
+   DRM.
+
+   In addition to just porting today's video application from HTTP to
+   ICN there are also promising opportunities to leverage the ICN
+   network services for redesigning and thus significantly enhancing
+   video access and distribution [icnrg-2015-01-westphal].  For example,
+   ICN's store and forward capability could be leveraged for rate
+   adaptation to achieve maximum throughput and optimal QoE in scenarios
+   with varying link properties, if capacity information is fed back to
+   rate selection algorithms at senders.  Other optimizations such as
+   more aggressive pre-fetching could be performed in the network by
+   leveraging visibility of chunk NDO names and NDO meta data in the
+   network.  Moreover, multi-source rate adaption in combination with
+   network coding could enable better quality of experience, for example
+   in multi-interface/access scenarios where multiple paths from client
+   to upstream caches exist.
+
 4.9.3.  Internet of Things
 
-   stack size, communication overhead, potentially required gateway
-   architecture
+   The essence of ICN lies in the name based routing that enables users
+   to retrieve NDOs by the names regardless of their locations.  By the
+   definition, ICN is suitable well for IoT applications, where users
+   consume data generated from IoTs without maintaining secure
+   connections to them.  The basic put/get style APIs of ICN enable
+   developers to build IoT applications in a simple and fast manner.
+
+   On-going efforts such as [I-D.lindgren-icnrg-efficientiot],
+   [I-D.zhang-iot-icn-challenges] have addressed the requirements and
+   challenges of ICN for IoT.  For instance, many IoT applications
+   depend on a PUSH model where data transmission is initiated by the
+   publisher, and so they can support various real-time applications:
+   emergency alarm, etc.  However, ICN does not support the PUSH model
+   in a native manner due to its inherent receiver-driven data
+   transmission mechanism.  The challenge would be how to efficiently
+   support the PUSH model in ICN, and so it provides publish/subscribe
+   style APIs for IoT application developers.  This could be done by
+   introducing other types of identifiers such as a device identifier or
+   by extending the current request/response communication style, which
+   may result in heavy overhead in ICN routers.
 
 
 5.  Security Considerations
@@ -1508,7 +1562,9 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 27]
+
+
+Kutscher, et al.         Expires August 3, 2015                [Page 28]
 
 Internet-Draft               ICN Challenges                 January 2015
 
@@ -1558,17 +1614,38 @@ Internet-Draft               ICN Challenges                 January 2015
               draft-irtf-icnrg-scenarios-03 (work in progress),
               August 2014.
 
-   [ICNNAMING]
-              Ghodsi, A., Koponen, T., Rajahalme, J., Sarolahti, P., and
-              S. Shenker, "Naming in Content-Oriented Architectures",
+   [I-D.irtf-icnrg-videostreaming]
+              Lederer, S., cedric.westphal@huawei.com, c., Mueller, C.,
+              Detti, A., Corujo, D., aytav.azgin, a., Posch, D., and C.
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 28]
+Kutscher, et al.         Expires August 3, 2015                [Page 29]
 
 Internet-Draft               ICN Challenges                 January 2015
 
 
+              Timmerer, "Adaptive Video Streaming over ICN",
+              draft-irtf-icnrg-videostreaming-02 (work in progress),
+              November 2014.
+
+   [I-D.lindgren-icnrg-efficientiot]
+              Lindgren, A., Abdesslem, F., Ahlgren, B., Schelen, O., and
+              A. Malik, "Applicability and Tradeoffs of Information-
+              Centric Networking for Efficient IoT",
+              draft-lindgren-icnrg-efficientiot-02 (work in progress),
+              January 2015.
+
+   [I-D.zhang-iot-icn-challenges]
+              Zhang, Y., Raychadhuri, D., Grieco, L., Baccelli, E.,
+              Burke, J., Ravindran, R., and G. Wang, "ICN based
+              Architecture for IoT - Requirements and Challenges",
+              draft-zhang-iot-icn-challenges-01 (work in progress),
+              December 2014.
+
+   [ICNNAMING]
+              Ghodsi, A., Koponen, T., Rajahalme, J., Sarolahti, P., and
+              S. Shenker, "Naming in Content-Oriented Architectures",
               In Proceedings ACM SIGCOMM Workshop on Information-Centric
               Networking (ICN), 2011.
 
@@ -1597,6 +1674,13 @@ Internet-Draft               ICN Challenges                 January 2015
               Further: From PSIRP to PURSUIT", In Proceedings of Proc.
               BROADNETS.  ICST, 2010.
 
+
+
+Kutscher, et al.         Expires August 3, 2015                [Page 30]
+
+Internet-Draft               ICN Challenges                 January 2015
+
+
    [RANDOM]   Gkantsidis, C., Mihail, M., and A. Saberi, "Random walks
               in peer-to-peer networks: algorithms and evaluation",
               In Perform. Eval., vol. 63, pp. 241--263, 2006.
@@ -1617,14 +1701,6 @@ Internet-Draft               ICN Challenges                 January 2015
 
    [RFC6920]  Farrell, S., Kutscher, D., Dannewitz, C., Ohlman, B.,
               Keranen, A., and P. Hallam-Baker, "Naming Things with
-
-
-
-Kutscher, et al.         Expires August 2, 2015                [Page 29]
-
-Internet-Draft               ICN Challenges                 January 2015
-
-
               Hashes", RFC 6920, April 2013.
 
    [SEEN]     Pentikousis, K., "In search of energy-efficient mobile
@@ -1644,11 +1720,31 @@ Internet-Draft               ICN Challenges                 January 2015
               Networking", IEEE INFOCOM Workshop on Name-Oriented
               Mobility Toronto, Canada, 2014, May 2014.
 
+   [icn2014-ahlgren-video-demo]
+              Ahlgren, B., Jonasson, A., and B. Ohlman, "Demo Overview:
+              HTTP Live Streaming over NetInf Transport", ACM SIGCOMM
+              Information-Centric Networking Conference Paris, France,
+              2014, September 2014.
+
    [icn2014-web-ndn]
               Moiseenko, I., Stapp, M., and D. Oran, "Communication
               Patterns for Web Interaction in Named Data Networking",
+
+
+
+Kutscher, et al.         Expires August 3, 2015                [Page 31]
+
+Internet-Draft               ICN Challenges                 January 2015
+
+
               ACM SIGCOMM Information-Centric Networking
               Conference Paris, France, 2014, September 2014.
+
+   [icnrg-2015-01-westphal]
+              Westphal, C., "Video over ICN", IRTF ICNRG
+              Meeting Cambridge, Massachusetts, USA, 2015, URI http://
+              www.ietf.org/proceedings/interim/2015/01/13/icnrg/slides/
+              slides-interim-2015-icnrg-1-0.pptx, January 2015.
 
 
 Appendix A.  Acknowledgments
@@ -1672,15 +1768,6 @@ Appendix B.  Changes
       *  rewrote text 4.7.4 (Staleness Detection of Cached NDOs)
 
 
-
-
-
-
-Kutscher, et al.         Expires August 2, 2015                [Page 30]
-
-Internet-Draft               ICN Challenges                 January 2015
-
-
 Authors' Addresses
 
    Dirk Kutscher (editor)
@@ -1691,6 +1778,19 @@ Authors' Addresses
 
    Phone:
    Email: kutscher@neclab.eu
+
+
+
+
+
+
+
+
+
+
+Kutscher, et al.         Expires August 3, 2015                [Page 32]
+
+Internet-Draft               ICN Challenges                 January 2015
 
 
    Suyong Eum
@@ -1730,13 +1830,6 @@ Authors' Addresses
    Email: dcorujo@av.it.pt
 
 
-
-
-Kutscher, et al.         Expires August 2, 2015                [Page 31]
-
-Internet-Draft               ICN Challenges                 January 2015
-
-
    Damien Saucez
    INRIA
    2004 route des Lucioles - BP 93
@@ -1744,6 +1837,16 @@ Internet-Draft               ICN Challenges                 January 2015
    France
 
    Email: damien.saucez@inria.fr
+
+
+
+
+
+
+
+Kutscher, et al.         Expires August 3, 2015                [Page 33]
+
+Internet-Draft               ICN Challenges                 January 2015
 
 
    Thomas C. Schmidt
@@ -1788,5 +1891,14 @@ Internet-Draft               ICN Challenges                 January 2015
 
 
 
-Kutscher, et al.         Expires August 2, 2015                [Page 32]
+
+
+
+
+
+
+
+
+
+Kutscher, et al.         Expires August 3, 2015                [Page 34]
 

@@ -15,6 +15,19 @@
 
 <!ENTITY I-D.icnrg-scenarios SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.draft-irtf-icnrg-scenarios-03.xml">
 
+<!ENTITY I-D.lindgren-icnrg-efficientiot SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.draft-lindgren-icnrg-efficientiot-02.xml">
+
+
+<!ENTITY I-D.zhang-iot-icn-challenges SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.draft-zhang-iot-icn-challenges-01.xml">
+
+
+<!ENTITY I-D.irtf-icnrg-videostreaming SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.draft-irtf-icnrg-videostreaming-02.xml">
+
+
+
+
+
+
 
 <!ENTITY RFC5280 PUBLIC ''
 'http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5280.xml'>
@@ -172,7 +185,7 @@
       </address>
     </author>
 
-    <date year="2015" month="January" day="29"/>
+    <date year="2015" month="January" day="30"/>
 
     <!-- If the month and year are both specified and are the current ones, xml2rfc will fill 
          in the current day for you. If only the current year is specified, xml2rfc will fill 
@@ -1921,11 +1934,69 @@
 	</section>
 	<section title="Video Streaming and Download">
 	  <t>
+	    One of ICN's prime application area is video streaming and
+	    download where accessing named data, object-level security
+	    and in-network storage can fulfill requirements for both
+	    video streaming and download. The applicability and
+	    benefits of ICN to video has been demonstrated by several
+	    prototype developments <xref target="icn2014-ahlgren-video-demo"/>.
+	  </t>
+	  <t>
+	    <xref
+	    target="I-D.irtf-icnrg-videostreaming"/> discusses the
+	    opportunities and challenges for implementing todays'
+	    video services such as DASH-based streaming and download
+	    over ICN, considering performance requirements,
+	    relationship to Peer-to-Peer live streaming, IPTV and DRM.
+	  </t>
+	  <t>
+	    In addition to just porting today's video application from
+	    HTTP to ICN there are also promising opportunities to
+	    leverage the ICN network services for redesigning and thus
+	    significantly enhancing video access and distribution
+	    <xref target="icnrg-2015-01-westphal"/>. For example,
+	    ICN's store and forward capability could be leveraged for
+	    rate adaptation to achieve maximum throughput and optimal
+	    QoE in scenarios with varying link properties, if capacity
+	    information is fed back to rate selection algorithms at
+	    senders. Other optimizations such as more aggressive
+	    pre-fetching could be performed in the network by
+	    leveraging visibility of chunk NDO names and NDO meta data
+	    in the network. Moreover, multi-source rate adaption in
+	    combination with network coding could enable better
+	    quality of experience, for example in
+	    multi-interface/access scenarios where multiple paths from
+	    client to upstream caches exist.
 	  </t>
 	</section>
 	<section title="Internet of Things">
 	  <t>
-	    stack size, communication overhead, potentially required gateway architecture
+	    The essence of ICN lies in the name based routing that
+	    enables users to retrieve NDOs by the names regardless of
+	    their locations. By the definition, ICN is suitable well
+	    for IoT applications, where users consume data generated
+	    from IoTs without maintaining secure connections to
+	    them. The basic put/get style APIs of ICN enable
+	    developers to build IoT applications in a simple and fast
+	    manner.
+	  </t>
+	  <t>
+	    On-going efforts such as <xref
+	    target="I-D.lindgren-icnrg-efficientiot"/>, <xref
+	    target="I-D.zhang-iot-icn-challenges"/> have addressed the
+	    requirements and challenges of ICN for IoT. For instance,
+	    many IoT applications depend on a PUSH model where data
+	    transmission is initiated by the publisher, and so they
+	    can support various real-time applications: emergency
+	    alarm, etc. However, ICN does not support the PUSH model
+	    in a native manner due to its inherent receiver-driven
+	    data transmission mechanism. The challenge would be how to
+	    efficiently support the PUSH model in ICN, and so it
+	    provides publish/subscribe style APIs for IoT application
+	    developers. This could be done by introducing other types
+	    of identifiers such as a device identifier or by extending
+	    the current request/response communication style, which
+	    may result in heavy overhead in ICN routers.
 	  </t>
 	</section>
 
@@ -2228,8 +2299,44 @@
 	</reference>
 
 
+	<reference anchor="icn2014-ahlgren-video-demo">
+	  <front>
+	    <title>
+	      Demo Overview: HTTP Live Streaming over NetInf Transport
+	    </title>
+	    <author initials="B." surname="Ahlgren"/>
+	    <author initials="A." surname="Jonasson"/>
+	    <author initials="B." surname="Ohlman"/>
+	    <date month="September" year="2014"/>
+	  </front>
+	  <seriesInfo name="ACM SIGCOMM Information-Centric Networking Conference" value="Paris, France, 2014"/>
+
+	</reference>
+
+	
+	<reference anchor="icnrg-2015-01-westphal">
+	  <front>
+	    <title>
+	      Video over ICN
+	    </title>
+	    <author initials="C." surname="Westphal"/>
+	    <date month="January" year="2015"/>
+	  </front>
+	  <seriesInfo name="IRTF ICNRG Meeting" value="Cambridge, Massachusetts, USA, 2015"/>
+	  <seriesInfo name="URI" value="http://www.ietf.org/proceedings/interim/2015/01/13/icnrg/slides/slides-interim-2015-icnrg-1-0.pptx"/>
+	</reference>
+
+
+
+	
+
 	&I-D.icnrg-scenarios;
 
+	&I-D.lindgren-icnrg-efficientiot;
+
+	&I-D.zhang-iot-icn-challenges;
+
+	&I-D.irtf-icnrg-videostreaming;
 	
       </references>
 
