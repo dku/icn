@@ -1761,6 +1761,8 @@ Appendix B.  Changes
       *  changes to the routing section based on comments by Dimitri
          Papadimitriou
 
+      *  Added new section on Application Development (4.9)
+
    draft-icnrg-challenges-00
 
       *  added paragraph on QoS to transport services section
@@ -1778,8 +1780,6 @@ Authors' Addresses
 
    Phone:
    Email: kutscher@neclab.eu
-
-
 
 
 
