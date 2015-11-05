@@ -41,7 +41,7 @@
 <!-- end of list of popular I-D processing instructions -->
 <?rfc comments="yes"?>
 <?rfc inline="yes"?>
-<rfc category="std" docName="draft-irtf-icnrg-challenges-01" ipr="trust200902"
+<rfc category="std" docName="draft-irtf-icnrg-challenges-03" ipr="trust200902"
      submissionType="independent">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
@@ -324,15 +324,15 @@
     <section title="Problems with Information Distribution Today">
       <t>The best current practice to manage the above-mentioned growth in
       terms of data volume and number of devices is to increase infrastructure
-      investment, employ application-layer overlays such as CDNs, P2P
-      applications, and M2M application platforms that cache content, provide
+      investment, employ application-layer overlays that cache content such as CDNs and P2P
+      applications, provide
       location-independent access to data, and optimize its delivery. In
       principle, such platforms provide a service model of accessing named
-      data objects (NDOs) (e.g., replicated web resources, M2M data in data
+      data objects (NDOs) (e.g., replicated web resources in data
       centers) instead of a host-to-host packet delivery service model.</t>
 
       <t>However, since this functionality resides in overlays only, the full
-      potential of content distribution and M2M application platforms cannot
+      potential of content distribution platforms cannot
       be leveraged as the network is not aware of data requests and data
       transmissions. This has the following impact: <list style="symbols">
           <t>data traffic typically follows sub-optimal paths as it is
@@ -1342,8 +1342,8 @@
 
           <t>In call cases, however, the driver for the implementation,
           deployment and operation of in-network caches will be its cost.
-          Operating caches at line speed inevitably requires faster memories,
-          which increase the implementation cost. Based on the capital to be
+          Operating caches at line speed inevitably requires faster memory,
+          which increases the implementation cost. Based on the capital to be
           invested, ISPs will need to make strategic decisions on the cache
           placement, which can be driven by several factors, such as: avoid
           inter-domain/expensive links, centrality of nodes, size of domain
