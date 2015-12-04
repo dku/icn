@@ -124,7 +124,7 @@ Internet-Draft               ICN Challenges                December 2015
        4.10.2.  Video Streaming and Download . . . . . . . . . . . .  28
    5.  Security Considerations . . . . . . . . . . . . . . . . . . .  28
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  28
-   7.  Informative References  . . . . . . . . . . . . . . . . . . .  29
+   7.  Informative References  . . . . . . . . . . . . . . . . . . .  28
    Appendix A.  Acknowledgments  . . . . . . . . . . . . . . . . . .  32
    Appendix B.  Changes  . . . . . . . . . . . . . . . . . . . . . .  32
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  33
@@ -1054,10 +1054,10 @@ Internet-Draft               ICN Challenges                December 2015
    sources (or next hops) in a suitable schedule for a series of
    requests.
 
-   In this model, the requestor would control the data rate by first
+   In this model, the requestor would control the data rate by
    regulating its request sending rate and next by performing source/
-   next-hop selections.  Challenges depend on the specific ICN approach,
-   but overall challenges for receiver-driven transport protocols (or
+   next-hop selections.  Specific challenges depend on the specific ICN
+   approach, but general challenges for receiver-driven transport
 
 
 
@@ -1066,10 +1066,11 @@ Kutscher, et al.          Expires June 6, 2016                 [Page 19]
 Internet-Draft               ICN Challenges                December 2015
 
 
-   mechanisms, since dedicated protocols might not be required) include
-   flow and congestion control, fairness, network utilization, stability
-   (of data rates under stable conditions) an so on.  [HRICP] describes
-   a request rate control protocol and corresponding design challenges.
+   protocols (or mechanisms, since dedicated protocols might not be
+   required) include flow and congestion control, fairness, network
+   utilization, stability (of data rates under stable conditions) etc.
+   [HRICP] and [ConTug] describe request rate control protocols and
+   corresponding design challenges.
 
    As mentioned above, the ICN communication paradigm does not depend
    strictly on end-to-end flows, as contents might be received from in-
@@ -1098,21 +1099,20 @@ Internet-Draft               ICN Challenges                December 2015
    to its neighbour.  The aggregation of requests has a general impact
    on transport protocol design.
 
-   Achieving rate fairness for requestors can be one challenge as it is
-   not possible to identify the number of requestors behind one
-   particular request.  A second problem related to request aggregation
-   is the management of request retransmissions.  Generally, it is
-   assumed that a router will not transmit a request if it transmitted
-   an identical request recently and because there is no information
-   about the requestor, the router cannot distinguish the initial
-   request from a retransmission from the same client.  In such a
-   situation, how can routers adapt their timers to use the best of the
-   communication paths?  Finally, aggregation of requests has an impact
-   on the server (publisher) side.  The publisher has no way to
-   determine the number of clients actually consuming the content it is
-   producing.  This shift of model influences the business model of the
-   server, e.g., how to implement pay-per-click, as discussed earlier in
-   Section 4.1.
+   Achieving fairness for requestors can be one challenge as it is not
+   possible to identify the number of requestors behind one particular
+   request.  A second problem related to request aggregation is the
+   management of request retransmissions.  Generally, it is assumed that
+   a router will not transmit a request if it transmitted an identical
+   request recently and because there is no information about the
+   requestor, the router cannot distinguish the initial request from a
+   client from a retransmission from the same client.  In such a
+   situation, how routers can adapt their timers to use the best of the
+   communication paths.
+
+
+
+
 
 
 
@@ -1121,14 +1121,6 @@ Kutscher, et al.          Expires June 6, 2016                 [Page 20]
 
 Internet-Draft               ICN Challenges                December 2015
 
-
-   NDOs can represent content used in different types of applications
-   with different QoS requirements, for example, interactive real-time
-   applications, media streaming, file download.  Each of these
-   applications imposes different QoS requirements on different elements
-   in an information-centric network, e.g., regarding cache placement,
-   request-to-cache/source routing.  Achieving the necessary QoS levels
-   in a shared network is an active ICN research topic.
 
 4.7.  In-Network Caching
 
@@ -1171,13 +1163,6 @@ Internet-Draft               ICN Challenges                December 2015
    both the Content Placement Problem and the Request-to-Cache Routing
    Problem discussed below.
 
-
-
-Kutscher, et al.          Expires June 6, 2016                 [Page 21]
-
-Internet-Draft               ICN Challenges                December 2015
-
-
    In most cases, however, the driver for the implementation, deployment
    and operation of in-network caches will be its cost.  Operating
    caches at line speed inevitably requires faster memory, which
@@ -1185,6 +1170,14 @@ Internet-Draft               ICN Challenges                December 2015
    invested, ISPs will need to make strategic decisions on the cache
    placement, which can be driven by several factors, such as: avoid
    inter-domain/expensive links, centrality of nodes, size of domain and
+
+
+
+Kutscher, et al.          Expires June 6, 2016                 [Page 21]
+
+Internet-Draft               ICN Challenges                December 2015
+
+
    the corresponding spatial locality of users, traffic patterns in a
    specific part of the network (e.g., university vs. business vs.
    fashion district of a city).
@@ -1226,6 +1219,13 @@ Internet-Draft               ICN Challenges                December 2015
    contents should be given priority in in-network content caches relate
    also to the business relationships between content providers and
    network operators.  Business model issues will drive some of these
+   decisions on content-to-cache distribution, but such issues are
+   outside the scope of this note and are not discussed here further.
+
+
+
+
+
 
 
 
@@ -1233,9 +1233,6 @@ Kutscher, et al.          Expires June 6, 2016                 [Page 22]
 
 Internet-Draft               ICN Challenges                December 2015
 
-
-   decisions on content-to-cache distribution, but such issues are
-   outside the scope of this note and are not discussed here further.
 
 4.7.3.  Request-to-Cache Routing
 
@@ -1282,6 +1279,9 @@ Internet-Draft               ICN Challenges                December 2015
    cached NDO about its staleness before serving it.  This approach
    assumes that the NDO includes the publisher information which can be
    used to reach the publisher.  It is suitable for the NDO whose
+   expiration time is difficult to be set in advance, e.g., a web page
+   which contains main text (that stays the same ever after) and the
+
 
 
 
@@ -1290,8 +1290,6 @@ Kutscher, et al.          Expires June 6, 2016                 [Page 23]
 Internet-Draft               ICN Challenges                December 2015
 
 
-   expiration time is difficult to be set in advance, e.g., a web page
-   which contains main text (that stays the same ever after) and the
    interactive sections such as comments or ads (that are updated
    irregularly).
 
@@ -1338,6 +1336,8 @@ Internet-Draft               ICN Challenges                December 2015
    automating tasks, or even better employing self-management mechanisms
    are preferred.  The main challenge here is that all tools we have at
    our disposal today are node-centric, end-to-end oriented, or assuming
+   a packet-stream communication environment.  Rethinking reachability
+   and operational availability, for example, can yield significant
 
 
 
@@ -1346,8 +1346,6 @@ Kutscher, et al.          Expires June 6, 2016                 [Page 24]
 Internet-Draft               ICN Challenges                December 2015
 
 
-   a packet-stream communication environment.  Rethinking reachability
-   and operational availability, for example, can yield significant
    insights into how information-centric networks will be managed in the
    future.
 
@@ -1394,6 +1392,8 @@ Internet-Draft               ICN Challenges                December 2015
    management operations addressing, for example, per-content management
    or access control, as well as analyzing performance per NDO instead
    of per link or node.  Moreover, such considerations can also be used
+   to manage operational aspects of ICN mechanisms themselves.  For
+   example, [NDN-MGMT] re-utilizes inherent content-centric capabilities
 
 
 
@@ -1402,8 +1402,6 @@ Kutscher, et al.          Expires June 6, 2016                 [Page 25]
 Internet-Draft               ICN Challenges                December 2015
 
 
-   to manage operational aspects of ICN mechanisms themselves.  For
-   example, [NDN-MGMT] re-utilizes inherent content-centric capabilities
    of CCN to manage optimal link connectivity for nodes, in concert with
    a network optimization process.  Conversely, how these content-
    centric aspects can otherwise influence and impact management in
@@ -1449,7 +1447,9 @@ Internet-Draft               ICN Challenges                December 2015
    communication style, which may result in heavy overhead in ICN
    routers.
 
-
+   Moreover, key characteristics of the ICN underlying operation also
+   impact important aspects of IoT, such as the caching in content
+   storage of network forwarding entities.  This allows the
 
 
 
@@ -1458,9 +1458,6 @@ Kutscher, et al.          Expires June 6, 2016                 [Page 26]
 Internet-Draft               ICN Challenges                December 2015
 
 
-   Moreover, key characteristics of the ICN underlying operation also
-   impact important aspects of IoT, such as the caching in content
-   storage of network forwarding entities.  This allows the
    simplification of ICN-based IoT application development, since the
    network is able to act on named content, generic names provide a way
    to address content independently of the underlying device (and
@@ -1506,6 +1503,9 @@ Internet-Draft               ICN Challenges                December 2015
    Other challenges include the ability to return different results
    based on requestor-specific processing in the presence on immutable
    objects (and name-object bindings) in ICN and the ability for
+   efficient bidirectional communication, which would require some
+   mechanism to name and reach requestor applications.
+
 
 
 
@@ -1513,9 +1513,6 @@ Kutscher, et al.          Expires June 6, 2016                 [Page 27]
 
 Internet-Draft               ICN Challenges                December 2015
 
-
-   efficient bidirectional communication, which would require some
-   mechanism to name and reach requestor applications.
 
 4.10.2.  Video Streaming and Download
 
@@ -1558,6 +1555,9 @@ Internet-Draft               ICN Challenges                December 2015
 
    This document presents no IANA considerations.
 
+7.  Informative References
+
+
 
 
 
@@ -1569,8 +1569,6 @@ Kutscher, et al.          Expires June 6, 2016                 [Page 28]
 
 Internet-Draft               ICN Challenges                December 2015
 
-
-7.  Informative References
 
    [BACKSCATTER]
               Waehlisch, M., Schmidt, TC., and M. Vahlenkamp,
@@ -1600,6 +1598,11 @@ Internet-Draft               ICN Challenges                December 2015
    [COMPACT]  Cowen, L., "Compact routing with minimum stretch", In
               Journal of Algorithms, vol. 38, pp. 170--183, 2001.
 
+   [ConTug]   Arianfar, S., Nikander, P., Eggert, L., Ott, J., and W.
+              Wong, "ConTug: A Receiver-Driven Transport Protocol for
+              Content-Centric Networks", Technical Report Aalto
+              University Comnet, 2011.
+
    [DONA]     Koponen, T., Ermolinskiy, A., Chawla, M., Kim, K., gon
               Chun, B., and S. Shenker, "A Data-Oriented (and Beyond)
               Network Architecture", In Proceedings of SIGCOMM 2007,
@@ -1615,9 +1618,6 @@ Internet-Draft               ICN Challenges                December 2015
               "Greedy forwarding in dynamic scale-free networks embedded
               in hyperbolic metric spaces", In Proceedings of the IEEE
               INFOCOM, San Diego, USA, 2010.
-
-
-
 
 
 

@@ -1061,74 +1061,86 @@
       </section>
 
       <section title="Rate and Congestion Control">
-        <t>ICN's receiver-driven communication model as described above
-        creates new opportunities for transport protocol design, as it does not rely
-        solely on end-to-end communication from a sender to a requestor. A
-        requested data object can be accessible in multiple different network
-        locations. A node can thus decide how to utilize multiple sources,
-        e.g., by sending parallel requests for the same NDO or by switching
-        sources (or next hops) in a suitable schedule for a series of
-        requests.</t>
+        <t>
+	  ICN's receiver-driven communication model as described above
+	  creates new opportunities for transport protocol design, as
+	  it does not rely solely on end-to-end communication from a
+	  sender to a requestor. A requested data object can be
+	  accessible in multiple different network locations. A node
+	  can thus decide how to utilize multiple sources, e.g., by
+	  sending parallel requests for the same NDO or by switching
+	  sources (or next hops) in a suitable schedule for a series
+	  of requests.
+	</t>
 
-        <t>In this model, the requestor would control the data rate by
-        first regulating its request sending rate and next by performing
-        source/next-hop selections. Challenges depend on the specific
-        ICN approach, but overall challenges for receiver-driven transport
-        protocols (or mechanisms, since dedicated protocols might not be
-        required) include flow and congestion control, fairness, network
-        utilization, stability (of data rates under stable conditions) an so on.
-        <xref target="HRICP"></xref> describes a request rate control
-        protocol and corresponding design challenges.</t>
+        <t>
+	  In this model, the requestor would control the data rate by
+	  regulating its request sending rate and next by performing
+	  source/next-hop selections. Specific challenges depend on
+	  the specific ICN approach, but general challenges for
+	  receiver-driven transport protocols (or mechanisms, since
+	  dedicated protocols might not be required) include flow and
+	  congestion control, fairness, network utilization, stability
+	  (of data rates under stable conditions) etc.  <xref
+	  target="HRICP"></xref> and <xref target="ConTug"></xref>
+	  describe request rate control protocols and corresponding
+	  design challenges.
+	</t>
 
-        <t>As mentioned above, the ICN communication paradigm does not depend
-        strictly on end-to-end flows, as contents might be received from
-        in-network caches. The traditional concept of a flow is then somewhat
-        not valid as sub-flows, or flowlets, might be formed on the fly, when
-        fractions of an NDO are transmitted from in-network caches. For a
-        transport layer protocol this is challenging, as any measurement
-        related to this flow as traditionally done by transport protocols
-        such as TCP, can often prove misleading. For example, false RTT
-        measurements will lead to largely variable average and smooth RTT
-        values, which in turn will trigger false timeout expirations.</t>
+	
+        <t>
+	  As mentioned above, the ICN communication paradigm does not
+	  depend strictly on end-to-end flows, as contents might be
+	  received from in-network caches. The traditional concept of
+	  a flow is then somewhat not valid as sub-flows, or flowlets,
+	  might be formed on the fly, when fractions of an NDO are
+	  transmitted from in-network caches. For a transport layer
+	  protocol this is challenging, as any measurement related to
+	  this flow as traditionally done by transport protocols such
+	  as TCP, can often prove misleading. For example, false RTT
+	  measurements will lead to largely variable average and
+	  smooth RTT values, which in turn will trigger false timeout
+	  expirations.
+	</t>
 
-        <t>Furthermore, out-of-order delivery is expected to be common in a
-        scenario where parts of a data object are retrieved from in-network
-        caches, rather than from the origin server. Several techniques for
-        dealing with out-of-order delivery have been proposed in the past for
-        TCP, some of which could potentially be modified and re-used in the
-        context of ICN. Further research is needed in this direction though to
-        choose the right technique and adjust it according to the
-        requirements of the ICN architecture and transport protocol in
-        use.</t>
+        <t>
+	  Furthermore, out-of-order delivery is expected to be common
+	  in a scenario where parts of a data object are retrieved
+	  from in-network caches, rather than from the origin
+	  server. Several techniques for dealing with out-of-order
+	  delivery have been proposed in the past for TCP, some of
+	  which could potentially be modified and re-used in the
+	  context of ICN. Further research is needed in this direction
+	  though to choose the right technique and adjust it according
+	  to the requirements of the ICN architecture and transport
+	  protocol in use.
+	</t>
 
-        <t>ICN offers routers the possibility to aggregate requests and can
-        use several paths, meaning that there is no such thing as a
-        (dedicated) end-to-end communication path, e.g., a router that
-        receives two requests for the same content at the same time only sends
-        one request to its neighbour. The aggregation of requests has a general
-        impact on transport protocol design.</t>
+        <t>
+	  ICN offers routers the possibility to aggregate requests and
+	  can use several paths, meaning that there is no such thing
+	  as a (dedicated) end-to-end communication path, e.g., a
+	  router that receives two requests for the same content at
+	  the same time only sends one request to its neighbour. The
+	  aggregation of requests has a general impact on transport
+	  protocol design.
+	</t>
 
-        <t>Achieving rate fairness for requestors can be one challenge as it is not
-        possible to identify the number of requestors behind one particular
-        request. A second problem related to request aggregation is the
-        management of request retransmissions. Generally, it is assumed that a
-        router will not transmit a request if it transmitted an identical
-        request recently and because there is no information about the
-        requestor, the router cannot distinguish the initial request from a retransmission from the same client. In such a
-        situation, how can routers adapt their timers to use the best of the
-        communication paths? Finally, aggregation of requests has an impact on
-        the server (publisher) side. The publisher has no way to determine the
-        number of clients actually consuming the content it is producing. This
-        shift of model influences the business model of the server, e.g., how
-        to implement pay-per-click, as discussed earlier in <xref target="sec.naming" />.</t>
+        <t>
+	  Achieving fairness for requestors can be one challenge as it
+	  is not possible to identify the number of requestors behind
+	  one particular request. A second problem related to request
+	  aggregation is the management of request
+	  retransmissions. Generally, it is assumed that a router will
+	  not transmit a request if it transmitted an identical
+	  request recently and because there is no information about
+	  the requestor, the router cannot distinguish the initial
+	  request from a client from a retransmission from the same
+	  client. In such a situation, how routers can adapt their
+	  timers to use the best of the communication paths.
+	</t>
 
-        <t>NDOs can represent content used in different types of applications
-        with different QoS requirements, for example, interactive real-time
-        applications, media streaming, file download. Each of these
-        applications imposes different QoS requirements on different elements
-        in an information-centric network, e.g., regarding cache placement,
-        request-to-cache/source routing. Achieving the necessary
-        QoS levels in a shared network is an active ICN research topic.</t>
+	
       </section>
 
       <section title="In-Network Caching">
@@ -1754,6 +1766,21 @@
         <seriesInfo name="DOI" value="10.1145/2342488.2342497" />
       </reference>
 
+      <reference anchor="ConTug">
+	<front>
+	  <title>ConTug: A Receiver-Driven Transport Protocol for
+	    Content-Centric Networks</title>
+	  <author initials="S." surname="Arianfar"></author>
+	  <author initials="P." surname="Nikander"></author>
+	  <author initials="L." surname="Eggert"></author>
+	  <author initials="J." surname="Ott"></author>
+	  <author initials="W." surname="Wong"></author>
+	  <date year="2011" />
+	</front>
+	<seriesInfo name="Technical Report" value="Aalto University Comnet" />
+      </reference>
+
+      
       <reference anchor="Chaum">
         <front>
           <title>Group signatures</title>
