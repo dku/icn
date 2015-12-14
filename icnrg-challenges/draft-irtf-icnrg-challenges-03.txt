@@ -5,7 +5,7 @@
 ICNRG                                                   D. Kutscher, Ed.
 Internet-Draft                                                       NEC
 Intended status: Informational                                    S. Eum
-Expires: June 6, 2016                                               NICT
+Expires: June 16, 2016                                              NICT
                                                           K. Pentikousis
                                                                     EICT
                                                                I. Psaras
@@ -18,7 +18,7 @@ Expires: June 6, 2016                                               NICT
                                                              HAW HAmburg
                                                             M. Waehlisch
                                                                FU Berlin
-                                                        December 4, 2015
+                                                       December 14, 2015
 
 
                         ICN Research Challenges
@@ -53,7 +53,7 @@ Status of This Memo
 
 
 
-Kutscher, et al.          Expires June 6, 2016                  [Page 1]
+Kutscher, et al.          Expires June 16, 2016                 [Page 1]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -63,7 +63,7 @@ Internet-Draft               ICN Challenges                December 2015
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on June 6, 2016.
+   This Internet-Draft will expire on June 16, 2016.
 
 Copyright Notice
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Kutscher, et al.          Expires June 6, 2016                  [Page 2]
+Kutscher, et al.          Expires June 16, 2016                 [Page 2]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -118,10 +118,10 @@ Internet-Draft               ICN Challenges                December 2015
        4.7.3.  Request-to-Cache Routing  . . . . . . . . . . . . . .  23
        4.7.4.  Staleness Detection of Cached NDOs  . . . . . . . . .  23
      4.8.  Network Management  . . . . . . . . . . . . . . . . . . .  24
-     4.9.  Internet of Things  . . . . . . . . . . . . . . . . . . .  26
-     4.10. Application Development . . . . . . . . . . . . . . . . .  27
-       4.10.1.  Web Applications . . . . . . . . . . . . . . . . . .  27
-       4.10.2.  Video Streaming and Download . . . . . . . . . . . .  28
+     4.9.  ICN Applications  . . . . . . . . . . . . . . . . . . . .  26
+       4.9.1.  Web Applications  . . . . . . . . . . . . . . . . . .  26
+       4.9.2.  Video Streaming and Download  . . . . . . . . . . . .  27
+       4.9.3.  Internet of Things  . . . . . . . . . . . . . . . . .  27
    5.  Security Considerations . . . . . . . . . . . . . . . . . . .  28
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  28
    7.  Informative References  . . . . . . . . . . . . . . . . . . .  28
@@ -165,7 +165,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                  [Page 3]
+Kutscher, et al.          Expires June 16, 2016                 [Page 3]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -221,7 +221,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                  [Page 4]
+Kutscher, et al.          Expires June 16, 2016                 [Page 4]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -277,7 +277,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                  [Page 5]
+Kutscher, et al.          Expires June 16, 2016                 [Page 5]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -333,7 +333,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                  [Page 6]
+Kutscher, et al.          Expires June 16, 2016                 [Page 6]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -389,7 +389,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                  [Page 7]
+Kutscher, et al.          Expires June 16, 2016                 [Page 7]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -414,7 +414,7 @@ Internet-Draft               ICN Challenges                December 2015
 
    Research challenges specific to naming include:
 
-   o  naming static data objects can be performed by using content
+   o  Naming static data objects can be performed by using content
       hashes as part of object names, so that publishers can calculate
       the hash over existing data objects and requestors and any ICN
       node can validate the name-content binding by re-calculating the
@@ -445,7 +445,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                  [Page 8]
+Kutscher, et al.          Expires June 16, 2016                 [Page 8]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -501,7 +501,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                  [Page 9]
+Kutscher, et al.          Expires June 16, 2016                 [Page 9]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -557,7 +557,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 10]
+Kutscher, et al.          Expires June 16, 2016                [Page 10]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -613,7 +613,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 11]
+Kutscher, et al.          Expires June 16, 2016                [Page 11]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -669,7 +669,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 12]
+Kutscher, et al.          Expires June 16, 2016                [Page 12]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -725,7 +725,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 13]
+Kutscher, et al.          Expires June 16, 2016                [Page 13]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -781,7 +781,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 14]
+Kutscher, et al.          Expires June 16, 2016                [Page 14]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -837,7 +837,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 15]
+Kutscher, et al.          Expires June 16, 2016                [Page 15]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -893,7 +893,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 16]
+Kutscher, et al.          Expires June 16, 2016                [Page 16]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -949,7 +949,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 17]
+Kutscher, et al.          Expires June 16, 2016                [Page 17]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -1005,7 +1005,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 18]
+Kutscher, et al.          Expires June 16, 2016                [Page 18]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -1061,7 +1061,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 19]
+Kutscher, et al.          Expires June 16, 2016                [Page 19]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -1117,7 +1117,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 20]
+Kutscher, et al.          Expires June 16, 2016                [Page 20]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -1173,7 +1173,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 21]
+Kutscher, et al.          Expires June 16, 2016                [Page 21]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -1229,7 +1229,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 22]
+Kutscher, et al.          Expires June 16, 2016                [Page 22]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -1285,7 +1285,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 23]
+Kutscher, et al.          Expires June 16, 2016                [Page 23]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -1341,7 +1341,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 24]
+Kutscher, et al.          Expires June 16, 2016                [Page 24]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -1397,7 +1397,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 25]
+Kutscher, et al.          Expires June 16, 2016                [Page 25]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -1423,55 +1423,7 @@ Internet-Draft               ICN Challenges                December 2015
       how to identify a particular link, interface, or flow that need to
       be managed.
 
-4.9.  Internet of Things
-
-   The essence of ICN lies in the name based routing that enables users
-   to retrieve NDOs by the names regardless of their locations.  By the
-   definition, ICN is suitable well for IoT applications, where users
-   consume data generated from IoTs without maintaining secure
-   connections to them.  The basic put/get style APIs of ICN enable
-   developers to build IoT applications in a simple and fast manner.
-
-   On-going efforts such as [I-D.lindgren-icnrg-efficientiot],
-   [I-D.zhang-iot-icn-challenges], [ICN2014-NDNWILD] have addressed the
-   requirements and challenges of ICN for IoT.  For instance, many IoT
-   applications depend on a PUSH model where data transmission is
-   initiated by the publisher, and so they can support various real-time
-   applications: emergency alarm, etc.  However, ICN does not support
-   the PUSH model in a native manner due to its inherent receiver-driven
-   data transmission mechanism.  The challenge would be how to
-   efficiently support the PUSH model in ICN, and so it provides
-   publish/subscribe style APIs for IoT application developers.  This
-   could be done by introducing other types of identifiers such as a
-   device identifier or by extending the current request/response
-   communication style, which may result in heavy overhead in ICN
-   routers.
-
-   Moreover, key characteristics of the ICN underlying operation also
-   impact important aspects of IoT, such as the caching in content
-   storage of network forwarding entities.  This allows the
-
-
-
-Kutscher, et al.          Expires June 6, 2016                 [Page 26]
-
-Internet-Draft               ICN Challenges                December 2015
-
-
-   simplification of ICN-based IoT application development, since the
-   network is able to act on named content, generic names provide a way
-   to address content independently of the underlying device (and
-   access) technology, and bandwidth consumption is optimized due to the
-   availability of cached content.  However, these aspect raise
-   challenges themselves, concerning the freshness of the information
-   received from the cache in contrast to the last value generated by a
-   sensor, as well as pushing content to specific nodes (e.g., for
-   controlling them), which requires individual addressing for
-   identification.  In addition, due to the heterogeneous nature of IoT
-   nodes, their processing capabilities might not be able to handle the
-   necessary content signing verification procedures.
-
-4.10.  Application Development
+4.9.  ICN Applications
 
    ICN can be applied to different application domains and is expected
    to provide benefits for application developers by providing a more
@@ -1480,7 +1432,7 @@ Internet-Draft               ICN Challenges                December 2015
    of relevant application domains at large.  This section discusses
    opportunities and challenges for selected application types.
 
-4.10.1.  Web Applications
+4.9.1.  Web Applications
 
    Intuitively, the ICN request/response communication style seems to be
    directly mappable to web communication over HTTP.  NDO names could be
@@ -1497,6 +1449,15 @@ Internet-Draft               ICN Challenges                December 2015
    mapping.  This could be done to some degree by extending name formats
    or by extending message structure to include cookies and similar
    context information.  The design decisions would need to consider
+
+
+
+
+Kutscher, et al.          Expires June 16, 2016                [Page 26]
+
+Internet-Draft               ICN Challenges                December 2015
+
+
    overhead in routers (if larger GET/Interest messages would have to be
    stored in corresponding tables on routers, for example.
 
@@ -1506,15 +1467,7 @@ Internet-Draft               ICN Challenges                December 2015
    efficient bidirectional communication, which would require some
    mechanism to name and reach requestor applications.
 
-
-
-
-Kutscher, et al.          Expires June 6, 2016                 [Page 27]
-
-Internet-Draft               ICN Challenges                December 2015
-
-
-4.10.2.  Video Streaming and Download
+4.9.2.  Video Streaming and Download
 
    One of ICN's prime application areas is video streaming and download
    where accessing named data, object-level security and in-network
@@ -1545,6 +1498,53 @@ Internet-Draft               ICN Challenges                December 2015
    scenarios where multiple paths from client to upstream caches exist
    [RFC7476].
 
+4.9.3.  Internet of Things
+
+   The essence of ICN lies in the name based routing that enables users
+   to retrieve NDOs by the names regardless of their locations.  By the
+   definition, ICN is suitable well for IoT applications, where users
+   consume data generated from IoTs without maintaining secure
+   connections to them.  The basic put/get style APIs of ICN enable
+   developers to build IoT applications in a simple and fast manner.
+
+
+
+Kutscher, et al.          Expires June 16, 2016                [Page 27]
+
+Internet-Draft               ICN Challenges                December 2015
+
+
+   On-going efforts such as [I-D.lindgren-icnrg-efficientiot],
+   [I-D.zhang-iot-icn-challenges], [ICN2014-NDNWILD] have addressed the
+   requirements and challenges of ICN for IoT.  For instance, many IoT
+   applications depend on a PUSH model where data transmission is
+   initiated by the publisher, and so they can support various real-time
+   applications: emergency alarm, etc.  However, ICN does not support
+   the PUSH model in a native manner due to its inherent receiver-driven
+   data transmission mechanism.  The challenge would be how to
+   efficiently support the PUSH model in ICN, and so it provides
+   publish/subscribe style APIs for IoT application developers.  This
+   could be done by introducing other types of identifiers such as a
+   device identifier or by extending the current request/response
+   communication style, which may result in heavy overhead in ICN
+   routers.
+
+   Moreover, key characteristics of the ICN underlying operation also
+   impact important aspects of IoT, such as the caching in content
+   storage of network forwarding entities.  This allows the
+   simplification of ICN-based IoT application development, since the
+   network is able to act on named content, generic names provide a way
+   to address content independently of the underlying device (and
+   access) technology, and bandwidth consumption is optimized due to the
+   availability of cached content.  However, these aspect raise
+   challenges themselves, concerning the freshness of the information
+   received from the cache in contrast to the last value generated by a
+   sensor, as well as pushing content to specific nodes (e.g., for
+   controlling them), which requires individual addressing for
+   identification.  In addition, due to the heterogeneous nature of IoT
+   nodes, their processing capabilities might not be able to handle the
+   necessary content signing verification procedures.
+
 5.  Security Considerations
 
    This document does not impact the security of the Internet.  ICN
@@ -1565,7 +1565,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 28]
+Kutscher, et al.          Expires June 16, 2016                [Page 28]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -1621,7 +1621,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 29]
+Kutscher, et al.          Expires June 16, 2016                [Page 29]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -1638,10 +1638,10 @@ Internet-Draft               ICN Challenges                December 2015
 
    [I-D.irtf-icnrg-videostreaming]
               Lederer, S., cedric.westphal@huawei.com, c., Mueller, C.,
-              Detti, A., Corujo, D., Timmerer, C., Posch, D.,
-              aytav.azgin, a., and S. Liu, "Adaptive Video Streaming
-              over ICN", draft-irtf-icnrg-videostreaming-03 (work in
-              progress), February 2015.
+              Detti, A., Corujo, D., Wang, J., Montpetit, M., Murray,
+              N., aytav.azgin, a., LIU, S., Timmerer, C., and D. Posch,
+              "Adaptive Video Streaming over ICN", draft-irtf-icnrg-
+              videostreaming-05 (work in progress), December 2015.
 
    [I-D.lindgren-icnrg-efficientiot]
               Lindgren, A., Abdesslem, F., Ahlgren, B., Schelen, O., and
@@ -1653,8 +1653,8 @@ Internet-Draft               ICN Challenges                December 2015
               Zhang, Y., Raychadhuri, D., Grieco, L., Baccelli, E.,
               Burke, J., Ravindran, R., and G. Wang, "ICN based
               Architecture for IoT - Requirements and Challenges",
-              draft-zhang-iot-icn-challenges-01 (work in progress),
-              December 2014.
+              draft-zhang-iot-icn-challenges-02 (work in progress),
+              August 2015.
 
    [ICN2014-AHLGREN-VIDEO-DEMO]
               Ahlgren, B., Jonasson, A., and B. Ohlman, "Demo Overview:
@@ -1677,7 +1677,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 30]
+Kutscher, et al.          Expires June 16, 2016                [Page 30]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -1733,7 +1733,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 31]
+Kutscher, et al.          Expires June 16, 2016                [Page 31]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -1789,7 +1789,7 @@ Authors' Addresses
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 32]
+Kutscher, et al.          Expires June 16, 2016                [Page 32]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -1845,7 +1845,7 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 33]
+Kutscher, et al.          Expires June 16, 2016                [Page 33]
 
 Internet-Draft               ICN Challenges                December 2015
 
@@ -1901,4 +1901,4 @@ Internet-Draft               ICN Challenges                December 2015
 
 
 
-Kutscher, et al.          Expires June 6, 2016                 [Page 34]
+Kutscher, et al.          Expires June 16, 2016                [Page 34]
