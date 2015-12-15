@@ -2152,9 +2152,10 @@
     </references>
 
     <section title="Acknowledgments">
-      <t>The authors would like to thank Georgios Karagiannis for providing
-      suggestions on QoS research challenges and Dimitri Papadimitriou for
-      feedback on the routing section.</t>
+      <t>The authors would like to thank Georgios Karagiannis for
+      providing suggestions on QoS research challenges, Dimitri
+      Papadimitriou for feedback on the routing section, and Joerg Ott
+      for reviewing the whole document.</t>
     </section>
 
     <!--
