@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="US-ASCII"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
+<!ENTITY RFC4838 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4838.xml">
 <!ENTITY RFC5944 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5944.xml">
 <!ENTITY RFC5246 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5246.xml">
 <!ENTITY RFC5280 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5280.xml">
@@ -39,7 +40,7 @@
 <!-- end of list of popular I-D processing instructions -->
 <?rfc comments="yes"?>
 <?rfc inline="yes"?>
-<rfc category="info" docName="draft-irtf-icnrg-challenges-03" ipr="trust200902">
+<rfc category="info" docName="draft-irtf-icnrg-challenges-04" ipr="trust200902">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
      you can add the attributes updates="NNNN" and obsoletes="NNNN" 
@@ -212,7 +213,7 @@
       </address>
     </author>
 
-    <date year="2015" />
+    <date year="2016" />
 
     <!-- If the month and year are both specified and are the current ones, xml2rfc will fill 
          in the current day for you. If only the current year is specified, xml2rfc will fill 
@@ -248,11 +249,13 @@
 	Internet principle. Data becomes independent from location,
 	application, storage, and means of transportation, enabling or
 	enhancing a number of desirable features, such as security,
-	user-mobility, multicast and in-network caching. This document
-	describes the the research challenges in ICN, including
-	naming, security, routing, system scalability, mobility
-	management, wireless networking, transport services,
-	in-network caching, and network management.
+	user-mobility, multicast and in-network caching. Mechanisms
+	for realizing these benefits is subject of on-going research
+	in the IRTF and elsewhere. This document describes current
+	research challenges in ICN, including naming, security,
+	routing, system scalability, mobility management, wireless
+	networking, transport services, in-network caching, and
+	network management.
       </t>
 	  
       <t>
@@ -267,9 +270,9 @@
       <t>
 	Information-centric networking (ICN) is an approach to evolve
 	the Internet infrastructure to directly support this use by
-	introducing named data as a core network-layer primitive. Data
-	objects become independent of location, application, storage,
-	and means of transportation, allowing for inexpensive and
+	introducing named data as a network primitive. Data objects
+	become independent of location, application, storage, and
+	means of transportation, allowing for inexpensive and
 	ubiquitous in-network caching and replication. The expected
 	benefits are improved efficiency and security, better
 	scalability with respect to information/bandwidth demand and
@@ -283,9 +286,9 @@
 	structures, ubiquitous caching and corresponding transport
 	services, or it can be seen as a packet-level internetworking
 	technology that would cause fundamental changes to Internet
-	routing and forwarding. In summary, ICN is expected to evolve
-	the Internet architecture towards a network model that is more
-	suitable for the current and future usage patterns.
+	routing and forwarding. In summary, ICN can evolve the
+	Internet architecture towards a named-data-based network model
+	with different properties and different services.
       </t>
 
       <t>
@@ -317,7 +320,8 @@
 	The best current practice to manage the above-mentioned growth
 	in terms of data volume and number of devices is to increase
 	infrastructure investment, employ application-layer overlays
-	that cache content such as CDNs and P2P applications, provide
+	that cache content such as Content Distribution Networks
+	(CDNs) and Peer-to-Peer (P2P) applications, provide
 	location-independent access to data, and optimize its
 	delivery. In principle, such platforms provide a service model
 	of accessing named data objects (NDOs) (e.g., replicated web
@@ -352,9 +356,10 @@
 	  </t>
 
           <t>
-	    since the network is not aware of the nature of data
-	    objects, it is unable to manage access and transmission
-	    (without layer violations);
+	    the forwarding layer cannot cooperate with transport layer
+	    functions,so sometimes useful functionality such as local
+	    retransmission, local rate control have to implemented
+	    with TCP proxies or other intermediaries.
 	  </t>
 
           <t>
@@ -402,16 +407,25 @@
 		name bound to it, and there are typically mechanisms
 		to secure (and validate) this binding. Different ICN
 		approaches have different concepts for how to map NDOs
-		to individual units of transport. Within the context
-		of this document, an NDO is any named data object that
-		can be requested from the network. In this document we
-		often use the terms NDO and data object
-		interchangeably.
+		to individual units of transport (chunks,
+		fragments). Sometimes smaller units may be represented
+		by NDOs themselves. Within the context of this
+		document, an NDO is any named data object that can be
+		requested from the network, and we do not consider sub
+		units below the NDO level. In this document we often
+		use the terms NDO and data object interchangeably.
 	      </t>
 
               <t hangText="Requestor:">
 		Entity in an ICN network that is sending a request for
-		a Named Data Object to the network.</t>
+	      a Named Data Object to the network.</t>
+	      <t hangText="Publisher:">
+		Entity in an ICN network that publishes an NDO to the
+		network, so that corresponding requests can reach the
+		publisher. The publisher need to be identical to the
+		actual creator, for example a publisher could provide
+		the service of hosting NDOs on behalf of the actual
+		creators/owners.</t>
             </list>
 	  </t>
       </section>
@@ -513,18 +527,21 @@
     </section>
 
     <section title="ICN Research Challenges">
-      <section anchor="sec.naming" title="Naming and Data Authenticity">
-        <t>Naming data objects is as important for ICN as naming hosts is for
-        today's Internet. Fundamentally, ICN requires unique names for
-        individual NDOs, since names are used for identifying objects
-        independently of their location or container. In addition, since NDOs
-        can be cached anywhere, the origin cannot be trusted anymore hence the
-        importance to establish a verifiable binding between the object and
-        its name (name-data integrity) so that a requestor can be sure that the
-        received bits do correspond to the NDO originally requested (object
-        authenticity). Information about an object's provenance, i.e., who
-        generated or published it, is also useful to associate to the
-        name.</t>
+      <section anchor="sec.naming" title="Naming, Data Integrity, and Data Orign Authentication">
+        <t>Naming data objects is as important for ICN as naming hosts
+        is for today's Internet. Fundamentally, ICN requires unique
+        names for individual NDOs, since names are used for
+        identifying objects independently of their location or
+        container. In addition, since NDOs can be cached anywhere, the
+        origin cannot be trusted anymore hence the importance to
+        establish a verifiable binding between the object and its name
+        (name-data binding validation) so that a requestor can be sure
+        that the received bits do correspond to the NDO originally
+        requested (data integrity). Data orign authentication is a
+        different security service that can be related to naming,
+        i.e., verifying that an NDO has indeed been published by a
+        publisher (that could be identified by a name prefix).
+	</t>
 
         <t>The above functions are fundamentally required for the
         information-centric network to work reliably, otherwise neither
@@ -545,36 +562,44 @@
         some extent, map the name to user intent.</t>
 
         <t>
-	  The second general class of naming schemes follows a
-	  "self-certifying" approach, meaning that the object's
-	  name-data integrity can be verified without requiring a
-	  public key infrastructure (PKI) or other third party to
-	  first establish trust in the key. Self-certification is
-	  achieved, e.g., by binding the hash of the NDO content to
-	  the object's name. For instance, this can be done by
-	  directly embedding the hash of the content in the
-	  name. Another option is an indirect binding, which embeds
-	  the public key of the publisher in the name and signs the
-	  hash of the content with the corresponding secret key. The
-	  resulting names are typically non-hierarchical, or flat,
-	  although the publisher field could be employed to create a
-	  structure which could facilitate route aggregation.
+	  The second general class of naming schemes enables verifying
+	  the object's name-data integrity without requiring a public
+	  key infrastructure (PKI) or other third party to first
+	  establish trust in the key. This is achieved, e.g., by
+	  binding the hash of the NDO content to the object's
+	  name. For instance, this can be done by directly embedding
+	  the hash of the content in the name. Another option is an
+	  indirect binding, which embeds the public key of the
+	  publisher in the name and signs the hash of the content with
+	  the corresponding secret key. The resulting names are
+	  typically non-hierarchical, or flat, although the publisher
+	  field could be employed to create a structure which could
+	  facilitate route aggregation.
 	</t>
 	<t>
 	  There are several design trade-offs for ICN naming, which
-	  affect routing and security.  Self-certifying names are not
-	  human readable nor hierarchical. They can however provide
-	  some structure for aggregation, for instance, a name part
-	  corresponding to a publisher. In self-certifying names, the
-	  key of the publisher is bound to the name of NDO, and so
-	  when a user receives, e.g., the triplet namely [data, key,
-	  signature], the user can immediately verify that the data
-	  actually are from the publisher, i.e., the origin of the
-	  NDO, by cryptographically hashing the received key and the
-	  name of NDO, and comparing it with acquainted hashed
-	  key. Then, the key can be used to verify the signature,
-	  i.e., the integrity and provenance of the NDO.
-      </t>
+	  affect routing and security.  Hash-based names are not human
+	  readable nor hierarchical. They can however provide some
+	  structure for aggregation, for instance, a name part
+	  corresponding to a publisher. In hash-based names with
+	  indirect binding, the key of the publisher is bound to the
+	  name of NDO, and so when a user receives, e.g., the triplet
+	  namely [data, key, signature], the receiving entity can
+	  verify that the NDO has been generated by the possessor of
+	  the private/public key pair and that the NDO has not been
+	  changed in transit (data integrity). This can be done by
+	  cryptographically hashing the received key and the name of
+	  NDO, and comparing it with received hashed key. Then, the
+	  key can be used to verify the signature.
+	</t>
+	<t>
+	  Data origin authentication can be achieved by validating
+	  public-key-cryptography-based signatures about an NDO's name
+	  and content. In order to ascertain data integrity and origin
+	  authenticity with such an approach, a PKI-like system is
+	  required that would allow linking the corresponding public
+	  key to a trust chain.
+	</t>
 
         <t>Research challenges specific to naming include: <list
             style="symbols">
@@ -586,12 +611,15 @@
             target="RFC6920"></xref> specifies a concrete naming format for
             this.</t>
 
-            <t>Naming dynamic objects refers to use cases where the name has
-            to be generated before the object is created. For example, this
-            could be the case for live streaming, when a publisher wants to
-            make the stream available by registering stream chunk names in the
-            network. One approach to this can be self-certified names as
-            described above.</t>
+            <t>
+	      Naming dynamic objects refers to use cases where the
+	      name has to be generated before the object is
+	      created. For example, this could be the case for live
+	      streaming, when a publisher wants to make the stream
+	      available by registering stream chunk names in the
+	      network. One approach to this can be hash-based names
+	      with indirect binding as described above.
+	    </t>
 
             <t>Requestor privacy protection can be a challenge in ICN as a
             direct consequence of the accessing-named-data-objects paradigm:
@@ -623,25 +651,28 @@
 
       <section anchor="sec.security" title="Security">
 
-	  <t>Security can take many different forms in ICN and instead of
-        discussing specific attacks or technical details, we propose here the
-        most important security challenges that come from the shift to
-        information-centric communications. Some challenges are
-        well-understood, and there are (sometimes multiple different)
-        approaches to address them, whereas other challenges are active
-        research and engineering topics.</t>
+	<t>
+	  Security is an active research field in ICN. This section
+	  provides an overview of important important security
+	  features and corresponding challenges that are related to
+	  shifting to information-centric communications. Some
+	  challenges are well-understood, and there are (sometimes
+	  multiple different) approaches to address them, whereas
+	  other challenges are active research and engineering topics.
+	</t>
 
-        <section title="Data Object Authentication">
-          <t>As mentioned in section <xref target="sec.naming"></xref>, data
-          object authentication is an important ICN feature, since ICN data
-          objects are retrieved not only from an original copy holder but also
-          from any caching point. Hence, the communication channel endpoints
-          to retrieve NDOs are not trustable anymore and solutions widely used
-          today such as TLS <xref target="RFC5246"></xref> cannot be used as a
-          general solution. Since data objects can be maliciously modified, ICN
-          should provide users with a security mechanism to verify the origin
-          and integrity of the data object, and there are different ways to
-          achieve this.</t>
+        <section title="Data Integrity and Orign Authentication">
+          <t>As mentioned in section <xref
+          target="sec.naming"></xref>, data integrity verification is
+          an important ICN feature, since NDOs are retrieved not only
+          from an original copy holder but also from any caching
+          point. Hence, the communication channel endpoints to
+          retrieve NDOs are not trustable anymore and solutions widely
+          used today such as TLS <xref target="RFC5246"></xref> cannot
+          be used as a general solution. Since data objects can be
+          maliciously modified, ICN should provide receivers with a
+          security mechanism to verify the integrity of the data
+          object, and there are different ways to achieve this.</t>
 
           <t>An efficient approach for static NDOs is providing a
           name-content-binding by hashing an NDO and using the hash as a part
@@ -658,17 +689,28 @@
           object, the consumer must know the public key of the entity that
           signed the object.</t>
 
+	  <t>
+	    Data Orign Authentication, i.e., verifying that an NDO has
+	    indeed been published by a publisher, requires a secure
+	    binding of an NDO name to a publisher identiy -- this is
+	    also typically implemented using public key cryptography,
+	    i.e., by requiring a recevier to verify digital signatures
+	    that as part of a received message.
+	  </t>
+	  
           <t>One research challenge is then to support a mechanism to
-          distribute the publisher's public keys to the consumers of data
-          objects. There are two main approaches to achieve this; one is based
-          on an external third party authority such as hierarchical Public Key
-          Infrastructure (PKI) <xref target="RFC5280"></xref> and the other is
-          to adapt a self-certifying scheme. The former, as the name implies,
-          depends on an external third party authority to distribute the
-          public key of the publisher for the consumers. In a self-certifying
-          scheme, the public key (or a hash of it) would be used as part of
-          the name -- which is sufficient to validate the object's
-          authenticity.</t>
+          distribute the publisher's public keys to the consumers of
+          data objects. There are two main approaches to achieve this;
+          one is based on an external third party authority such as
+          hierarchical Public Key Infrastructure (PKI) (see <xref
+          target="RFC5280"></xref> for a description of hierarchical
+          PKI) and the other is to adapt a hash-based scheme with
+          indirect binding. The former, as the name implies, depends
+          on an external third party authority to distribute the
+          public key of the publisher for the consumers. In a
+          hash-based scheme with indirect binding, the public key (or
+          a hash of it) would be used as part of the name -- which is
+          sufficient to validate the data integrity.</t>
 
           <t>In cases where information about the origin of a data object is
           not available by other means, the object itself would have to
@@ -676,8 +718,7 @@
           publisher, for example with a certificate, that can be validated
           through the PKI. Once the certificate is authenticated, its public
           key can be used to authenticate the signed data object itself.</t>
-
-		  </section>
+	</section>
 
         <section title="Binding NDOs to Real-World Identities">
           <t>In addition to validating NDO authenticity, it is still important
@@ -685,11 +726,11 @@
           objects, so that a requestor can verify that a received object was
           actually published by a certain source.</t>
 
-          <t>With hash-based and self-certifying names, real world identity
-          bindings are not intrinsically established: the name provides the
-          hash of the NDO or of the public key that has been used to sign the
-          NDO. There needs to be another binding to a real world identity if
-          that feature is requested.</t>
+          <t>With hash-based names, real world identity bindings are
+          not intrinsically established: the name provides the hash of
+          the NDO or of the public key that has been used to sign the
+          NDO. There needs to be another binding to a real world
+          identity if that feature is requested.</t>
 
           <t>If the object name directly provides the publisher name and if
           that name is protected by a certificate that links to a PKI-like trust
@@ -848,6 +889,20 @@
 
               <t>How can we incorporate copies of a data object in in-network
               caches in this routing scheme?</t>
+
+	      <t>
+		Bread-crumbs routing implies a symmetric path for ICN
+		request and response delivery. Some network
+		configurations and link types prohibit symmetric path
+		forwarding, so it would be challenging to interconnect
+		such networks to bread-crumbs routing-based
+		infrastructure. For example, certain forwarding
+		strategies in Delay-Tolerant Networking (DTN) <xref
+		target="RFC4838"/> are employing opportunistic
+		forwarding where responses cannot be assumed to travel
+		the same path as requests.
+	      </t>
+	      
             </list></t>
         </section>
 
@@ -1204,10 +1259,10 @@
 	  transmitted from in-network caches. For a transport layer
 	  protocol this is challenging, as any measurement related to
 	  this flow as traditionally done by transport protocols such
-	  as TCP, can often prove misleading. For example, false RTT
-	  measurements will lead to largely variable average and
-	  smooth RTT values, which in turn will trigger false timeout
-	  expirations.
+	  as TCP, can often prove misleading. For example, false
+	  Round-Trip Time (RTT) measurements will lead to largely
+	  variable average and smoothed RTT values, which in turn will
+	  trigger false timeout expirations.
 	</t>
 
         <t>
@@ -1253,12 +1308,14 @@
       </section>
 
       <section title="In-Network Caching">
-        <t>Explicitly named data objects allow for caching at virtually any
-        network element, including routers, proxy caches and end-user
-        devices. In-network caching can therefore improve network performance
-        by fetching content from nodes geographically placed closer to the
-        end-user. Several issues that need further investigation have been
-        identified with respect to in-network caching. In this section we list important challenges that relate to the properties of the new
+        <t>Explicitly named data objects allow for caching at
+        virtually any network element, including routers, proxy caches
+        and end-user devices. In-network caching can therefore improve
+        network performance by fetching content from nodes
+        geographically placed closer to the end-user. Several issues
+        that need further investigation have been identified with
+        respect to in-network caching. In this section we list
+        important challenges that relate to the properties of the new
         ubiquitous caching system.</t>
 
         <section title="Cache Placement">
@@ -1425,57 +1482,69 @@
 
       <section title="Network Management">
         <t>Managing networks has been a core craft in the IP-based
-        host-centric paradigm ever since the technology was introduced in
-        production networks. However, at the onset of IP, management was
-        considered primarily as an add-on. Essential tools that are used daily
-        by networkers, such as ping and traceroute, did not become widely
-        available until more than a decade or so after IP was first
-        introduced. Management protocols, such as SNMP, also became available
-        much later than the original introduction of IP and many still
-        consider them insufficient despite the years of experience we have
-        running host-centric networks. Today, when new networks are deployed
-        network management is considered a key aspect for any operator, a
-        major challenge which is directly reflected in higher OPEX if not done
-        well. If we want ICN to be deployed in infrastructure networks,
-        development of management tools and mechanisms must go hand-in-hand
-        with the rest of the architecture design.</t>
+        host-centric paradigm ever since the technology was introduced
+        in production networks. However, at the onset of IP,
+        management was considered primarily as an add-on. Essential
+        tools that are used daily by networkers, such as ping and
+        traceroute, did not become widely available until more than a
+        decade or so after IP was first introduced. Management
+        protocols, such as SNMP, also became available much later than
+        the original introduction of IP and many still consider them
+        insufficient despite the years of experience we have running
+        host-centric networks. Today, when new networks are deployed
+        network management is considered a key aspect for any
+        operator, a major challenge which is directly reflected in
+        higher operational cost if not done well. If we want ICN to be
+        deployed in infrastructure networks, development of management
+        tools and mechanisms must go hand-in-hand with the rest of the
+        architecture design.</t>
 
-        <t>Although defining an FCAPS model for ICN is clearly outside the
-        scope of this document, there is a need for creating basic tools early
-        on while ICN is still in the design and experimentation phases that
-        can evolve over time and help network operations centers (NOCs) to
-        define policies, validate that they are indeed used in practice, be
-        notified early on about failures, determine and resolve configuration
-        problems. AAA as well as performance management, from a NOC
-        perspective, will also need to be considered. Given the expectations
-        for a large number of nodes and unprecedented traffic volumes,
-        automating tasks, or even better employing self-management mechanisms
-        are preferred. The main challenge here is that all tools we have at our
-        disposal today are node-centric, end-to-end oriented, or assuming a
-        packet-stream communication environment. Rethinking reachability and
-        operational availability, for example, can yield significant insights
-        into how information-centric networks will be managed in the
-        future.</t>
+        <t>
+	  Although defining an FCAPS (fault, configuration,
+	  accounting, performance, security) <xref
+	  target="ISOIEC-7498-4"/> management model for ICN is clearly
+	  outside the scope of this document, there is a need for
+	  creating basic tools early on while ICN is still in the
+	  design and experimentation phases that can evolve over time
+	  and help network operations centers (NOCs) to define
+	  policies, validate that they are indeed used in practice, be
+	  notified early on about failures, determine and resolve
+	  configuration problems. Authentication, Authorization,
+	  Accounting (AAA) as well as performance management, from a
+	  NOC perspective, will also need to be considered. Given the
+	  expectations for a large number of nodes and unprecedented
+	  traffic volumes, automating tasks, or even better employing
+	  self-management mechanisms are preferred. The main challenge
+	  here is that all tools we have at our disposal today are
+	  node-centric, end-to-end oriented, or assuming a
+	  packet-stream communication environment. Rethinking
+	  reachability and operational availability, for example, can
+	  yield significant insights into how information-centric
+	  networks will be managed in the future.
+	</t>
 
-        <t>With respect to network management we see three different aspects.
-        First, any operator needs to manage all resources available in the
-        network, which can range from node connectivity to network bandwidth
-        availability to in-network storage to multi-access support. In ICN,
-        users will also bring into the network significant resources in terms
-        of network coverage extension, storage, and processing capabilities.
-        DTN characteristics should also be considered to the degree that this
-        is possible (e.g., content dissemination through data mules).
-        Secondly, given that nodes and links are not at the center of an
-        information-centric network, network management should capitalize on
-        native ICN mechanisms. For example, in-network storage and name
-        resolution can be used for monitoring, while native publish/subscribe
-        functionality can be used for triggering notifications. Finally,
-        management is also at the core of network controlling capabilities by
-        allowing operating actions to be mediated and decided, triggering and
-        activating networking procedures in an optimized way. For example,
-        monitoring aspects can be conjugated with different management actions
-        in a coordinated way, allowing network operations to flow in a
-        concertated manner.</t>
+        <t>With respect to network management we see three different
+        aspects.  First, any operator needs to manage all resources
+        available in the network, which can range from node
+        connectivity to network bandwidth availability to in-network
+        storage to multi-access support. In ICN, users will also bring
+        into the network significant resources in terms of network
+        coverage extension, storage, and processing capabilities.
+        Delay Tolerant Networking (DTN) characteristics should also be
+        considered to the degree that this is possible (e.g., content
+        dissemination through data mules).  Secondly, given that nodes
+        and links are not at the center of an information-centric
+        network, network management should capitalize on native ICN
+        mechanisms. For example, in-network storage and name
+        resolution can be used for monitoring, while native
+        publish/subscribe functionality can be used for triggering
+        notifications. Finally, management is also at the core of
+        network controlling capabilities by allowing operating actions
+        to be mediated and decided, triggering and activating
+        networking procedures in an optimized way. For example,
+        monitoring aspects can be conjugated with different management
+        actions in a coordinated way, allowing network operations to
+        flow in a concertated manner.</t>
 
         <t>
 	  However, the considerations on leveraging intrinsic ICN
@@ -1496,7 +1565,7 @@
 	  how to be aware of the node capabilities (i.e., high or
 	  low-powered M2M node) and if there is a host-centric
 	  protocol running where the management process can also
-	  leverage upon.
+	  leverage.
 	</t>
 
         <t>
@@ -1581,11 +1650,12 @@
           been demonstrated by several prototype developments <xref
           target="ICN2014-AHLGREN-VIDEO-DEMO"></xref>.</t>
 
-          <t><xref target="I-D.irtf-icnrg-videostreaming"></xref> discusses
-          the opportunities and challenges for implementing today's' video
-          services such as DASH-based streaming and download over ICN,
-          considering performance requirements, relationship to peer-to-peer
-          live streaming, IPTV and DRM.</t>
+          <t><xref target="I-D.irtf-icnrg-videostreaming"></xref>
+          discusses the opportunities and challenges for implementing
+          today's' video services such as DASH-based streaming and
+          download over ICN, considering performance requirements,
+          relationship to peer-to-peer live streaming, IPTV and
+          Digital Rights Management (DRM).</t>
 
           <t>In addition to just porting today's video application from a host-centric paradigm
           to ICN there are also promising opportunities to leverage the ICN
@@ -2144,18 +2214,37 @@
 
       &RFC7476;
 
+      &RFC4838;
+
       &I-D.lindgren-icnrg-efficientiot;
 
       &I-D.zhang-iot-icn-challenges;
 
       &I-D.irtf-icnrg-videostreaming;
+
+
+      <reference anchor="ISOIEC-7498-4">
+        <front>
+          <title>Information Processing Systems -- Open Systems Interconnection -- Basic Reference Model -- Part 4: Management Framework</title>
+
+          <author surname="ISO"></author>
+
+          <date month="November" year="1989" />
+        </front>
+
+        <seriesInfo name="URI"
+                    value="http://standards.iso.org/ittf/PubliclyAvailableStandards/s014258_ISO_IEC_7498-4_1989(E).zip" />
+      </reference>
+
+
+      
     </references>
 
     <section title="Acknowledgments">
       <t>The authors would like to thank Georgios Karagiannis for
       providing suggestions on QoS research challenges, Dimitri
       Papadimitriou for feedback on the routing section, and Joerg Ott
-      for reviewing the whole document.</t>
+      and Stephen Farrell for reviewing the whole document.</t>
     </section>
 
     <!--

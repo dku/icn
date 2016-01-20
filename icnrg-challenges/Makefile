@@ -2,11 +2,15 @@ XML2RFC=./xml2rfc
 
 DRAFTTXT=draft-icnrg-challenges.txt
 SRC=draft-icnrg-challenges.xml
-CURRENTVERSION=draft-irtf-icnrg-challenges-03.txt
+CURRENTVERSION=draft-irtf-icnrg-challenges-04.txt
+PDFVERSION=$(patsubst %.txt, %.pdf, $(CURRENTVERSION))
 
 all: $(DRAFTTXT)
 
 release: $(CURRENTVERSION)
+
+
+pdf: $(PDFVERSION)
 
 $(CURRENTVERSION): $(DRAFTTXT)
 	cp -f $< $@
@@ -22,4 +26,7 @@ $(DRAFTTXT): $(SRC)
 clean:
 	rm -f $(DRAFTTXT) *~
 
+
+%.pdf : %.txt
+	a2ps -1 -B --borders=0 -M a4 -R -columns=1 -l 72 $< -o- | ps2pdf - $@
 
