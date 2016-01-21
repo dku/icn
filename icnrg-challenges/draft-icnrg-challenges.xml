@@ -407,8 +407,8 @@
 		name bound to it, and there are typically mechanisms
 		to secure (and validate) this binding. Different ICN
 		approaches have different concepts for how to map NDOs
-		to individual units of transport (chunks,
-		fragments). Sometimes smaller units may be represented
+		to individual units of transport, e.g., chunks,
+		segments. Sometimes smaller units may be represented
 		by NDOs themselves. Within the context of this
 		document, an NDO is any named data object that can be
 		requested from the network, and we do not consider sub
@@ -422,10 +422,10 @@
 	      <t hangText="Publisher:">
 		Entity in an ICN network that publishes an NDO to the
 		network, so that corresponding requests can reach the
-		publisher. The publisher need to be identical to the
-		actual creator, for example a publisher could provide
-		the service of hosting NDOs on behalf of the actual
-		creators/owners.</t>
+		publisher. The publisher does not need to be identical
+		to the actual creator, for example a publisher could
+		provide the service of hosting NDOs on behalf of the
+		actual creators/owners.</t>
             </list>
 	  </t>
       </section>
