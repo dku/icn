@@ -601,8 +601,8 @@
 	  key to a trust chain.
 	</t>
 
-        <t>Research challenges specific to naming include: <list
-            style="symbols">
+        <t>Research challenges specific to naming include:
+	<list style="symbols">
             <t>Naming static data objects can be performed by using content
             hashes as part of object names, so that publishers can calculate the
             hash over existing data objects and requestors and any ICN node
@@ -742,6 +742,82 @@
           particular ICN approach.</t>
         </section>
 
+	<section title="Access Control and Authorization">
+	  <t>
+	    Access control and authorization is a challenge in ICN,
+	    because of the lack of user-to-server authentication in
+	    the fundamental named-data-based communication model.
+	  </t>
+	  <t>
+	    All ICN entities are capable of delivering NDOs on demand
+	    due to their in-network caching function. In such an
+	    environment, traditional access control schemes based on
+	    Access Control List (ACL) are ill-suited since widely
+	    distributed ICN entities have to maintain an identical
+	    control policy over NDOs for each consumer, which is
+	    prohibited due to computational overhead and privacy
+	    issues. There are two complementary approaches to address
+	    the issues:
+	    <list style="numbers">
+	      <t>
+		Separated approach: access control service from a
+		third party that is independent from ICN entities.
+		Due to the clear separation, ICN entities free from
+		computational overhead to determine the accessibility
+		of NDOs by consumers and also consumers can explicitly
+		secure their privacy, e.g., access information to
+		particular NDOs, from compromised ICN entities. One
+		challenge relevant to this approach is how to reduce
+		the authorization delay involved with the delay to the
+		access control provider?
+	      </t>
+	      <t>
+		Integrated approach: access control service from ICN
+		entities. This mechanism is often based on content
+		encryption and key distribution. <xref
+		target="encryption-ac"/> As mentioned previously, this
+		approach suffers from prohibitive overhead for ICN
+		entities due to the process of key verification. While
+		key distribution is per se challenging, this approach
+		is beneficial in a way that NDOs can be retrieved
+		without the help of an external access control
+		provider. Challenges to this approach include:
+		<list style="numbers">
+		  <t>
+		    How to apply an access control mechanism for
+		    dynamic NDOs in in-network caches in a timely
+		    manner?
+		  </t>
+		  <t>
+		    How to provide consumers with the different levels
+		    of accessibility to individual NDOs in a scalable
+		    manner?
+		  </t>
+		</list>
+	      </t>
+	    </list>
+	  </t>
+	</section>
+
+	<section title="Encryption">
+	  <t>
+	    In ICN, NDOs can be encrypted to implement access control
+	    (only consumers in possession of corresponding decryption
+	    keys can access the content) or privacy (same
+	    approach). Distributing and managing the corresponding
+	    keys as well as providing usable interfaces to
+	    applications and human users is a challenge and subject of
+	    on-going work.
+	  </t>
+	  <t>
+	    In principle, the challenges are similar to those of
+	    broadcast/media distribution, and similar approaches
+	    (combing symmetric with public-key cryptography) are being
+	    investigated. <xref target="ndn-controlled-sharing"/>
+	  </t>
+
+	</section>
+	
         <section title="Traffic Aggregation and Filtering">
           <t>One request message to retrieve a data object can actually
           aggregate requests coming from several consumers. This aggregation
@@ -1308,15 +1384,17 @@
       </section>
 
       <section title="In-Network Caching">
-        <t>Explicitly named data objects allow for caching at
-        virtually any network element, including routers, proxy caches
-        and end-user devices. In-network caching can therefore improve
-        network performance by fetching content from nodes
-        geographically placed closer to the end-user. Several issues
-        that need further investigation have been identified with
-        respect to in-network caching. In this section we list
-        important challenges that relate to the properties of the new
-        ubiquitous caching system.</t>
+        <t>
+	  Explicitly named data objects allow for caching at virtually
+	  any network element, including routers, proxy caches and
+	  end-user devices. In-network caching can therefore improve
+	  network performance by fetching content from nodes
+	  geographically placed closer to the end-user. Several issues
+	  that need further investigation have been identified with
+	  respect to in-network caching. In this section we list
+	  important challenges that relate to the properties of the
+	  new ubiquitous caching system.
+	</t>
 
         <section title="Cache Placement">
           <t>
@@ -1478,6 +1556,28 @@
           models for caching NDOs along with their revision handling and
           updating protocols in a scalable manner.</t>
         </section>
+
+	<section title="Cache Sharing by Multiple Applications">
+	  <t>
+	    When ICN is deployed as a general, application-independent
+	    network and cache infrastructure, multiple consumers and
+	    producers (representing different applications) would
+	    communicate over the same infrastructure. With universal
+	    naming schemes or sufficiently unique hash-based
+	    identifiers different application could also share
+	    identical NDOs in a transparent way.
+	  </t>
+	  <t>
+	    Depending on the naming, data integrity and data orign
+	    authentication approaches, there may be technical and
+	    business challenges to share caches across different
+	    applications, for example content protection, avoiding
+	    cache poisoning, ensuring performance isolation etc. As
+	    ICN research matures, these challenges should be addressed
+	    more specifically in a dedicated document.
+	  </t>
+	</section>
+	
       </section>
 
       <section title="Network Management">
@@ -2178,6 +2278,38 @@
                     value="Paris, France, 2014" />
       </reference>
 
+
+      <reference anchor="encryption-ac">
+        <front>
+          <title>An Encryption-Based Access Control Framework
+for Content-Centric Networking</title>
+          <author initials="J." surname="Kurihara"> </author>
+          <author initials="E." surname="Uzun"> </author>
+          <author initials="C." surname="Wood"> </author>
+          <date month="September" year="2015" />
+        </front>
+        <seriesInfo name="IFIP Networking 2015"
+                    value="Toulouse, France, 2015" />
+      </reference>
+
+
+      <reference anchor="ndn-controlled-sharing">
+        <front>
+          <title>Controlled Sharing of Sensitive Content</title>
+          <author initials="Y." surname="Yu"> </author>
+          <date month="October" year="2015" />
+        </front>
+        <seriesInfo name="IRTF ICNRG Meeting"
+                    value="San Francisco, USA, 2015" />
+	<seriesInfo name="URI"
+                    value="https://www.ietf.org/proceedings/interim/2015/10/03/icnrg/slides/slides-interim-2015-icnrg-4-8.pdf"/>
+      </reference>
+
+
+      
+
+
+      
       <reference anchor="hotnets2014-psaras">
         <front>
           <title>
