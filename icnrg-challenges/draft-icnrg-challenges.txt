@@ -5,7 +5,7 @@
 ICNRG                                                   D. Kutscher, Ed.
 Internet-Draft                                                       NEC
 Intended status: Informational                                    S. Eum
-Expires: August 6, 2016                                             NICT
+Expires: August 8, 2016                                             NICT
                                                           K. Pentikousis
                                                                     EICT
                                                                I. Psaras
@@ -18,7 +18,7 @@ Expires: August 6, 2016                                             NICT
                                                              HAW HAmburg
                                                             M. Waehlisch
                                                                FU Berlin
-                                                        February 3, 2016
+                                                        February 5, 2016
 
 
                         ICN Research Challenges
@@ -53,7 +53,7 @@ Status of This Memo
 
 
 
-Kutscher, et al.         Expires August 6, 2016                 [Page 1]
+Kutscher, et al.         Expires August 8, 2016                 [Page 1]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -66,7 +66,7 @@ Internet-Draft               ICN Challenges                February 2016
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on August 6, 2016.
+   This Internet-Draft will expire on August 8, 2016.
 
 Copyright Notice
 
@@ -98,7 +98,7 @@ Table of Contents
        4.2.3.  Access Control and Authorization  . . . . . . . . . .  11
        4.2.4.  Encryption  . . . . . . . . . . . . . . . . . . . . .  12
        4.2.5.  Traffic Aggregation and Filtering . . . . . . . . . .  12
-       4.2.6.  State Overloading . . . . . . . . . . . . . . . . . .  13
+       4.2.6.  State Overloading . . . . . . . . . . . . . . . . . .  12
        4.2.7.  Delivering Data Objects from Replicas . . . . . . . .  13
        4.2.8.  Cryptographic Robustness  . . . . . . . . . . . . . .  13
        4.2.9.  Routing and Forwarding Information Bases  . . . . . .  14
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Kutscher, et al.         Expires August 6, 2016                 [Page 2]
+Kutscher, et al.         Expires August 8, 2016                 [Page 2]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -132,7 +132,7 @@ Internet-Draft               ICN Challenges                February 2016
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  31
    7.  Informative References  . . . . . . . . . . . . . . . . . . .  31
    Appendix A.  Acknowledgments  . . . . . . . . . . . . . . . . . .  35
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  35
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  36
 
 1.  Introduction
 
@@ -165,7 +165,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                 [Page 3]
+Kutscher, et al.         Expires August 8, 2016                 [Page 3]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -221,7 +221,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                 [Page 4]
+Kutscher, et al.         Expires August 8, 2016                 [Page 4]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -277,7 +277,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                 [Page 5]
+Kutscher, et al.         Expires August 8, 2016                 [Page 5]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -333,7 +333,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                 [Page 6]
+Kutscher, et al.         Expires August 8, 2016                 [Page 6]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -389,7 +389,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                 [Page 7]
+Kutscher, et al.         Expires August 8, 2016                 [Page 7]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -445,7 +445,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                 [Page 8]
+Kutscher, et al.         Expires August 8, 2016                 [Page 8]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -501,7 +501,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                 [Page 9]
+Kutscher, et al.         Expires August 8, 2016                 [Page 9]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -557,7 +557,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                [Page 10]
+Kutscher, et al.         Expires August 8, 2016                [Page 10]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -602,23 +602,22 @@ Internet-Draft               ICN Challenges                February 2016
        that is independent from ICN entities.  Due to the clear
        separation, ICN entities free from computational overhead to
        determine the accessibility of NDOs by consumers and also
-       consumers can explicitly secure their privacy, e.g., access
-       information to particular NDOs, from compromised ICN entities.
-       One challenge relevant to this approach is how to reduce the
-       authorization delay involved with the delay to the access control
-       provider?
+       consumers can secure their privacy through the independent
+       authorization entity [access-control-delegation].  One challenge
+       relevant to this approach is how to reduce the authorization
+       delay involved with the delay to the access control provider?
 
    2.  Integrated approach: access control service from ICN entities.
        This mechanism is often based on content encryption and key
+       distribution [encryption-ac].  As mentioned previously, this
 
 
 
-Kutscher, et al.         Expires August 6, 2016                [Page 11]
+Kutscher, et al.         Expires August 8, 2016                [Page 11]
 
 Internet-Draft               ICN Challenges                February 2016
 
 
-       distribution. [encryption-ac] As mentioned previously, this
        approach suffers from prohibitive overhead for ICN entities due
        to the process of key verification.  While key distribution is
        per se challenging, this approach is beneficial in a way that
@@ -662,23 +661,19 @@ Internet-Draft               ICN Challenges                February 2016
    keys (e.g., different private keys can be used to decrypt the same
    encrypted data object) [Chaum].
 
-
-
-
-
-
-
-
-Kutscher, et al.         Expires August 6, 2016                [Page 12]
-
-Internet-Draft               ICN Challenges                February 2016
-
-
 4.2.6.  State Overloading
 
    ICN solutions that implement state on intermediate routers for
    request routing or forwarding (e.g., CCN [CCN]) are subject to denial
    of service attacks from overloading or superseding the internal state
+
+
+
+Kutscher, et al.         Expires August 8, 2016                [Page 12]
+
+Internet-Draft               ICN Challenges                February 2016
+
+
    of a router (e.g., 'interest flooding' [BACKSCATTER]).  Additionally,
    stateful forwarding can enable attack vectors such as resource
    exhaustion or complexity attacks to the routing infrastructure.  The
@@ -722,18 +717,18 @@ Internet-Draft               ICN Challenges                February 2016
    and to allow for data object authentication.  This is a fundamental
    requirement in ICN due to distributed caching.  Publishers, who (a)
    massively sign content, which is (b) long-lived, offer time and data
-
-
-
-Kutscher, et al.         Expires August 6, 2016                [Page 13]
-
-Internet-Draft               ICN Challenges                February 2016
-
-
    to an attacker for comprising cryptographic credentials.  Signing
    large amount of data eases common attacks that try to breach the key
    of the publisher.  Based on this observation, the following research
    challenges emerge:
+
+
+
+
+Kutscher, et al.         Expires August 8, 2016                [Page 13]
+
+Internet-Draft               ICN Challenges                February 2016
+
 
    o  To which extent does the content publication model conflict with
       cryptographic limitations?
@@ -778,18 +773,18 @@ Internet-Draft               ICN Challenges                February 2016
    due to the omission of the resolution process.  For the delivery
    step, RBNR needs another identifier (ID) of either host or location
    to forward the requested data object back to the requestor.
-
-
-
-Kutscher, et al.         Expires August 6, 2016                [Page 14]
-
-Internet-Draft               ICN Challenges                February 2016
-
-
    Otherwise, an additional routing mechanism has to be introduced, such
    as bread-crumbs routing [BREADCRUMBS], in which each request leaves
    behind a trail of breadcrumbs along its forwarding path, and then the
    response is forwarded back to the requestor consuming the trail.
+
+
+
+
+Kutscher, et al.         Expires August 8, 2016                [Page 14]
+
+Internet-Draft               ICN Challenges                February 2016
+
 
    Challenges specific to RBNR include:
 
@@ -835,17 +830,17 @@ Internet-Draft               ICN Challenges                February 2016
 
    Challenges specific to LBNR include:
 
-
-
-Kutscher, et al.         Expires August 6, 2016                [Page 15]
-
-Internet-Draft               ICN Challenges                February 2016
-
-
    o  How can we build a scalable resolution system which provides
 
       *  Fast lookup: mapping the name of data object to its locators
          (copies as well).
+
+
+
+Kutscher, et al.         Expires August 8, 2016                [Page 15]
+
+Internet-Draft               ICN Challenges                February 2016
+
 
       *  Fast update: the location of data object is expected to change
          frequently.  Also, multiple data objects may change their
@@ -890,19 +885,19 @@ Internet-Draft               ICN Challenges                February 2016
    starting with [RFC2002], a multitude of enhancements to IP have been
    standardized aiming to "allow transparent routing of IP datagrams to
    mobile nodes in the Internet" [RFC5944].  In a nutshell [MMIN],
-
-
-
-Kutscher, et al.         Expires August 6, 2016                [Page 16]
-
-Internet-Draft               ICN Challenges                February 2016
-
-
    mobility management for IP networks is locator-oriented and relies on
    the concept of a mobility anchor as a foundation for providing
    always-on connectivity to mobile nodes.  Other standards
    organizations, such as 3GPP, have followed similar anchor-based
    approaches.  Traffic to and from the mobile node must flow through
+
+
+
+Kutscher, et al.         Expires August 8, 2016                [Page 16]
+
+Internet-Draft               ICN Challenges                February 2016
+
+
    the mobility anchor, typically using a set of tunnels, enabling the
    mobile node to remain reachable while changing its point of
    attachment to the network.
@@ -946,19 +941,19 @@ Internet-Draft               ICN Challenges                February 2016
    information while facilitating the use of ICN primitives which
    natively support multicast and anycast.
 
-
-
-
-Kutscher, et al.         Expires August 6, 2016                [Page 17]
-
-Internet-Draft               ICN Challenges                February 2016
-
-
    ICN naming and name resolution, as well as the security features that
    come along should natively support mobility.  For example, CCN [CCN]
    does not have the restriction of spanning tree routing, so it is able
    to take advantage of multiple interfaces or adapt to the changes
    produced by rapid mobility (i.e., there is no need to bind a layer 3
+
+
+
+Kutscher, et al.         Expires August 8, 2016                [Page 17]
+
+Internet-Draft               ICN Challenges                February 2016
+
+
    address with a layer 2 address).  In fact, client mobility can be
    simplified by allowing requests for new content to normally flow from
    different interfaces, or through newly connected points of attachment
@@ -1000,22 +995,20 @@ Internet-Draft               ICN Challenges                February 2016
       design supports multicast, anycast and location-indepedent
       information retrieval?
 
-
-
-
-
-
-Kutscher, et al.         Expires August 6, 2016                [Page 18]
-
-Internet-Draft               ICN Challenges                February 2016
-
-
    o  How can content retrieval mechanisms interface with specific link
       operations, such as identifying which links are available for
       certain content?
 
    o  How can mobility be offered as a service, which is only activated
       when the specific user/content/conditions require it?
+
+
+
+
+Kutscher, et al.         Expires August 8, 2016                [Page 18]
+
+Internet-Draft               ICN Challenges                February 2016
+
 
    o  How can mobility management be coordinated between the node and
       the network for optimization and policing procedures?
@@ -1061,7 +1054,14 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                [Page 19]
+
+
+
+
+
+
+
+Kutscher, et al.         Expires August 8, 2016                [Page 19]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1117,7 +1117,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                [Page 20]
+Kutscher, et al.         Expires August 8, 2016                [Page 20]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1173,7 +1173,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                [Page 21]
+Kutscher, et al.         Expires August 8, 2016                [Page 21]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1229,7 +1229,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                [Page 22]
+Kutscher, et al.         Expires August 8, 2016                [Page 22]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1285,7 +1285,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                [Page 23]
+Kutscher, et al.         Expires August 8, 2016                [Page 23]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1341,7 +1341,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                [Page 24]
+Kutscher, et al.         Expires August 8, 2016                [Page 24]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1397,7 +1397,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                [Page 25]
+Kutscher, et al.         Expires August 8, 2016                [Page 25]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1453,7 +1453,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                [Page 26]
+Kutscher, et al.         Expires August 8, 2016                [Page 26]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1509,7 +1509,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                [Page 27]
+Kutscher, et al.         Expires August 8, 2016                [Page 27]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1565,7 +1565,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                [Page 28]
+Kutscher, et al.         Expires August 8, 2016                [Page 28]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1621,7 +1621,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                [Page 29]
+Kutscher, et al.         Expires August 8, 2016                [Page 29]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1677,7 +1677,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 6, 2016                [Page 30]
+Kutscher, et al.         Expires August 8, 2016                [Page 30]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1697,6 +1697,13 @@ Internet-Draft               ICN Challenges                February 2016
    This document presents no IANA considerations.
 
 7.  Informative References
+
+   [access-control-delegation]
+              Fotiou, N., Marias, G., and G. Polyzos, "Access control
+              enforcement delegation for information-centric networking
+              architectures", Proceedings of the second edition of the
+              ICN workshop on Information-centric networking (ICN '12)
+              Helsinki, Finnland, 2012, 2012.
 
    [BACKSCATTER]
               Waehlisch, M., Schmidt, TC., and M. Vahlenkamp,
@@ -1723,6 +1730,14 @@ Internet-Draft               ICN Challenges                February 2016
    [Chaum]    Chaum, D. and E. van Heijst, "Group signatures", In
               Proceedings of EUROCRYPT, 1991.
 
+
+
+
+Kutscher, et al.         Expires August 8, 2016                [Page 31]
+
+Internet-Draft               ICN Challenges                February 2016
+
+
    [COMPACT]  Cowen, L., "Compact routing with minimum stretch", In
               Journal of Algorithms, vol. 38, pp. 170--183, 2001.
 
@@ -1730,13 +1745,6 @@ Internet-Draft               ICN Challenges                February 2016
               Wong, "ConTug: A Receiver-Driven Transport Protocol for
               Content-Centric Networks", Technical Report Aalto
               University Comnet, 2011.
-
-
-
-Kutscher, et al.         Expires August 6, 2016                [Page 31]
-
-Internet-Draft               ICN Challenges                February 2016
-
 
    [DONA]     Koponen, T., Ermolinskiy, A., Chawla, M., Kim, K., gon
               Chun, B., and S. Shenker, "A Data-Oriented (and Beyond)
@@ -1777,22 +1785,20 @@ Internet-Draft               ICN Challenges                February 2016
               "Adaptive Video Streaming over ICN", draft-irtf-icnrg-
               videostreaming-05 (work in progress), December 2015.
 
+
+
+
+
+Kutscher, et al.         Expires August 8, 2016                [Page 32]
+
+Internet-Draft               ICN Challenges                February 2016
+
+
    [I-D.lindgren-icnrg-efficientiot]
               Lindgren, A., Abdesslem, F., Ahlgren, B., Schelen, O., and
               A. Malik, "Applicability and Tradeoffs of Information-
               Centric Networking for Efficient IoT", draft-lindgren-
               icnrg-efficientiot-03 (work in progress), July 2015.
-
-
-
-
-
-
-
-Kutscher, et al.         Expires August 6, 2016                [Page 32]
-
-Internet-Draft               ICN Challenges                February 2016
-
 
    [I-D.zhang-iot-icn-challenges]
               Zhang, Y., Raychadhuri, D., Grieco, L., Baccelli, E.,
@@ -1832,23 +1838,23 @@ Internet-Draft               ICN Challenges                February 2016
               http://www.ietf.org/proceedings/interim/2015/01/13/icnrg/
               slides/slides-interim-2015-icnrg-1-0.pptx, January 2015.
 
+
+
+
+
+
+
+
+Kutscher, et al.         Expires August 8, 2016                [Page 33]
+
+Internet-Draft               ICN Challenges                February 2016
+
+
    [ICNSURVEY]
               Ahlgren, B., Dannewitz, C., Imbrenda, C., Kutscher, D.,
               and B. Ohlman, "A Survey of Information-Centric
               Networking", In Communications Magazine, IEEE , vol.50,
               no.7, pp.26-36, DOI 10.1109/MCOM.2012.6231276, 2012.
-
-
-
-
-
-
-
-
-Kutscher, et al.         Expires August 6, 2016                [Page 33]
-
-Internet-Draft               ICN Challenges                February 2016
-
 
    [ISOIEC-7498-4]
               ISO, , "Information Processing Systems -- Open Systems
@@ -1890,6 +1896,16 @@ Internet-Draft               ICN Challenges                February 2016
               in peer-to-peer networks: algorithms and evaluation", In
               Perform. Eval., vol. 63, pp. 241--263, 2006.
 
+
+
+
+
+
+Kutscher, et al.         Expires August 8, 2016                [Page 34]
+
+Internet-Draft               ICN Challenges                February 2016
+
+
    [RFC2002]  Perkins, C., Ed., "IP Mobility Support", RFC 2002, DOI
               10.17487/RFC2002, October 1996,
               <http://www.rfc-editor.org/info/rfc2002>.
@@ -1898,13 +1914,6 @@ Internet-Draft               ICN Challenges                February 2016
               R., Scott, K., Fall, K., and H. Weiss, "Delay-Tolerant
               Networking Architecture", RFC 4838, DOI 10.17487/RFC4838,
               April 2007, <http://www.rfc-editor.org/info/rfc4838>.
-
-
-
-Kutscher, et al.         Expires August 6, 2016                [Page 34]
-
-Internet-Draft               ICN Challenges                February 2016
-
 
    [RFC5246]  Dierks, T. and E. Rescorla, "The Transport Layer Security
               (TLS) Protocol Version 1.2", RFC 5246, DOI 10.17487/
@@ -1943,6 +1952,16 @@ Appendix A.  Acknowledgments
    feedback on the routing section, and Joerg Ott and Stephen Farrell
    for reviewing the whole document.
 
+
+
+
+
+
+Kutscher, et al.         Expires August 8, 2016                [Page 35]
+
+Internet-Draft               ICN Challenges                February 2016
+
+
 Authors' Addresses
 
    Dirk Kutscher (editor)
@@ -1952,14 +1971,6 @@ Authors' Addresses
    Germany
 
    Email: kutscher@neclab.eu
-
-
-
-
-
-Kutscher, et al.         Expires August 6, 2016                [Page 35]
-
-Internet-Draft               ICN Challenges                February 2016
 
 
    Suyong Eum
@@ -1999,6 +2010,14 @@ Internet-Draft               ICN Challenges                February 2016
    Email: dcorujo@av.it.pt
 
 
+
+
+
+Kutscher, et al.         Expires August 8, 2016                [Page 36]
+
+Internet-Draft               ICN Challenges                February 2016
+
+
    Damien Saucez
    INRIA
    2004 route des Lucioles - BP 93
@@ -2006,16 +2025,6 @@ Internet-Draft               ICN Challenges                February 2016
    France
 
    Email: damien.saucez@inria.fr
-
-
-
-
-
-
-
-Kutscher, et al.         Expires August 6, 2016                [Page 36]
-
-Internet-Draft               ICN Challenges                February 2016
 
 
    Thomas C. Schmidt
@@ -2060,13 +2069,4 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-
-
-
-
-
-
-
-
-
-Kutscher, et al.         Expires August 6, 2016                [Page 37]
+Kutscher, et al.         Expires August 8, 2016                [Page 37]

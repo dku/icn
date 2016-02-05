@@ -764,24 +764,25 @@
 		third party that is independent from ICN entities.
 		Due to the clear separation, ICN entities free from
 		computational overhead to determine the accessibility
-		of NDOs by consumers and also consumers can explicitly
-		secure their privacy, e.g., access information to
-		particular NDOs, from compromised ICN entities. One
-		challenge relevant to this approach is how to reduce
-		the authorization delay involved with the delay to the
-		access control provider?
+		of NDOs by consumers and also consumers can secure
+		their privacy through the independent authorization
+		entity <xref target="access-control-delegation"/>.
+		One challenge relevant to this approach is how to
+		reduce the authorization delay involved with the delay
+		to the access control provider?
 	      </t>
 	      <t>
 		Integrated approach: access control service from ICN
 		entities. This mechanism is often based on content
-		encryption and key distribution. <xref
-		target="encryption-ac"/> As mentioned previously, this
-		approach suffers from prohibitive overhead for ICN
-		entities due to the process of key verification. While
-		key distribution is per se challenging, this approach
-		is beneficial in a way that NDOs can be retrieved
-		without the help of an external access control
-		provider. Challenges to this approach include:
+		encryption and key distribution <xref
+		target="encryption-ac"/>. As mentioned previously,
+		this approach suffers from prohibitive overhead for
+		ICN entities due to the process of key
+		verification. While key distribution is per se
+		challenging, this approach is beneficial in a way that
+		NDOs can be retrieved without the help of an external
+		access control provider. Challenges to this approach
+		include:
 		<list style="numbers">
 		  <t>
 		    How to apply an access control mechanism for
@@ -2303,6 +2304,20 @@ for Content-Centric Networking</title>
                     value="San Francisco, USA, 2015" />
 	<seriesInfo name="URI"
                     value="https://www.ietf.org/proceedings/interim/2015/10/03/icnrg/slides/slides-interim-2015-icnrg-4-8.pdf"/>
+      </reference>
+
+    
+      
+      <reference anchor="access-control-delegation">
+        <front>
+          <title>Access control enforcement delegation for information-centric networking architectures</title>
+          <author initials="N." surname="Fotiou"> </author>
+	  <author initials="G." surname="Marias"> </author>
+	  <author initials="G." surname="Polyzos"> </author>
+          <date year="2012" />
+        </front>
+        <seriesInfo name="Proceedings of the second edition of the ICN workshop on Information-centric networking (ICN '12)"
+                    value="Helsinki, Finnland, 2012" />
       </reference>
 
 
