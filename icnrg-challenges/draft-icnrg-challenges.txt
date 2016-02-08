@@ -5,7 +5,7 @@
 ICNRG                                                   D. Kutscher, Ed.
 Internet-Draft                                                       NEC
 Intended status: Informational                                    S. Eum
-Expires: August 8, 2016                                             NICT
+Expires: August 11, 2016                                            NICT
                                                           K. Pentikousis
                                                                     EICT
                                                                I. Psaras
@@ -18,7 +18,7 @@ Expires: August 8, 2016                                             NICT
                                                              HAW HAmburg
                                                             M. Waehlisch
                                                                FU Berlin
-                                                        February 5, 2016
+                                                        February 8, 2016
 
 
                         ICN Research Challenges
@@ -53,7 +53,7 @@ Status of This Memo
 
 
 
-Kutscher, et al.         Expires August 8, 2016                 [Page 1]
+Kutscher, et al.         Expires August 11, 2016                [Page 1]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -66,7 +66,7 @@ Internet-Draft               ICN Challenges                February 2016
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on August 8, 2016.
+   This Internet-Draft will expire on August 11, 2016.
 
 Copyright Notice
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Kutscher, et al.         Expires August 8, 2016                 [Page 2]
+Kutscher, et al.         Expires August 11, 2016                [Page 2]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -165,7 +165,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                 [Page 3]
+Kutscher, et al.         Expires August 11, 2016                [Page 3]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -221,7 +221,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                 [Page 4]
+Kutscher, et al.         Expires August 11, 2016                [Page 4]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -277,7 +277,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                 [Page 5]
+Kutscher, et al.         Expires August 11, 2016                [Page 5]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -333,7 +333,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                 [Page 6]
+Kutscher, et al.         Expires August 11, 2016                [Page 6]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -389,7 +389,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                 [Page 7]
+Kutscher, et al.         Expires August 11, 2016                [Page 7]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -445,7 +445,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                 [Page 8]
+Kutscher, et al.         Expires August 11, 2016                [Page 8]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -501,7 +501,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                 [Page 9]
+Kutscher, et al.         Expires August 11, 2016                [Page 9]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -557,7 +557,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 10]
+Kutscher, et al.         Expires August 11, 2016               [Page 10]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -613,7 +613,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 11]
+Kutscher, et al.         Expires August 11, 2016               [Page 11]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -669,7 +669,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 12]
+Kutscher, et al.         Expires August 11, 2016               [Page 12]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -725,7 +725,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 13]
+Kutscher, et al.         Expires August 11, 2016               [Page 13]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -781,7 +781,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 14]
+Kutscher, et al.         Expires August 11, 2016               [Page 14]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -837,7 +837,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 15]
+Kutscher, et al.         Expires August 11, 2016               [Page 15]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -893,7 +893,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 16]
+Kutscher, et al.         Expires August 11, 2016               [Page 16]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -949,7 +949,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 17]
+Kutscher, et al.         Expires August 11, 2016               [Page 17]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1005,7 +1005,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 18]
+Kutscher, et al.         Expires August 11, 2016               [Page 18]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1061,7 +1061,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 19]
+Kutscher, et al.         Expires August 11, 2016               [Page 19]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1117,7 +1117,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 20]
+Kutscher, et al.         Expires August 11, 2016               [Page 20]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1173,7 +1173,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 21]
+Kutscher, et al.         Expires August 11, 2016               [Page 21]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1229,7 +1229,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 22]
+Kutscher, et al.         Expires August 11, 2016               [Page 22]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1285,7 +1285,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 23]
+Kutscher, et al.         Expires August 11, 2016               [Page 23]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1341,7 +1341,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 24]
+Kutscher, et al.         Expires August 11, 2016               [Page 24]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1397,7 +1397,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 25]
+Kutscher, et al.         Expires August 11, 2016               [Page 25]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1453,7 +1453,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 26]
+Kutscher, et al.         Expires August 11, 2016               [Page 26]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1509,7 +1509,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 27]
+Kutscher, et al.         Expires August 11, 2016               [Page 27]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1565,7 +1565,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 28]
+Kutscher, et al.         Expires August 11, 2016               [Page 28]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1621,7 +1621,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 29]
+Kutscher, et al.         Expires August 11, 2016               [Page 29]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1677,7 +1677,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 30]
+Kutscher, et al.         Expires August 11, 2016               [Page 30]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1703,7 +1703,7 @@ Internet-Draft               ICN Challenges                February 2016
               enforcement delegation for information-centric networking
               architectures", Proceedings of the second edition of the
               ICN workshop on Information-centric networking (ICN '12)
-              Helsinki, Finnland, 2012, 2012.
+              Helsinki, Finnland, 2012.
 
    [BACKSCATTER]
               Waehlisch, M., Schmidt, TC., and M. Vahlenkamp,
@@ -1733,7 +1733,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 31]
+Kutscher, et al.         Expires August 11, 2016               [Page 31]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1789,7 +1789,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 32]
+Kutscher, et al.         Expires August 11, 2016               [Page 32]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1845,7 +1845,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 33]
+Kutscher, et al.         Expires August 11, 2016               [Page 33]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1901,7 +1901,7 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 34]
+Kutscher, et al.         Expires August 11, 2016               [Page 34]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -1957,7 +1957,7 @@ Appendix A.  Acknowledgments
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 35]
+Kutscher, et al.         Expires August 11, 2016               [Page 35]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -2013,7 +2013,7 @@ Authors' Addresses
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 36]
+Kutscher, et al.         Expires August 11, 2016               [Page 36]
 
 Internet-Draft               ICN Challenges                February 2016
 
@@ -2069,4 +2069,4 @@ Internet-Draft               ICN Challenges                February 2016
 
 
 
-Kutscher, et al.         Expires August 8, 2016                [Page 37]
+Kutscher, et al.         Expires August 11, 2016               [Page 37]
