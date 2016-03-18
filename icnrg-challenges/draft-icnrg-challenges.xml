@@ -571,7 +571,7 @@
 	  the hash of the content in the name. Another option is an
 	  indirect binding, which embeds the public key of the
 	  publisher in the name and signs the hash of the content with
-	  the corresponding secret key. The resulting names are
+	  the corresponding private key. The resulting names are
 	  typically non-hierarchical, or flat, although the publisher
 	  field could be employed to create a structure which could
 	  facilitate route aggregation.
@@ -767,9 +767,11 @@
 		of NDOs by consumers and also consumers can secure
 		their privacy through the independent authorization
 		entity <xref target="access-control-delegation"/>.
-		One challenge relevant to this approach is how to
-		reduce the authorization delay involved with the delay
-		to the access control provider?
+		Relevant challenges to this approach include reducing
+		the authorization delay (when communicating to the
+		access control provider) and currency and consistency
+		of access control information (when access control
+		lists are distributed).
 	      </t>
 	      <t>
 		Integrated approach: access control service from ICN
@@ -785,14 +787,17 @@
 		include:
 		<list style="numbers">
 		  <t>
-		    How to apply an access control mechanism for
-		    dynamic NDOs in in-network caches in a timely
-		    manner?
+		    applying an access control mechanism for dynamic
+		    NDOs in in-network caches in a timely manner;
 		  </t>
 		  <t>
-		    How to provide consumers with the different levels
-		    of accessibility to individual NDOs in a scalable
-		    manner?
+		    providing consumers with the different levels of
+		    accessibility to individual NDOs in a scalable
+		    manner; and
+		  </t>
+		  <t>
+		    managing key revocation and similar PKI management
+		    functions.
 		  </t>
 		</list>
 	      </t>
