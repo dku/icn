@@ -7,6 +7,7 @@
 <!ENTITY RFC2002 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2002.xml">
 <!ENTITY RFC6920 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6920.xml">
 <!ENTITY RFC7476 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7476.xml">
+<!ENTITY RFC7696 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7696.xml">
 <!ENTITY I-D.ni-params SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.hallambaker-decade-ni-params.xml">
 <!ENTITY I-D.lindgren-icnrg-efficientiot SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.draft-lindgren-icnrg-efficientiot-03.xml">
 <!ENTITY I-D.zhang-iot-icn-challenges SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.draft-zhang-iot-icn-challenges-02.xml">
@@ -40,7 +41,7 @@
 <!-- end of list of popular I-D processing instructions -->
 <?rfc comments="yes"?>
 <?rfc inline="yes"?>
-<rfc category="info" docName="draft-irtf-icnrg-challenges-05" ipr="trust200902">
+<rfc category="info" docName="draft-irtf-icnrg-challenges-06" ipr="trust200902">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
      you can add the attributes updates="NNNN" and obsoletes="NNNN" 
@@ -630,14 +631,15 @@
             much information, the assumption is that the name can be used to
             retrieve the corresponding data objects in the future.</t>
 
-            <t>Updating and versioning NDOs can be challenging because it can
-            contradict fundamental ICN assumptions: if an NDO can be
-            replicated and stored in in-network storage for later retrieval,
-            names have to be long-lived and the name-content binding must
-            not change: updating an object (i.e., changing the content without
-            generating a new name) is not possible. Versioning is one possible
-            solution, but requires a naming scheme that supports it (and a way
-            for requestors to learn about versions).</t>
+            <t>Updating and versioning NDOs can be challenging because
+            it can contradict fundamental ICN assumptions: if an NDO
+            can be replicated and stored in in-network storage for
+            later retrieval, names have to be long-lived and the
+            name-content binding must not change: updating an object
+            (i.e., changing the content without generating a new name)
+            is not possible. Versioning is one possible solution, but
+            requires a naming scheme that supports it (and a way for
+            requestors to learn about newer and older versions).</t>
 
             <t>Managing accessibility: whereas in ICN the general assumption
             is to enable ubiquitous access to NDOs, there can be relevant use
@@ -889,19 +891,35 @@
         </section>
 
         <section title="Cryptographic Robustness">
-          <t>Content producers sign their content to ensure the integrity of
-          data and to allow for data object authentication. This is a
-          fundamental requirement in ICN due to distributed caching.
-          Publishers, who (a) massively sign content, which is (b) long-lived,
-          offer time and data to an attacker for comprising cryptographic
-          credentials. Signing large amount of data eases common attacks that
-          try to breach the key of the publisher. Based on this observation,
-          the following research challenges emerge:
-		  <list style="symbols">
-		  <t>To which extent does the content publication model conflict with cryptographic limitations?</t>
-          <t>How can we achieve transparent re-signing without introducing
-          additional cryptographic weaknesses or key management
-          overhead?</t></list></t>
+          <t>
+	    Content producers sign their content to ensure the
+	    integrity of data and to allow for data object
+	    authentication. This is a fundamental requirement in ICN
+	    due to distributed caching.  Publishers, who (a) massively
+	    sign content, which is (b) long-lived, offer time and data
+	    to an attacker for comprising cryptographic
+	    credentials. Signing large amount of data eases common
+	    attacks that try to breach the key of the publisher. Based
+	    on this observation, the following research challenges
+	    emerge:
+	    <list style="symbols">
+	      <t>
+		To which extent does the content publication model
+		conflict with cryptographic limitations?
+	      </t>
+              <t>
+		How can we achieve transparent re-signing without
+		introducing additional cryptographic weaknesses or key
+		management overhead?
+	      </t>
+	    </list>
+	    In general, ICN implementations should be designed
+	    considering the guidelines provided by <xref
+	    target="RFC7696"/>, especially regarding cryptographic
+	    algorithm agility, for example <xref target="RFC6920"/>
+	    specifies a naming scheme for hash-based names that has
+	    been designed to support algorithm agility.
+	  </t>
         </section>
 
         <section title="Routing and Forwarding Information Bases">
@@ -1864,6 +1882,8 @@
       &RFC5944;
 
       &RFC6920;
+
+      &RFC7696;
 
       <!--
       &I-D.ni-params;
