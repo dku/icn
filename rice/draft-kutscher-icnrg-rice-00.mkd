@@ -52,10 +52,13 @@ normative:
 #        - rfc2119
 #        - rfc2616
 #  I-D.ietf-core-coap:
-  RFC2119:
-  RFC2616:
 
-#informative:
+    RFC2119:
+
+
+informative:
+
+#RFC2616:
 #  REST:
 #    title: Architectural Styles and the Design of Network-based Software Architectures
 #    author:
@@ -64,6 +67,88 @@ normative:
 #        name: Roy Fielding
 #        org: University of California, Irvine
 #    date: 2000
+
+
+    RFC4987:
+
+    MOISEENKO2014: DOI.10.1145/2660129.2660152
+
+    TSCHUDIN2014NAMED: DOI.10.1109/CCNC.2014.6940518
+
+    NFAAS: DOI.10.1145/3125719.3125727
+
+    REST:
+        title: Architectural Styles and the Design of Network-based Software Architectures
+        author:
+#      -
+            ins: R. Fielding
+            name: Roy Fielding
+            org: University of California, Irvine
+        date: 2000
+
+
+    THUNKS: DOI.10.1145/366062.366084
+
+    MAPME: DOI.10.1109/TNSM.2018.2796720
+
+    NDN: DOI.10.1145/2656877.2656887
+
+    ION2013TOWARD: DOI.10.1145/2491224.2491237
+
+    MISRA2013: DOI.10.1145/2491224.2491228
+
+    CHOI2013THREAT: DOI.10.1109/ICOIN.2013.6496396
+
+    ALSHEIKH2015FLOODING: DOI.10.1145/2810156.2812604
+
+    MAHADEVAN2014: DOI.10.1145/2660129.2660154
+
+    GHALI2016: DOI.10.1145/2994620.2994639
+
+    AIRTNT:
+        title: Airtnt -- Fair Exchange Payment for Outsourced Secure Enclave Computations
+        author:
+            -
+                name: Mustafa  Al-Bassam et al.
+                ins: Mustafa  Al-Bassam et al.
+        date: 2018
+        seriesInfo:
+            UCL: Technical Report
+        target: https://www.ee.ucl.ac.uk/~uceeips/files/airtnt-payments-v1.pdf
+
+    SPOC:
+        title: SPOC -- Secure Payments for Outsourced Computations
+        author:
+            -
+                name: Michael Krol
+                ins: Michael Krol
+            -
+                name: Ioannis Psaras
+                ins: Ioannis Psaras
+        date: 2018
+        target: https://www.ee.ucl.ac.uk/~ipsaras/files/spoc-payments.pdf
+        seriesInfo:
+            NDSS: NDSS'18 Workshop on Decentralised IoT Security and Standards (DISS)
+
+
+
+#    moiseenko2014:
+#        title: Communication patterns for web interaction in named data networking
+#        author:
+#            -
+#                ins: Ilya Moiseenko
+#                name: Ilya Moiseenko
+#        author:
+#            -
+#                ins: Mark Stapp
+#                name: Mark Stapp
+#        author:
+#            -
+#                ins: Dave Oran
+#                name: Dave Oran
+#        date: 2014
+#        seriesInfo: Proceedings of the 1st ACM Conference on Information-Centric Networking
+#
 
 entity:
         SELF: "[RFCXXXX]"
@@ -100,13 +185,13 @@ Much of today's network traffic consists of data sent for processing
 to the cloud and web-servers exchanging high volumes of dynamically
 generated content. While today's ICN networks can deal efficiently
 with static data delivery, they have difficulty handling
-service/function invocation \cite{moiseenko2014communication}. In view
+service/function invocation {{MOISEENKO2014}}. In view
 of these limitations, multiple works have recently tried to extend
 ICN's capabilities to deal with dynamic content.
 
 Notable among these efforts, Named Function Networking (NFN)
-\cite{tschudin2014named} and Named Function as a Service (NFaaS)
-\cite{krol2017nfaas} extend ICN's named data access model to a remote
+{{TSCHUDIN2014NAMED}} and Named Function as a Service (NFaaS)
+{{NFAAS}} extend ICN's named data access model to a remote
 function invocation capability, enabling consumers to request the
 network to execute functions remotely.  In NFN \cite{tschudin2014named}, for
 instance, function invocation corresponds to independent computational
@@ -114,7 +199,7 @@ processes, evaluated as expressions in a functional programming model.
 
 ICN provides several attractive benefits compared to remote invocation
 over current network protocol stacks (e.g. CORBA, RESTful
-HTTP\cite{Fielding:restful}). Name-based routing allows the network to
+HTTP {{REST}}. Name-based routing allows the network to
 optimise the placement of computations with automatic load
 distribution and failure resiliency. The built-in object-based
 security of ICN frees application designers from the need to craft
@@ -125,8 +210,7 @@ caching can substantially reduce server load for referentially
 transparent computations.
 
 There have been several approaches for integrating computation with
-ICN, as we discuss in more detail in Section
-\ref{sec:related_work}. However, when using them to realize real-world
+ICN. However, when using them to realize real-world
 applications like web-style interactions, several additional aspects
 beyond the fundamental Named Function invocation concept need to be
 addressed:
@@ -143,7 +227,7 @@ addressed:
   set of input parameters/arguments. In dynamic web content creation
   for example, the volume of such parameters (in bytes) can easily
   surpass the volume of the actual returned data objects
-  \cite{moiseenko2014communication}.  Adding larger sets of parameters
+  {{MOISEENKO2014}.  Adding larger sets of parameters
   to Interest messages can introduce additional unsolicited traffic in
   ICN networks that could interfere with congestion control.
 - Accommodating non-trivial computations: Unlike responding to an
@@ -169,7 +253,7 @@ named-function networking context. Its main features are:
 - a secure, 4-way handshake for ICN networks in order to achieve
   shared secret derivation, consumer authentication and parameter
   passing.
-- the concept of thunks~\cite{Ingerman:1961:TWC:366062.366084} from
+- the concept of thunks {{THUNKS}} from
   the programming language literature to decouple method invocation
   from the return of results to enable long-running computations. The
   thunk is used to name the results for retrieval purposes.
@@ -184,6 +268,13 @@ invocation scheme, where computation is accommodated in distributed
 compute spots in local or wide area networks at the core or edge of
 the network. The mechanisms we propose follow ICN principles and
 require minimal and short-lived additional network state.
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+"SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+document are to be interpreted as described in RFC 2119, BCP 14
+{{RFC2119}} and indicate requirement levels for compliant RICE
+implementations.
+
 
 Terminology and Design Overview {#model}
 ===============================
@@ -283,7 +374,7 @@ Be compatible with ICN extension mechanisms:
 : Some recent proposed extensions make benign changes to ICN
   forwarding behavior (without compromising general
   interoperability). One example would be fast forwarding information
-  updates using technique such as Map-ME \cite{auge2016map}. RICE
+  updates using technique such as Map-ME {{MAPME}}. RICE
   should be designed to work with such extensions. In this particular
   case, this means that RICE should support client and server
   mobility in a Map-ME-enhanced network.
@@ -317,9 +408,9 @@ Thunks {#thunks}
 ------
 
 RMI Initiation and Result Retrieval are somehow decoupled from each
-other. The RMI Initiation generates a *Thunk* name, i.e., a handler
+other. The RMI Initiation generates a 'Thunk' name, i.e., a handler
 that the client can use later to retrieve the RMI result (or status)
-from the server. *Thunk* thus represents the computation process at
+from the server. 'Thunk' thus represents the computation process at
 the server.
 
 The RMI Initiation and the actual RMI invocation (and results)
@@ -335,7 +426,7 @@ Naming {#naming}
 ------
 
 RICE relies on a generic naming scheme for remote method invocation.
-We distinguish between *Method Names* and *Thunk Names* A function
+We distinguish between 'Method Names' and 'Thunk Names'. A function
 name identifies a method requested by a client that can be executed by
 any server able to perform the computations. In contrast, a thunk name
 identifies a specific method instance already being run on a specific
@@ -345,8 +436,8 @@ When a client initially requests the invocation of a referentially
 transparent method, the name in the Interest MUST unambiguously
 specify both the invoked method and the set of input parameters. The
 method part can be system-specific (\e.g., lambda-expressions in
-\cite{tschudin2014named} or expressed as a hierarchical name structure
-as in \cite{krol2017nfaas}), but MUST unambiguously identify the
+{{TSCHUDIN2014NAMED}} or expressed as a hierarchical name structure
+as in {{NFAAS}}}), but MUST unambiguously identify the
 method to invoke.
 
 The input parameters can be represented directly when very small in
@@ -400,10 +491,10 @@ deriving a shared secret, 2) authenticating and authorizing clients,
 and 3) providing input parameters to methods.
 
 A client starts a 4-way handshake by sending an Interest message
-*I1* towards a server. Similarly to
+I1 towards a server. Similarly to
 the TCP SYN flag, the message contains an additional TLV
-*Handshake* field (this description assumes
-NDN\cite{zhang2010named} implementation of ICN).
+Handshake field (this description assumes
+NDN {{NDN}} implementation of ICN).
 
 The field contains an identifier that is chosen by the client and
 distinguishes among different handshakes. Upon
@@ -415,30 +506,30 @@ short expiry time after which it is deleted.
 
 TODO: specify the timeout
 
-When the server receives the Interest, it MUST respond with an *I2*
+When the server receives the Interest, it MUST respond with an I2
 Interest message and forms the name from the received identifier. The
 Interest thus follows the previously established FIB entries towards
 the client. The forwarder also increases the expiry timer of
-*I1*'s PIT entry.
+I1's PIT entry.
 
 At this point, the client MUST be ready to
-respond and send a *D2* Data message. (Authorization
+respond and send a D2 Data message. (Authorization
 information and parameters may be larger than what can be carried in a
-single *D2* message. Therefore, multiple *I2/D2* exchanges
+single D2 message. Therefore, multiple I2/D2 exchanges
 using the built-in chunking capabilities of the underlying ICN
-protocols can be employed.) When the server receives *D2* it
+protocols can be employed.) When the server receives D2 it
 allocates resources for the computation for the client and sends back
-a confirmation in *D1* Data message.
+a confirmation in D1 Data message.
 <!--
 Delivery of *D1* is
 possible despite the extra *I2/D2* exchange because *I1's*
 PIT entry timer was increased by *I2*.
 -->
 
-Interest *I1* of the first handshake contains a method name
+Interest I1 of the first handshake contains a method name
 that is delivered to a server advertising the corresponding prefix. At
-the end of the first handshake, in *D1*, the server returns its
-thunk name. This name can be then used by the client in *I1*
+the end of the first handshake, in D1, the server returns its
+thunk name. This name can be then used by the client in I1
 message of consecutive handshakes to assure future invocations reach
 the same method instance.
 
@@ -446,7 +537,7 @@ the same method instance.
 Shared Secret Derivation {#sharedsecret}
 ------------------------
 
-Dirk: Not sure we need the following:
+**Dirk: Not sure we need the following:**
 
 Common secret derivation plays an important role in many security
 protocols. Once a common secret is established, both parties can
@@ -454,23 +545,23 @@ encrypt the communication using symmetric cryptography. Common secret
 derivation (e.g., via Diffie-Hellman Key Exchange) requires sending
 data in both directions between the involved parties and is clumsy to
 implement in vanilla ICN networks where not all nodes have globally
-routable prefixes. *Using one or multiple handshakes as described
+routable prefixes. Using one or multiple handshakes as described
 above allows use of any symmetric key scheme to secure the
-communication over arbitrary paths.*
+communication over arbitrary paths.
 
 Client Authentication {#clientauth}
 ---------------------
 
 
 Reliable and secure authentication requires multiple messages to be
-exchanged between the server and the client. *Utilizing the
+exchanged between the server and the client. Utilizing the
 handshake for client authentication, specially the exchanged
-_I2/D2_ messages, we achieve this goal and we decouple it from
-function invocation and input parameter passing.*
+I2/D2 messages, we achieve this goal and we decouple it from
+function invocation and input parameter passing.
 
-In addition, by using the *I2/D2* messages for client authentication
+In addition, by using the I2/D2 messages for client authentication
 and avoiding adding authentication information in the original
-interest (*I2/D2*), the RICE handshake mechanism becomes protected
+interest (I2/D2), the RICE handshake mechanism becomes protected
 against any record-and-replay attack by a malicious party which can
 intercept the traffic. Once authenticated, the client creates a
 security token that can be included as a last component of the thunk
@@ -479,26 +570,27 @@ referentially opaque methods, the token can be changed for each
 consecutive Interest message (i.e., based on the last received Data
 message).
 
-It should be noted that RICE can rely on idiomatic ICN mechanisms
-for server authentication, i.e., validate the signatures on Data or
-signed Interest messages. The client could also encrypt input
-parameters using the public key of the server. A detailed specification will be provided by a future version of this document.
+It should be noted that RICE can rely on idiomatic ICN mechanisms for
+server authentication, i.e., validate the signatures on Data or signed
+Interest messages. The client could also encrypt input parameters
+using the public key of the server. A detailed specification will be
+provided by a future version of this document.
 
 Following ICN principles, clients SHOULD NOT authenticate the server
 performing computations, but rather authenticate the returned
 result. If submitted input contains confidential data, it can be
 encrypted and shared using existing ICN access control techniques
-\cite{ion2013toward}.
+{{ION2013TOWARD}}.
 
 Input Parameters {#input}
 ----------------
 
 RICE passes input parameters to remote methods "by reference".  Since
-the server cannot access memory in the client, we use the *I2/D2*
+the server cannot access memory in the client, we use the I2/D2
 Interest/Data Exchange as a "callback" from the server to the client
 to fetch the input parameters. This preserves the ICN principle that
 data is never pushed to the server if not requested.  The server
-piggybacks on the PIT entry established by *I1* to reach the client
+piggybacks on the PIT entry established by I1 to reach the client
 and pull the required data.  If the input contains sensitive
 information, the client can encrypt it using a common secret derived
 in previous handshakes as described above.
@@ -521,7 +613,7 @@ Upon receipt of the Interest, the server starts the requested
 computation and immediately responds with a thunk Data message. For
 the network, the thunk does not differ from a regular Data message
 that consumes the pending PIT entry. The payload of the message
-contains a \emph{thunk name} and an estimated completion time. The
+contains a 'thunk name' and an estimated completion time. The
 client waits for the time indicated in the server's response and
 issues a new Interest with the received thunk name.
 
@@ -536,16 +628,16 @@ Security Considerations {#sec}
 
 By building on a well-studied ICN protocol framework, RICE shares the
 fundamental security advantages and difficulties of those
-protocols~\cite{Misra_2013,choi2013threat,afanasyev2013interest}. RICE
+protocols {{MISRA2013}}, {{CHOI2013THREAT}}, {{ALSHEIKH2015FLOODING}}. RICE
 employs native CCN/NDN machinery for cryptographic data integrity,
 origin authentication, confidentiality, and key
-management~\cite{Mahadevan_2014}. Similarly, RICE shares the privacy
-problems and limitations of extant ICN protocols~\cite{Ghali_2016}. In
+management {{MAHADEVAN2014}}. Similarly, RICE shares the privacy
+problems and limitations of extant ICN protocols {{GHALI2016}}. In
 general, the additional threat that needs to be addressed is a
 computational or state-creation attack against a server by
 un-authorized clients. These threats request long-running
 computations, or flood the server with remote invocation requests that
-start useless computations \cite{airtnt}, \cite{spoc-ndss-diss}.
+start useless computations {{AIRTNT}}, {{SPOC}}.
 
 For the security consideration, we concentrate on the vulnerabilities
 associated with RICE, and provide a brief security analysis of the RICE
@@ -553,47 +645,31 @@ machinery. The proposed 4-way handshake provides secure input
 parameter passing. It does so by fetching the parameters via the
 Interest-Data exchange "callback" from the server to the client. Such
 callbacks could open a reflection attack via interest
-flooding~\cite{choi2013threat} if a globally routable name were used
+flooding {{CHOI2013THREAT}} if a globally routable name were used
 for the callback operation. However, the reverse-path mechanism and
-non-routable name \rname~uses confines knowledge of the client's input
+non-routable name RICE uses confines knowledge of the client's input
 parameter set to the server and on-path forwarders. The remaining
 vulnerability is the need to maintain forwarding state for the entire
 duration of the four-way handshake, rather than just a two-way
 exchange.
 
-When a client sends *I1* towards a producer, it creates
+When a client sends I1 towards a producer, it creates
 additional state in FIB tables on all the intermediary
 forwarders. However, similarly to PIT entries, the created state is
 purged when its timer expires. If the timer is set to the same value
 as the PIT entries divided by 2, it does not expand the attack surface
 and existing Interest flood prevention techniques can be applied
-\cite{afanasyev2013interest}.
+{{ALSHEIKH2015FLOODING}}.
 
-Upon reception of *I1*, the producer does not create any local state
+Upon reception of I1, the producer does not create any local state
 or allocate resources for the client. This protects our system from
 DoS attacks similar to the TCP SYN flood attack
-\cite{eddy2007tcp}. When the producer responds with the *I2*
-message, that follows the trail created by *I1*. Such an approach
-assures that *I2* is delivered only to the client initiating the
+{{RFC4987}}. When the producer responds with the I2
+message, that follows the trail created by I1. Such an approach
+assures that I2 is delivered only to the client initiating the
 session and eliminates the threat of using the producer as a spam
 bot. Following ICN principles, the data is effectively pulled by the
 producer from the consumer assuring that the producer does not receive
 large volume data that it did not request.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
