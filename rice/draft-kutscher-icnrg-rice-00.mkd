@@ -2,7 +2,7 @@
 title: Remote Method Invocation in ICN
 # abbrev: RICE
 docName: draft-kutscher-icnrg-rice-00
-date: 2018-08-31
+date: 2018-09-18
 # date: 2012-01
 # date: 2012
 
@@ -130,6 +130,27 @@ informative:
         seriesInfo:
             NDSS: NDSS'18 Workshop on Decentralised IoT Security and Standards (DISS)
 
+    RICE2018:
+        title: RICE -- Remote Method Invocation in ICN
+        author:
+            -
+                name: Michael Krol
+                ins: Michael Krol
+            -
+                name: Karim Habak
+                ins: Karim Habak
+            -
+                name: Dave Oran
+                ins: Dave Oran
+            -
+                name: Dirk Kutscher
+                ins: Dirk Kutscher
+            -
+                name: Ioannis Psaras
+                ins: Ioannis Psaras
+        date: 2018-09
+        seriesInfo:
+            ACM: ICN Conference 2018
 
 
 #    moiseenko2014:
@@ -268,6 +289,9 @@ invocation scheme, where computation is accommodated in distributed
 compute spots in local or wide area networks at the core or edge of
 the network. The mechanisms we propose follow ICN principles and
 require minimal and short-lived additional network state.
+
+More rationale, a comparison with related work, and an evaluation of
+the RICE approach is provided in {{RICE2018}}.
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this

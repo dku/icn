@@ -5,8 +5,8 @@
 ICNRG                                                        D. Kutscher
 Internet-Draft                                                    Huawei
 Intended status: Experimental                                    D. Oran
-Expires: March 4, 2019                 Network Systems Research & Design
-                                                         August 31, 2018
+Expires: March 22, 2019                Network Systems Research & Design
+                                                      September 18, 2018
 
 
                     Remote Method Invocation in ICN
@@ -47,15 +47,15 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on March 4, 2019.
+   This Internet-Draft will expire on March 22, 2019.
 
 
 
 
 
-Kutscher & Oran           Expires March 4, 2019                 [Page 1]
+Kutscher & Oran          Expires March 22, 2019                 [Page 1]
 
-Internet-Draft       Remote Method Invocation in ICN         August 2018
+Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
 Copyright Notice
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Kutscher & Oran           Expires March 4, 2019                 [Page 2]
+Kutscher & Oran          Expires March 22, 2019                 [Page 2]
 
-Internet-Draft       Remote Method Invocation in ICN         August 2018
+Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
    functions remotely.  In NFN \cite{tschudin2014named}, for instance,
@@ -165,9 +165,9 @@ Internet-Draft       Remote Method Invocation in ICN         August 2018
 
 
 
-Kutscher & Oran           Expires March 4, 2019                 [Page 3]
+Kutscher & Oran          Expires March 22, 2019                 [Page 3]
 
-Internet-Draft       Remote Method Invocation in ICN         August 2018
+Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
       100s of milliseconds for wide-area networks).  PIT state is,
@@ -203,6 +203,9 @@ Internet-Draft       Remote Method Invocation in ICN         August 2018
    principles and require minimal and short-lived additional network
    state.
 
+   More rationale, a comparison with related work, and an evaluation of
+   the RICE approach is provided in [RICE2018].
+
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
    document are to be interpreted as described in RFC 2119, BCP 14
@@ -215,16 +218,16 @@ Internet-Draft       Remote Method Invocation in ICN         August 2018
    providing a robust and secure basis for a wide range of applications
    and in-network computation scenarios, including scenarios where
    method invocation requires a significant amount of input data and
+
+
+
+Kutscher & Oran          Expires March 22, 2019                 [Page 4]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
    involves computations that take significantly longer than a network
    RTT to complete.
-
-
-
-
-Kutscher & Oran           Expires March 4, 2019                 [Page 4]
-
-Internet-Draft       Remote Method Invocation in ICN         August 2018
-
 
    RICE is independent of any particular function execution environment.
    RICE provides all the required ICN protocol mechanisms and
@@ -271,16 +274,16 @@ Internet-Draft       Remote Method Invocation in ICN         August 2018
    Be robust and ICN-friendly to a mix of RICE and non-RICE traffic:  we
       want RICE to coexist seamlessly in existing ICN networks, e.g., it
       should adhere to the same flow balance principles.  The main
+
+
+
+Kutscher & Oran          Expires March 22, 2019                 [Page 5]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
       consequence is that we do not transmit RMI parameters in Interest
       messages.
-
-
-
-
-Kutscher & Oran           Expires March 4, 2019                 [Page 5]
-
-Internet-Draft       Remote Method Invocation in ICN         August 2018
-
 
    Support non-trivial, long-running computations with large amounts of
    result data
@@ -327,17 +330,16 @@ Internet-Draft       Remote Method Invocation in ICN         August 2018
       In this particular case, this means that RICE should support
       client and server mobility in a Map-ME-enhanced network.
 
+
+
+
+Kutscher & Oran          Expires March 22, 2019                 [Page 6]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
    Make minimal changes to ICN protocols and forwarder behavior:  We
       want to allow for some changes to ICN forwarder behavior, but
-
-
-
-
-Kutscher & Oran           Expires March 4, 2019                 [Page 6]
-
-Internet-Draft       Remote Method Invocation in ICN         August 2018
-
-
       these should be limited and designed so that they do not
       complicate forwarder implementations or impair their performance.
 
@@ -383,17 +385,18 @@ Internet-Draft       Remote Method Invocation in ICN         August 2018
    name identifies a specific method instance already being run on a
    specific node.
 
+
+
+
+
+Kutscher & Oran          Expires March 22, 2019                 [Page 7]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
    When a client initially requests the invocation of a referentially
    transparent method, the name in the Interest MUST unambiguously
    specify both the invoked method and the set of input parameters.  The
-
-
-
-Kutscher & Oran           Expires March 4, 2019                 [Page 7]
-
-Internet-Draft       Remote Method Invocation in ICN         August 2018
-
-
    method part can be system-specific (\e.g., lambda-expressions in
    [TSCHUDIN2014NAMED] or expressed as a hierarchical name structure as
    in [NFAAS]}), but MUST unambiguously identify the method to invoke.
@@ -438,17 +441,17 @@ Internet-Draft       Remote Method Invocation in ICN         August 2018
 
    A client starts a 4-way handshake by sending an Interest message I1
    towards a server.  Similarly to the TCP SYN flag, the message
+
+
+
+
+Kutscher & Oran          Expires March 22, 2019                 [Page 8]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
    contains an additional TLV Handshake field (this description assumes
    NDN [NDN] implementation of ICN).
-
-
-
-
-
-Kutscher & Oran           Expires March 4, 2019                 [Page 8]
-
-Internet-Draft       Remote Method Invocation in ICN         August 2018
-
 
    The field contains an identifier that is chosen by the client and
    distinguishes among different handshakes.  Upon receipt of the
@@ -498,12 +501,9 @@ Internet-Draft       Remote Method Invocation in ICN         August 2018
 
 
 
-
-
-
-Kutscher & Oran           Expires March 4, 2019                 [Page 9]
+Kutscher & Oran          Expires March 22, 2019                 [Page 9]
 
-Internet-Draft       Remote Method Invocation in ICN         August 2018
+Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
 3.5.  Client Authentication
@@ -557,9 +557,9 @@ Internet-Draft       Remote Method Invocation in ICN         August 2018
 
 
 
-Kutscher & Oran           Expires March 4, 2019                [Page 10]
+Kutscher & Oran          Expires March 22, 2019                [Page 10]
 
-Internet-Draft       Remote Method Invocation in ICN         August 2018
+Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
    In this section, we describe our use of thunks to allow clients to
@@ -613,9 +613,9 @@ Internet-Draft       Remote Method Invocation in ICN         August 2018
 
 
 
-Kutscher & Oran           Expires March 4, 2019                [Page 11]
+Kutscher & Oran          Expires March 22, 2019                [Page 11]
 
-Internet-Draft       Remote Method Invocation in ICN         August 2018
+Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
    duration of the four-way handshake, rather than just a two-way
@@ -669,9 +669,9 @@ Internet-Draft       Remote Method Invocation in ICN         August 2018
 
 
 
-Kutscher & Oran           Expires March 4, 2019                [Page 12]
+Kutscher & Oran          Expires March 22, 2019                [Page 12]
 
-Internet-Draft       Remote Method Invocation in ICN         August 2018
+Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
    [CHOI2013THREAT]
@@ -725,9 +725,9 @@ Internet-Draft       Remote Method Invocation in ICN         August 2018
 
 
 
-Kutscher & Oran           Expires March 4, 2019                [Page 13]
+Kutscher & Oran          Expires March 22, 2019                [Page 13]
 
-Internet-Draft       Remote Method Invocation in ICN         August 2018
+Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
    [NFAAS]    KrA^3l, M. and I. Psaras, "NFaaS", Proceedings of the 4th
@@ -740,6 +740,11 @@ Internet-Draft       Remote Method Invocation in ICN         August 2018
    [RFC4987]  Eddy, W., "TCP SYN Flooding Attacks and Common
               Mitigations", RFC 4987, DOI 10.17487/RFC4987, August 2007,
               <https://www.rfc-editor.org/info/rfc4987>.
+
+   [RICE2018]
+              Michael Krol, ., Karim Habak, ., Dave Oran, ., Dirk
+              Kutscher, ., and . Ioannis Psaras, "RICE -- Remote Method
+              Invocation in ICN", September 2018.
 
    [SPOC]     Michael Krol, . and . Ioannis Psaras, "SPOC -- Secure
               Payments for Outsourced Computations", 2018,
@@ -768,6 +773,19 @@ Authors' Addresses
    Email: ietf@dkutscher.net
 
 
+
+
+
+
+
+
+
+
+Kutscher & Oran          Expires March 22, 2019                [Page 14]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
    Dave Oran
    Network Systems Research & Design
    TBD
@@ -781,4 +799,42 @@ Authors' Addresses
 
 
 
-Kutscher & Oran           Expires March 4, 2019                [Page 14]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kutscher & Oran          Expires March 22, 2019                [Page 15]
