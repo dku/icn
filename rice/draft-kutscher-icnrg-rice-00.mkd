@@ -26,6 +26,33 @@ pi:    # can use array (if all yes) or hash here
 
 author:
       -
+        ins: M. Krol
+        name: Michal Krol
+        org: University College London
+        street: Gower Street
+        city: London
+        # code: D-80992
+        country: United Kingdom
+        email: m.krol@ucl.ac.uk
+      -
+        ins: K. Habak
+        name: Karim Habak
+        org: Georgia Institute of Technology
+        street: North Ave NW
+        city: Atlanta
+        code: GA 30332
+        country: USA
+        email: karim.habak@gatech.edu
+      -
+        ins: D. Oran
+        name: Dave Oran
+        org: Network Systems Research & Design
+        street: TBD
+        city: Cambridge
+        #code: TBD
+        country: USA
+        email: daveoran@orandom.net
+      -
         ins: D. Kutscher
         name: Dirk Kutscher
         org: Huawei
@@ -39,14 +66,14 @@ author:
         country: Germany
         email: ietf@dkutscher.net
       -
-        ins: D. Oran
-        name: Dave Oran
-        org: Network Systems Research & Design
-        street: TBD
-        city: Cambridge
-        code: TBD
-        country: USA
-        email: daveoran@orandom.net
+        ins: I. Psaras
+        name: Ioannis Psaras
+        org: University College London
+        street: Gower Street
+        city: London
+        # code: D-80992
+        country: United Kingdom
+        email: i.psaras@ucl.ac.uk
 
 normative:
 #        - rfc2119

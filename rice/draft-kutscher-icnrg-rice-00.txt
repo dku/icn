@@ -2,10 +2,16 @@
 
 
 
-ICNRG                                                        D. Kutscher
-Internet-Draft                                                    Huawei
-Intended status: Experimental                                    D. Oran
-Expires: March 22, 2019                Network Systems Research & Design
+ICNRG                                                            M. Krol
+Internet-Draft                                 University College London
+Intended status: Experimental                                   K. Habak
+Expires: March 22, 2019                  Georgia Institute of Technology
+                                                                 D. Oran
+                                       Network Systems Research & Design
+                                                             D. Kutscher
+                                                                  Huawei
+                                                               I. Psaras
+                                               University College London
                                                       September 18, 2018
 
 
@@ -44,19 +50,18 @@ Status of This Memo
 
    Internet-Drafts are draft documents valid for a maximum of six months
    and may be updated, replaced, or obsoleted by other documents at any
+
+
+
+Krol, et al.             Expires March 22, 2019                 [Page 1]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
    This Internet-Draft will expire on March 22, 2019.
-
-
-
-
-
-Kutscher & Oran          Expires March 22, 2019                 [Page 1]
-
-Internet-Draft       Remote Method Invocation in ICN      September 2018
-
 
 Copyright Notice
 
@@ -76,21 +81,21 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
-   2.  Terminology and Design Overview . . . . . . . . . . . . . . .   4
+   2.  Terminology and Design Overview . . . . . . . . . . . . . . .   5
      2.1.  Design Goals  . . . . . . . . . . . . . . . . . . . . . .   5
    3.  Protocol  . . . . . . . . . . . . . . . . . . . . . . . . . .   7
      3.1.  Thunks  . . . . . . . . . . . . . . . . . . . . . . . . .   7
-     3.2.  Naming  . . . . . . . . . . . . . . . . . . . . . . . . .   7
-     3.3.  Handshake . . . . . . . . . . . . . . . . . . . . . . . .   8
+     3.2.  Naming  . . . . . . . . . . . . . . . . . . . . . . . . .   8
+     3.3.  Handshake . . . . . . . . . . . . . . . . . . . . . . . .   9
      3.4.  Shared Secret Derivation  . . . . . . . . . . . . . . . .   9
      3.5.  Client Authentication . . . . . . . . . . . . . . . . . .  10
      3.6.  Input Parameters  . . . . . . . . . . . . . . . . . . . .  10
-     3.7.  Dynamic Content Retrieval Using Thunks  . . . . . . . . .  10
+     3.7.  Dynamic Content Retrieval Using Thunks  . . . . . . . . .  11
    4.  Security Considerations . . . . . . . . . . . . . . . . . . .  11
    5.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  12
      5.1.  Normative References  . . . . . . . . . . . . . . . . . .  12
      5.2.  Informative References  . . . . . . . . . . . . . . . . .  12
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  14
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  15
 
 1.  Introduction
 
@@ -102,18 +107,17 @@ Table of Contents
    multiple works have recently tried to extend ICN's capabilities to
    deal with dynamic content.
 
-   Notable among these efforts, Named Function Networking (NFN)
-   [TSCHUDIN2014NAMED] and Named Function as a Service (NFaaS) [NFAAS]
-   extend ICN's named data access model to a remote function invocation
-   capability, enabling consumers to request the network to execute
 
 
-
-Kutscher & Oran          Expires March 22, 2019                 [Page 2]
+Krol, et al.             Expires March 22, 2019                 [Page 2]
 
 Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
+   Notable among these efforts, Named Function Networking (NFN)
+   [TSCHUDIN2014NAMED] and Named Function as a Service (NFaaS) [NFAAS]
+   extend ICN's named data access model to a remote function invocation
+   capability, enabling consumers to request the network to execute
    functions remotely.  In NFN \cite{tschudin2014named}, for instance,
    function invocation corresponds to independent computational
    processes, evaluated as expressions in a functional programming
@@ -158,18 +162,18 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
       message, constructing responses by performing general computations
       (that could in turn invoke further remote computations) may take
       relatively long.  In CCN/NDN, forwarders keep Interest state for
-      matching received Data messages.  The design and dimensioning of
-      Pending Interest Tables (PITs) is typically based on the
-      assumption that corresponding Data messages are received in a time
-      frame that is based on typical network RTTs (e.g., order of 10s or
 
 
 
-Kutscher & Oran          Expires March 22, 2019                 [Page 3]
+Krol, et al.             Expires March 22, 2019                 [Page 3]
 
 Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
+      matching received Data messages.  The design and dimensioning of
+      Pending Interest Tables (PITs) is typically based on the
+      assumption that corresponding Data messages are received in a time
+      frame that is based on typical network RTTs (e.g., order of 10s or
       100s of milliseconds for wide-area networks).  PIT state is,
       therefore, short-lived by design.  As a result, Application
       Timescales can differ significantly from Network Timescales, which
@@ -212,20 +216,22 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
    [RFC2119] and indicate requirement levels for compliant RICE
    implementations.
 
+
+
+
+
+
+Krol, et al.             Expires March 22, 2019                 [Page 4]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
 2.  Terminology and Design Overview
 
    RICE is as a general Remote Method Invocation (RMI) service -
    providing a robust and secure basis for a wide range of applications
    and in-network computation scenarios, including scenarios where
    method invocation requires a significant amount of input data and
-
-
-
-Kutscher & Oran          Expires March 22, 2019                 [Page 4]
-
-Internet-Draft       Remote Method Invocation in ICN      September 2018
-
-
    involves computations that take significantly longer than a network
    RTT to complete.
 
@@ -268,20 +274,20 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
       overload servers and open a vulnerability to computational
       attacks.
 
+
+
+
+Krol, et al.             Expires March 22, 2019                 [Page 5]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
    Support non-trivial method invocation with arbitrarily complex
    parameter sets
 
    Be robust and ICN-friendly to a mix of RICE and non-RICE traffic:  we
       want RICE to coexist seamlessly in existing ICN networks, e.g., it
       should adhere to the same flow balance principles.  The main
-
-
-
-Kutscher & Oran          Expires March 22, 2019                 [Page 5]
-
-Internet-Draft       Remote Method Invocation in ICN      September 2018
-
-
       consequence is that we do not transmit RMI parameters in Interest
       messages.
 
@@ -324,19 +330,19 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
 
    Be compatible with ICN extension mechanisms:  Some recent proposed
       extensions make benign changes to ICN forwarding behavior (without
+
+
+
+Krol, et al.             Expires March 22, 2019                 [Page 6]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
       compromising general interoperability).  One example would be fast
       forwarding information updates using technique such as Map-ME
       [MAPME].  RICE should be designed to work with such extensions.
       In this particular case, this means that RICE should support
       client and server mobility in a Map-ME-enhanced network.
-
-
-
-
-Kutscher & Oran          Expires March 22, 2019                 [Page 6]
-
-Internet-Draft       Remote Method Invocation in ICN      September 2018
-
 
    Make minimal changes to ICN protocols and forwarder behavior:  We
       want to allow for some changes to ICN forwarder behavior, but
@@ -376,6 +382,18 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
    use to reach that backend server (or to obtain the corresponding
    result, generally speaking).
 
+
+
+
+
+
+
+
+Krol, et al.             Expires March 22, 2019                 [Page 7]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
 3.2.  Naming
 
    RICE relies on a generic naming scheme for remote method invocation.
@@ -384,15 +402,6 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
    by any server able to perform the computations.  In contrast, a thunk
    name identifies a specific method instance already being run on a
    specific node.
-
-
-
-
-
-Kutscher & Oran          Expires March 22, 2019                 [Page 7]
-
-Internet-Draft       Remote Method Invocation in ICN      September 2018
-
 
    When a client initially requests the invocation of a referentially
    transparent method, the name in the Interest MUST unambiguously
@@ -433,6 +442,14 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
    instance, and it is up to the server to return the same or different
    handlers to multiple clients.
 
+
+
+
+Krol, et al.             Expires March 22, 2019                 [Page 8]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
 3.3.  Handshake
 
    RICE uses a 4-way handshake which serves the purposes of 1) deriving
@@ -441,15 +458,6 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
 
    A client starts a 4-way handshake by sending an Interest message I1
    towards a server.  Similarly to the TCP SYN flag, the message
-
-
-
-
-Kutscher & Oran          Expires March 22, 2019                 [Page 8]
-
-Internet-Draft       Remote Method Invocation in ICN      September 2018
-
-
    contains an additional TLV Handshake field (this description assumes
    NDN [NDN] implementation of ICN).
 
@@ -490,6 +498,14 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
 
    Common secret derivation plays an important role in many security
    protocols.  Once a common secret is established, both parties can
+
+
+
+Krol, et al.             Expires March 22, 2019                 [Page 9]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
    encrypt the communication using symmetric cryptography.  Common
    secret derivation (e.g., via Diffie-Hellman Key Exchange) requires
    sending data in both directions between the involved parties and is
@@ -497,14 +513,6 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
    globally routable prefixes.  Using one or multiple handshakes as
    described above allows use of any symmetric key scheme to secure the
    communication over arbitrary paths.
-
-
-
-
-Kutscher & Oran          Expires March 22, 2019                 [Page 9]
-
-Internet-Draft       Remote Method Invocation in ICN      September 2018
-
 
 3.5.  Client Authentication
 
@@ -546,6 +554,14 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
    data is never pushed to the server if not requested.  The server
    piggybacks on the PIT entry established by I1 to reach the client and
    pull the required data.  If the input contains sensitive information,
+
+
+
+Krol, et al.             Expires March 22, 2019                [Page 10]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
    the client can encrypt it using a common secret derived in previous
    handshakes as described above.
 
@@ -553,15 +569,6 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
 
    In dynamic content generation or method invocation, the server may
    require a significant amount of time to create the requested data.
-
-
-
-
-Kutscher & Oran          Expires March 22, 2019                [Page 10]
-
-Internet-Draft       Remote Method Invocation in ICN      September 2018
-
-
    In this section, we describe our use of thunks to allow clients to
    retrieve computation results.
 
@@ -603,21 +610,20 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
    RICE machinery.  The proposed 4-way handshake provides secure input
    parameter passing.  It does so by fetching the parameters via the
    Interest-Data exchange "callback" from the server to the client.
+
+
+
+Krol, et al.             Expires March 22, 2019                [Page 11]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
    Such callbacks could open a reflection attack via interest flooding
    [CHOI2013THREAT] if a globally routable name were used for the
    callback operation.  However, the reverse-path mechanism and non-
    routable name RICE uses confines knowledge of the client's input
    parameter set to the server and on-path forwarders.  The remaining
    vulnerability is the need to maintain forwarding state for the entire
-
-
-
-
-Kutscher & Oran          Expires March 22, 2019                [Page 11]
-
-Internet-Draft       Remote Method Invocation in ICN      September 2018
-
-
    duration of the four-way handshake, rather than just a two-way
    exchange.
 
@@ -656,23 +662,24 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
               <https://www.ee.ucl.ac.uk/~uceeips/files/
               airtnt-payments-v1.pdf>.
 
+
+
+
+
+
+
+
+Krol, et al.             Expires March 22, 2019                [Page 12]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
    [ALSHEIKH2015FLOODING]
               Al-Sheikh, S., WA[currency units]hlisch, M., and T.
               Schmidt, "Revisiting Countermeasures Against NDN Interest
               Flooding", Proceedings of the 2nd International Conference
               on Information-Centric Networking - ICN '15,
               DOI 10.1145/2810156.2812604, 2015.
-
-
-
-
-
-
-
-Kutscher & Oran          Expires March 22, 2019                [Page 12]
-
-Internet-Draft       Remote Method Invocation in ICN      September 2018
-
 
    [CHOI2013THREAT]
               and , "Threat of DoS by interest flooding attack in
@@ -710,6 +717,19 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
               the 3rd ACM SIGCOMM workshop on Information-centric
               networking - ICN '13, DOI 10.1145/2491224.2491228, 2013.
 
+
+
+
+
+
+
+
+
+Krol, et al.             Expires March 22, 2019                [Page 13]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
    [MOISEENKO2014]
               Moiseenko, I., Stapp, M., and D. Oran, "Communication
               patterns for web interaction in named data networking",
@@ -722,13 +742,6 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
               "Named data networking", ACM SIGCOMM Computer
               Communication Review Vol. 44, pp. 66-73,
               DOI 10.1145/2656877.2656887, July 2014.
-
-
-
-Kutscher & Oran          Expires March 22, 2019                [Page 13]
-
-Internet-Draft       Remote Method Invocation in ICN      September 2018
-
 
    [NFAAS]    KrA^3l, M. and I. Psaras, "NFaaS", Proceedings of the 4th
               ACM Conference on Information-Centric Networking -
@@ -762,7 +775,45 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
               Networking Conference (CCNC),
               DOI 10.1109/ccnc.2014.6940518, January 2014.
 
+
+
+
+
+
+
+Krol, et al.             Expires March 22, 2019                [Page 14]
+
+Internet-Draft       Remote Method Invocation in ICN      September 2018
+
+
 Authors' Addresses
+
+   Michal Krol
+   University College London
+   Gower Street
+   London
+   United Kingdom
+
+   Email: m.krol@ucl.ac.uk
+
+
+   Karim Habak
+   Georgia Institute of Technology
+   North Ave NW
+   Atlanta  GA 30332
+   USA
+
+   Email: karim.habak@gatech.edu
+
+
+   Dave Oran
+   Network Systems Research & Design
+   TBD
+   Cambridge
+   USA
+
+   Email: daveoran@orandom.net
+
 
    Dirk Kutscher
    Huawei
@@ -773,68 +824,17 @@ Authors' Addresses
    Email: ietf@dkutscher.net
 
 
+   Ioannis Psaras
+   University College London
+   Gower Street
+   London
+   United Kingdom
+
+   Email: i.psaras@ucl.ac.uk
 
 
 
 
 
 
-
-
-Kutscher & Oran          Expires March 22, 2019                [Page 14]
-
-Internet-Draft       Remote Method Invocation in ICN      September 2018
-
-
-   Dave Oran
-   Network Systems Research & Design
-   TBD
-   Cambridge  TBD
-   USA
-
-   Email: daveoran@orandom.net
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Kutscher & Oran          Expires March 22, 2019                [Page 15]
+Krol, et al.             Expires March 22, 2019                [Page 15]
