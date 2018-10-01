@@ -5,14 +5,14 @@
 ICNRG                                                            M. Krol
 Internet-Draft                                 University College London
 Intended status: Experimental                                   K. Habak
-Expires: March 22, 2019                  Georgia Institute of Technology
+Expires: April 4, 2019                   Georgia Institute of Technology
                                                                  D. Oran
                                        Network Systems Research & Design
                                                              D. Kutscher
                                                                   Huawei
                                                                I. Psaras
                                                University College London
-                                                      September 18, 2018
+                                                        October 01, 2018
 
 
                     Remote Method Invocation in ICN
@@ -53,15 +53,15 @@ Status of This Memo
 
 
 
-Krol, et al.             Expires March 22, 2019                 [Page 1]
+Krol, et al.              Expires April 4, 2019                 [Page 1]
 
-Internet-Draft       Remote Method Invocation in ICN      September 2018
+Internet-Draft       Remote Method Invocation in ICN        October 2018
 
 
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on March 22, 2019.
+   This Internet-Draft will expire on April 4, 2019.
 
 Copyright Notice
 
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Krol, et al.             Expires March 22, 2019                 [Page 2]
+Krol, et al.              Expires April 4, 2019                 [Page 2]
 
-Internet-Draft       Remote Method Invocation in ICN      September 2018
+Internet-Draft       Remote Method Invocation in ICN        October 2018
 
 
    Notable among these efforts, Named Function Networking (NFN)
@@ -165,9 +165,9 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
 
-Krol, et al.             Expires March 22, 2019                 [Page 3]
+Krol, et al.              Expires April 4, 2019                 [Page 3]
 
-Internet-Draft       Remote Method Invocation in ICN      September 2018
+Internet-Draft       Remote Method Invocation in ICN        October 2018
 
 
       matching received Data messages.  The design and dimensioning of
@@ -221,9 +221,9 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
 
-Krol, et al.             Expires March 22, 2019                 [Page 4]
+Krol, et al.              Expires April 4, 2019                 [Page 4]
 
-Internet-Draft       Remote Method Invocation in ICN      September 2018
+Internet-Draft       Remote Method Invocation in ICN        October 2018
 
 
 2.  Terminology and Design Overview
@@ -277,9 +277,9 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
 
-Krol, et al.             Expires March 22, 2019                 [Page 5]
+Krol, et al.              Expires April 4, 2019                 [Page 5]
 
-Internet-Draft       Remote Method Invocation in ICN      September 2018
+Internet-Draft       Remote Method Invocation in ICN        October 2018
 
 
    Support non-trivial method invocation with arbitrarily complex
@@ -333,9 +333,9 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
 
-Krol, et al.             Expires March 22, 2019                 [Page 6]
+Krol, et al.              Expires April 4, 2019                 [Page 6]
 
-Internet-Draft       Remote Method Invocation in ICN      September 2018
+Internet-Draft       Remote Method Invocation in ICN        October 2018
 
 
       compromising general interoperability).  One example would be fast
@@ -389,9 +389,9 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
 
-Krol, et al.             Expires March 22, 2019                 [Page 7]
+Krol, et al.              Expires April 4, 2019                 [Page 7]
 
-Internet-Draft       Remote Method Invocation in ICN      September 2018
+Internet-Draft       Remote Method Invocation in ICN        October 2018
 
 
 3.2.  Naming
@@ -445,9 +445,9 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
 
-Krol, et al.             Expires March 22, 2019                 [Page 8]
+Krol, et al.              Expires April 4, 2019                 [Page 8]
 
-Internet-Draft       Remote Method Invocation in ICN      September 2018
+Internet-Draft       Remote Method Invocation in ICN        October 2018
 
 
 3.3.  Handshake
@@ -501,9 +501,9 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
 
-Krol, et al.             Expires March 22, 2019                 [Page 9]
+Krol, et al.              Expires April 4, 2019                 [Page 9]
 
-Internet-Draft       Remote Method Invocation in ICN      September 2018
+Internet-Draft       Remote Method Invocation in ICN        October 2018
 
 
    encrypt the communication using symmetric cryptography.  Common
@@ -557,9 +557,9 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
 
-Krol, et al.             Expires March 22, 2019                [Page 10]
+Krol, et al.              Expires April 4, 2019                [Page 10]
 
-Internet-Draft       Remote Method Invocation in ICN      September 2018
+Internet-Draft       Remote Method Invocation in ICN        October 2018
 
 
    the client can encrypt it using a common secret derived in previous
@@ -613,9 +613,9 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
 
-Krol, et al.             Expires March 22, 2019                [Page 11]
+Krol, et al.              Expires April 4, 2019                [Page 11]
 
-Internet-Draft       Remote Method Invocation in ICN      September 2018
+Internet-Draft       Remote Method Invocation in ICN        October 2018
 
 
    Such callbacks could open a reflection attack via interest flooding
@@ -669,9 +669,9 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
 
-Krol, et al.             Expires March 22, 2019                [Page 12]
+Krol, et al.              Expires April 4, 2019                [Page 12]
 
-Internet-Draft       Remote Method Invocation in ICN      September 2018
+Internet-Draft       Remote Method Invocation in ICN        October 2018
 
 
    [ALSHEIKH2015FLOODING]
@@ -725,9 +725,9 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
 
-Krol, et al.             Expires March 22, 2019                [Page 13]
+Krol, et al.              Expires April 4, 2019                [Page 13]
 
-Internet-Draft       Remote Method Invocation in ICN      September 2018
+Internet-Draft       Remote Method Invocation in ICN        October 2018
 
 
    [MOISEENKO2014]
@@ -781,9 +781,9 @@ Internet-Draft       Remote Method Invocation in ICN      September 2018
 
 
 
-Krol, et al.             Expires March 22, 2019                [Page 14]
+Krol, et al.              Expires April 4, 2019                [Page 14]
 
-Internet-Draft       Remote Method Invocation in ICN      September 2018
+Internet-Draft       Remote Method Invocation in ICN        October 2018
 
 
 Authors' Addresses
@@ -837,4 +837,4 @@ Authors' Addresses
 
 
 
-Krol, et al.             Expires March 22, 2019                [Page 15]
+Krol, et al.              Expires April 4, 2019                [Page 15]
